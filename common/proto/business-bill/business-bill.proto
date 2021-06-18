@@ -1,0 +1,524 @@
+syntax = "proto3";
+
+package go.micro.srv.business_bill;
+
+service BusinessBill {
+    // 下单
+    rpc Prepay (PrepayRequest) returns (PrepayReply) {}
+
+    //个人商家下单
+    rpc PersonalBusinessPrepay (PersonalBusinessPrepayRequest) returns (PersonalBusinessPrepayReply) {}
+
+    //用户扫个人商家固定二维码下单
+    rpc PersonalBusinessCodeFixedPrePay (PersonalBusinessCodeFixedPrePayRequest) returns (PersonalBusinessCodeFixedPrePayReply) {}
+
+    // 查询
+    rpc Query (QueryRequest) returns (QueryReply) {}
+
+    // 支付完成订单退款
+    rpc BusinessBillRefund (BusinessBillRefundRequest) returns (BusinessBillRefundReply) {}
+
+    rpc ApiPayRefund (ApiPayRefundRequest) returns (ApiPayRefundReply) {}
+
+    //============================================================================
+    // APP用户扫码支付-带金额二维码
+    rpc QrCodeAmountPay (QrCodeAmountPayRequest) returns (QrCodeAmountPayReply) {}
+
+    // APP用户扫码支付下单
+    rpc QrCodeFixedPrePay(QrCodeFixedPrePayRequest) returns (QrCodeFixedPrePayReply)  {}
+
+    // APP用户扫码支付-用户输入金额
+    rpc QrCodeFixedPay (QrCodeFixedPayRequest) returns (QrCodeFixedPayReply) {}
+
+    // APP根据二维码id查询订单信息(金额, 商家名称)
+    rpc QueryTransInfo(QueryTransInfoRequest) returns (QueryTransInfoReply){}
+
+    // APP通过固定收款二维码获取商户应用信息
+    rpc GetBusinessAppInfo(GetBusinessAppInfoRequest) returns (GetBusinessAppInfoReply){}
+
+    // APP通过固定收款二维码获取个人商户信息
+    rpc GetPersonalBusinessInfo (GetPersonalBusinessInfoRequest) returns (GetPersonalBusinessInfoReply) {}
+
+    // APP付款码
+    rpc GetPaymentCode (GetPaymentCodeRequest) returns (GetPaymentCodeReply) {}
+
+    // APP查询用户待支付订单
+    rpc QueryPendingPayOrder (QueryPendingPayOrderRequest) returns (QueryPendingPayOrderReply) {}
+
+    // APP用户订单号支付
+    rpc OrderPay (OrderPayRequest) returns (OrderPayReply) {}
+
+    //退款查询
+    rpc QueryRefundOrder (QueryRefundOrderRequest) returns (QueryRefundOrderReply){}
+
+    //查询订单
+    rpc QueryOrder(QueryOrderRequest) returns (QueryOrderReply) {}
+
+    //App支付
+    rpc AppPay (AppPayRequest) returns (AppPayReply) {}
+
+    //结算
+    rpc ManualSettle (ManualSettleRequest) returns (ManualSettleReply) {}
+
+    //企业转账
+    rpc EnterpriseTransfer (EnterpriseTransferRequest) returns (EnterpriseTransferReply) {
+    }
+
+    //查询转账
+    rpc QueryTransfer (QueryTransferRequest) returns (QueryTransferReply) {
+    }
+    //dddddddddddddddddddddddddd
+}
+
+
+//=====================下单=======================
+message PrepayRequest {
+    string amount = 1;
+    string remark = 2;
+    string notify_url = 3;
+    string return_url = 4;
+    string app_id = 5;
+    string out_order_no = 6;
+    string currency_type = 7;
+    string subject = 8;
+    string time_expire = 9;
+    string payment_code = 10;
+    string trade_type = 11;
+    string lang = 12 ;
+    string attach = 13 ;
+}
+
+message PrepayReply {
+    string result_code = 1;
+    string msg = 2;
+    string order_no = 3;
+    string out_order_no = 4;
+    string qr_code_id = 5;
+    string app_pay_content = 6;
+}
+
+
+//==================个人商家下单===================
+message PersonalBusinessPrepayRequest {
+    string account_no = 1;
+    string amount = 2;
+    string currency_type = 3;
+    string subject = 4;
+    string remark = 5;
+    string lang = 6;
+}
+
+message PersonalBusinessPrepayReply {
+    string result_code = 1;
+    string msg = 2;
+    string order_no = 3;
+    string qr_code_id = 4;
+}
+
+//==========用户扫个人商家固定二维码下单================
+message PersonalBusinessCodeFixedPrePayRequest {
+    string qr_code_id = 1;
+    string account_no = 2;
+    string account_type = 3;
+    string amount = 4;
+    string currency_type = 5;
+    string remark = 6;
+    string subject = 7;
+    string lang = 8;
+}
+
+message PersonalBusinessCodeFixedPrePayReply {
+    string result_code = 1;
+    string msg = 2;
+    string order_no = 3;
+    string amount = 4;
+    string subject = 5;
+}
+
+//=====================支付=======================
+message PayRequest {
+    string order_no = 1;
+    string account_no = 2;
+    string payment_password = 3;
+    string non_str = 4;
+    string account_type = 5;
+    string lang = 6 ;
+}
+
+message PayReply {
+    string result_code = 1;
+    string msg = 2;
+    string order_no = 3;
+    string out_order_no = 4;
+    string order_status = 5;
+    string subject = 6; // 商品标题
+    string create_time = 7; // 创建时间
+    string pay_time = 8; // 支付时间
+}
+
+//======================查询=====================
+message QueryRequest {
+    string app_id = 1;
+    string out_order_no = 2;
+    string order_no = 3;
+    string lang = 4 ;
+}
+
+message QueryReply {
+    string result_code = 1;
+    string msg = 2;
+    string out_order_no = 3;
+    string order_no = 4;
+    string pay_account = 5; // 付款人账号id
+    string order_status = 6;
+    string amount = 7; // 交易金额
+    string currency_type = 8; // 币种
+    string create_time = 9;// 订单生成时间
+    string pay_time = 10; // 支付时间
+    string subject = 11; // 订单标题
+    string remark = 12; // 描述
+    string rate = 13; // 费率
+    string fee  =14; // 手续费
+}
+
+//=====================用户扫码支付-带金额二维码=================
+message QrCodeAmountPayRequest {
+    string qr_code_id = 1;
+    string account_no = 2;
+    string payment_password = 3;
+    string non_str = 4;
+    string account_type = 5;
+    string lang = 6;
+    string payment_method = 7;
+    string bank_card_no = 8;
+    string sign_key = 9; //指纹支付标识Key
+    string device_uuid = 10; //设备uuid
+}
+
+message QrCodeAmountPayReply {
+    string result_code = 1;
+    string msg = 2;
+    string order_no = 3;
+    string out_order_no = 4;
+    string order_status = 5;
+    string subject = 6; // 商品标题
+    string create_time = 7; // 创建时间
+    string pay_time = 8; // 支付时间
+    string user_order_type = 9; // 用户端订单类型
+}
+
+//=====================用户扫码下单==============================
+message QrCodeFixedPrePayRequest {
+    string qr_code_id = 1;
+    string account_no = 2;
+    string account_type = 3;
+    string amount = 4;
+    string currency_type = 5;
+    string remark = 6;
+    string subject = 7;
+    string lang = 8;
+}
+
+message QrCodeFixedPrePayReply {
+    string result_code = 1;
+    string msg = 2;
+    string order_no = 3;
+    string amount = 4;
+    string subject = 5;
+}
+
+//=====================用户扫码支付-用户输入金额===================
+message QrCodeFixedPayRequest {
+    string order_no = 1;
+    string account_no = 2;
+    string account_type = 3;
+    string payment_password = 4;
+    string non_str = 5;
+    string lang = 6;
+    string payment_method = 7;
+    string bank_card_no = 8;
+    string sign_key = 9; //指纹支付标识Key
+    string device_uuid = 10; //设备uuid
+}
+
+message QrCodeFixedPayReply {
+    string result_code = 1;
+    string msg = 2;
+    string order_no = 3;
+    string out_order_no = 4;
+    string order_status = 5;
+    string subject = 6; // 商品标题
+    string create_time = 7; // 创建时间
+    string pay_time = 8; // 支付时间
+    string user_order_type = 9; // 用户端订单类型
+    string lang = 10;
+}
+
+//====================根据二维码id查询订单信息(金额, 商家名称)=======
+message QueryTransInfoRequest {
+    string qr_code_id = 1;
+    string lang = 2;
+}
+
+message QueryTransInfoReply {
+    string result_code = 1;
+    string msg = 2;
+    string amount = 3; //交易金额
+    string subject = 4; // 订单标题
+    string business_name = 5; // 商户名称
+    string currency_type = 6; //币种
+}
+
+//===================通过固定收款二维码获取商户应用信息===============
+message GetBusinessAppInfoRequest{
+    string fixed_qrcode = 1;
+    string lang = 2;
+}
+
+message GetBusinessAppInfoReply {
+    string result_code = 1;
+    string msg = 2;
+    string app_name = 3; // 商户应用名称
+}
+
+
+//===================通过固定收款二维码获取个人商户信息===============
+message GetPersonalBusinessInfoRequest{
+    string fixed_code = 1;
+    string lang = 2;
+}
+
+message GetPersonalBusinessInfoReply {
+    string result_code = 1;
+    string msg = 2;
+    string business_name = 3; // 商户简称
+}
+
+//====================支付完成订单退款=======================
+message BusinessBillRefundRequest {
+    string business_no = 1;
+    string business_acc_no = 2;
+    string account_type = 3;
+    string order_no = 4;
+    string refund_amount = 5;
+    string payment_pwd = 6;
+    string non_str = 7;
+    string refund_reason = 8;
+    string lang = 9;
+}
+
+message BusinessBillRefundReply {
+    string result_code = 1;
+    string msg = 2;
+    string refund_no = 3;
+    string refund_amount = 4;
+    string out_refund_no = 5;
+    string refund_status = 6;
+    string refund_payee_acc = 7;
+}
+
+message ApiPayRefundRequest {
+    string app_id = 1;
+    string order_no = 2;       //交易订单号
+    string out_order_no = 3;   //交易外部单号
+    string refund_amount = 4;  //退款金额
+    string out_refund_no = 5;  //外部退款单号
+    string refund_reason = 6;  //退款原因
+    string notify_url = 7;     //异步通知地址
+    string lang = 8;
+    string attach = 9;
+}
+
+message ApiPayRefundReply {
+    string result_code = 1;
+    string msg = 2;
+    string order_no = 3;       //交易订单号
+    string out_order_no = 4;   //交易外部单号
+    string refund_no = 5;
+    string refund_amount = 6;
+    string out_refund_no = 7;
+    string refund_status = 8;
+    string real_refund_amount = 9;
+}
+
+//====================付款码=========================================
+message GetPaymentCodeRequest {
+    string account_no = 1;
+    string payment_code = 2;
+    string lang = 3;
+}
+message GetPaymentCodeReply {
+    string result_code = 1;
+    string msg = 2;
+    string account_no = 3;
+    string payment_code = 4;
+}
+
+//====================查询用户待支付订单==============================
+message QueryPendingPayOrderRequest {
+    string account_no = 1;
+    string payment_code = 2;
+    string lang = 3;
+}
+
+message QueryPendingPayOrderReply {
+    string result_code = 1;
+    string msg = 2;
+    string order_no = 3;
+    string amount = 4;
+    string currency_type = 5;
+    string business_name = 6;
+    string subject = 7;
+}
+
+//====================付款码支付======================================
+message OrderPayRequest {
+    string account_no = 1;
+    string order_no = 2;
+    string payment_pwd = 3;
+    string non_str = 4;
+    string account_type = 5;
+    string lang = 6;
+    string payment_method = 7;
+    string bank_card_no = 8;
+    string sign_key = 9; //指纹支付标识Key
+    string device_uuid = 10; //设备uuid
+}
+
+message OrderPayReply {
+    string result_code = 1;
+    string msg = 2;
+    string order_no = 3;
+    string order_status = 4;
+    string create_time = 5;
+    string pay_time = 6;
+    string business_name = 7;
+    string subject = 8;
+    string user_order_type = 9;
+}
+
+//====================退款查询========================================
+message QueryRefundOrderRequest {
+    string app_id = 1;  // 应用id
+    string refund_no = 2;  // 退款号
+    string out_refund_no =3;    // 外部退款号
+    string lang = 4;
+}
+
+message QueryRefundOrderReply {
+    string result_code = 1;
+    string msg = 2;
+    string order_no = 3;
+    string out_order_no = 4;
+    string currency_type = 5;
+    string refund_no = 6;
+    string out_refund_no = 7;
+    string amount = 8; // 订单金额
+    string refund_amount = 9; // 退款金额
+    string refund_status = 10; // 退款状态
+    string refund_time  = 11; // 退款时间
+    string refund_payee_acc = 12; //退款接收账号
+}
+
+
+message QueryOrderRequest {
+    string order_no = 1;
+    string out_order_no = 2;
+    string lang = 3;
+}
+
+message QueryOrderReply {
+    string result_code = 1;
+    string msg = 2;
+    string order_no = 3;
+    string order_status = 4;
+    string amount = 5;
+    string currency_type = 6;
+    string subject = 7;
+    string app_name = 8;
+}
+
+message AppPayRequest {
+    string account_no = 1;
+    string account_type = 2;
+    string payment_pwd = 3;
+    string non_str = 4;
+    string app_pay_content = 5;
+    string lang = 6;
+    string payment_method = 7;
+    string bank_card_no = 8;
+    string sign_key = 9; //指纹支付标识Key
+    string device_uuid = 10; //设备uuid
+}
+
+message AppPayReply {
+    string result_code = 1;
+    string msg = 2;
+    string order_no = 3;
+    string order_status = 4;
+    string create_time = 5;
+    string pay_time = 6;
+    string user_order_type = 7;
+    string subject = 8;
+}
+
+message RefundOrder {
+    string refund_no = 9;
+    string out_refund_no = 10;
+    string refund_amount = 11; //退款金额
+    string refund_status = 12; //退款状态
+    string refund_success_time = 13; //退款成功时间
+}
+
+message ManualSettleRequest {
+    repeated string order_nos = 1;
+}
+
+message ManualSettleReply {
+    string result_code = 1;
+    int64 fail_num = 2; //结算失败数量
+    map<string,string> fail_order = 3; //结算失败订单-失败原因
+}
+
+message EnterpriseTransferRequest {
+    string app_id = 1;
+    string amount = 2;
+    string currency_type = 3;
+    string payee_email = 4;
+    string payee_phone = 5;
+    string payee_country_code = 6;
+    string remark = 7;
+    string lang = 8;
+    string out_transfer_no = 9;
+    string notify_url = 10;
+    string attach = 11;
+}
+
+message EnterpriseTransferReply {
+    string result_code = 1;
+    string msg = 2;
+    EnterpriseTransferOrder order = 3;
+}
+
+message EnterpriseTransferOrder {
+    string transfer_no = 1;
+    string out_transfer_no = 2;
+    string amount = 3;
+    string currency_type = 4;
+    string transfer_status = 5;
+    string transfer_time = 6;
+    string wrong_reason = 7;
+}
+
+message QueryTransferRequest {
+    string app_id = 1;
+    string transfer_no = 2;
+    string out_transfer_no = 3;
+    string lang = 4;
+}
+
+message QueryTransferReply {
+    string result_code = 1;
+    string msg = 2;
+    EnterpriseTransferOrder order = 3;
+}

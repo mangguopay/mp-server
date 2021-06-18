@@ -1,0 +1,4 @@
+2020-08-04 16:54:03 |ERROR | sql.go:476 | sql=[SELECT vaccount_no,va_type FROM vaccount WHERE account_no=$1 AND is_delete='0' ]
+args=[[0e8d24af-bec7-4f95-b038-c48045f51abf]]
+2020-08-04 16:54:39 |ERROR | sql.go:476 | sql=[SELECT vaccount_no,va_type FROM vaccount WHERE account_no=$1 AND is_delete='0' ]
+args=[[0e8d24af-bec7-4f95-b038-c48045f51abf]]

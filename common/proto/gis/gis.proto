@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package go.micro.srv.gis;
+
+service GIS {
+
+    rpc GetNearbyServicerList (GetNearbyServicerListRequest) returns (GetNearbyServicerListReply) {
+    }
+    //dddddddddddddddddddddddddd
+}
+//======================================
+message GetNearbyServicerListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string lat = 3; //当前纬度
+    string lng = 4; //当前经度
+    string account_uid = 5;
+}
+
+message GetNearbyServicerListReply {
+    string result_code = 1;
+    repeated NearbyServicerData datas = 2;
+    int32 total = 3;
+}
+
+message NearbyServicerData {
+    double lat = 1;
+    double lng = 2;
+    string servicer_no = 3;
+    string servicer_name = 4; //服务网点名称
+    double distance = 5;
+}
+
+message ListenEvenRequest {
+    bool is_sync = 1;
+}

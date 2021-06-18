@@ -1,0 +1,106 @@
+{
+  "steps":[
+    {
+      "type":"if",
+      "condition":"7ca6f3ed-c953-4b38-b503-5f29db425ca7",
+      "rollback":"a",
+      "y":[
+        {
+          "type":"pipeline",
+          "steps":"opNo"
+        },
+        {
+          "type":"if",
+          "condition":"a == b",
+          "y":[
+
+          ],
+          "n":[
+
+          ]
+        }
+      ],
+      "n":[
+        {
+          "type":"pipeline",
+          "steps":"xxxxx"
+        },
+        {
+          "type":"if",
+          "condition":"a == b",
+          "y":[
+            {
+              "type":"if",
+              "condition":"a == b",
+              "y":[
+                {
+                  "type":"if",
+                  "condition":"a == b",
+                  "y":[
+
+                  ],
+                  "n":[
+
+                  ]
+                }
+              ],
+              "n":[
+                {
+                  "type":"pipeline",
+                  "steps":"xxxxx"
+                },
+                {
+                  "type":"if",
+                  "condition":"a == b",
+                  "y":[
+
+                  ],
+                  "n":[
+
+                  ]
+                }
+              ]
+            }
+          ],
+          "n":[
+
+          ]
+        }
+      ]
+    },
+    {
+      "type":"switch",
+      "condition":"opNo",
+      "ops":{
+        "a":[
+          {
+            "type":"pipeline",
+            "steps":"xxxxx"
+          }
+        ],
+        "b":[
+          {
+            "type":"pipeline",
+            "steps":"xxxxx"
+          }
+        ],
+        "default":[
+          {
+            "type":"pipeline",
+            "steps":"xxxxx"
+          }
+        ]
+      }
+    },
+    {
+      "type":"for",
+      "condition":"opNo",
+      "i_begin":"",
+      "i_step":"",
+      "i_end":"",
+      "loop":[
+
+      ]
+    }
+  ]
+}

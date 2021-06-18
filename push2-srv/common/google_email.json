@@ -1,0 +1,8 @@
+{
+  "from_user": "qq425312361@gmail.com",
+  "auth_code": "ccguydvywnlrwbxr",
+  "smtp_host": "smtp.gmail.com:587",
+  "body_templete": ",<html>\n    <body>\n    <h3>\n    %s\n    </h3>\n    </body>\n    </html>",
+  "user_name": "Modern Pay",
+  "mime_type": "html"
+}

@@ -1,0 +1,76 @@
+mp-server:
+  base:
+    host: 0.0.0.0
+    port: 5000-6000
+    timezone: "Asia/Phnom_Penh"
+    # 平台私钥 6
+    pri_key: "MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAMaeqEboJWW1a847GGdl+rXxCzrFo/LfX6hnmW0KCo0g7UrGyWkdAQgxSPVhWDzZtNdJZf9FSvtWt3Mkl405gUo2gCgdem4N/lEfzMMwS57vPpguv85Q4SEq8phBYbH1F0qSsJ+upQLLRFmUW+6uIIuG5pABlWwSEljHBaP7iCMvAgMBAAECgYEAmwn7xyWtE4CTP29HtGaZVm5q2pyuRoZwsA72Z3QgGlvqfqU/UQqv5Io8LjanXxB9plOIB8Q6LIlbN8kHd9i8fyQ8a8Y4RQIxNFGqfJ3lf4XjkOs9d/+kLLEevcYr0KlI3V2a56SprYW7LLzLAJXwK/nq24X/M0QwImtJWr42j5kCQQDI7F6/a4R15IX/LctgmfjZ5OGWzTPNShQfRroNuApJTNEICyMrNBjCnTS48a+VFeQCEwhjMPCAs7jRnp2IEeULAkEA/RCi6rsuVu4RtlzZ386Q4jeQxxr3Xc/8s0zLLR/QpmTNFuNKw4nN3jvZ/Uee2TlncIj63cHR276+FjicbyRI7QJAUBHKTFRHjEfOknuocc3KWuMYd2U9QJFF5ZTk7jSqfL2NC7yMflobh+roKM+/3hTEMYNuM0E8hr2YaIjiVGh1MwJAFzzp2OgrTyw5UCeikhyjzUIQ91eQk3q/168bkR80x7LF6m4gtWf4EYopcEqdWZEd4IWTk71yid0wE1ZLdyE72QJBAJ2TUwsgS/Xr93AMLjj2rN4vBo2WFehBOHBOsKbslc/dATZLZnCi8AfZCTEt82cZJIHsMWBEwubBeV+0BWViVsg="
+    # 平台公钥 5
+    pub_key: "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDGnqhG6CVltWvOOxhnZfq18Qs6xaPy31+oZ5ltCgqNIO1KxslpHQEIMUj1YVg82bTXSWX/RUr7VrdzJJeNOYFKNoAoHXpuDf5RH8zDMEue7z6YLr/OUOEhKvKYQWGx9RdKkrCfrqUCy0RZlFvuriCLhuaQAZVsEhJYxwWj+4gjLwIDAQAB"
+    # default_pri_key: "MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAMIfFKx+MA1RxdAm6LgHxyW3VqX6O0Bj7e1/VctaRrMYbBsnKdjQbN4b0ockFC9mNVhpKlbXk0uMuFnmwdA4GZdCbBKz4DW+V2a3huuCaR8v7wRcSKw9Uz5eFwq0qGIvaQ6gjWdoLdl6rFsb6z960fqagxrXerBBk8gzkmGq5Zf7AgMBAAECgYAhOlS9mfP7s62aja50IdCy4gkQ7B5MTU6iwpMa9d74NQv8Md314OdhtX156HEUE/i5o3a92rS5z+KWcOtoCtJGRu59wHcimj83Hv3lXcntJZwvnkS7tgJs5wjlp5Ss+3rLZPP1iG6aplTieCMXZoiXoLQ3Aw1/Oo7Xc+bssUsH4QJBAMJzyTtdB4hYlUUeOph78IH6AnL030gBWnGwULjSUhUX78vWNJ3VIMPQIOBpEKmpgRqJrqHdRPkkUnikxhNeHhMCQQD/kHvh1Np5UeYpxWEvrpZXNXhW24mHmJE8AO51vE7+Efqkt1MBBXKiVRyt8LxbrbJicr4m0M3paMvKwcdm+Tt5AkBvl1cCdE7gVkXDlqd13pqVXM6O/iws/GnVGKQajMiCRmxdBB7J/QeCmCxl3KWtWBM5EY5gYcU1XTze82CguMB1AkAg+3qheKEBi0pTFcAnMTcB5kqzmv2y3EPSJKSh2T2wmI1qeKZjuVpEDQv4ftswUch14C0eQVBx0S6L6lpbtcqxAkEAnIYxGcj1Xl7dridw1qeD+5j9d0FJARxkJ47UVn8oqJNuaHgwnPHAo+YtK0Qs5HsbCNzgVQmMAopqNc9n3Zma3A=="
+    # 默认公钥3
+    default_pub_key: "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDCHxSsfjANUcXQJui4B8clt1al+jtAY+3tf1XLWkazGGwbJynY0GzeG9KHJBQvZjVYaSpW15NLjLhZ5sHQOBmXQmwSs+A1vldmt4brgmkfL+8EXEisPVM+XhcKtKhiL2kOoI1naC3ZeqxbG+s/etH6moMa13qwQZPIM5JhquWX+wIDAQAB"
+
+  database:
+    crm:
+      host: 10.41.1.241
+      port: 5432
+      user: postgres
+      password: 123
+      name: mp_crm
+      driver: postgres
+    risk:
+      host: 10.41.1.241
+      port: 5432
+      user: postgres
+      password: 123
+      name: mp_risk
+      driver: postgres
+    statlog:
+      host: 10.41.1.241
+      port: 5432
+      user: postgres
+      password: 123
+      name: mp_log
+      driver: postgres
+    stat:
+      host: 10.41.1.241
+      port: 5432
+      user: postgres
+      password: 123
+      name: mp_stat
+      driver: postgres
+    t_log:
+      host: 10.41.1.241
+      port: 8086
+      name: how_do_you_do
+      driver: influxdb
+  cache:
+    a:
+      host: 10.41.1.241
+      port: 6379
+      password: 123456a
+      adapter: redis
+      db: 0
+  mq:
+    primary:
+      host: 127.0.0.1
+      port: 4272
+      adapter: nats
+    secondary:
+      host: 127.0.0.1
+      port: 4282
+      adapter: nats
+
+  message:
+    jpush:
+      appkey: d82dd173d40f6631ae68e4c9
+      secret: dc5f3b9cc887ce3158d756e1
+    fcmpush:
+      server_key: AAAADkdrpSs:APA91bF1ySocNz99tieDrRjI4vID_m4nkh9pBnxIwPx4VpYk7YojLRZgAWaMLngn3zl0k_mtuCd7TZlcbF_GsBoloWK3eGnCLd41FI_53yDmu2dj-llEdxFr-7i0jTc6gM2UCfW2GLBk
+  aws:
+    s3:
+      access_key_id: AKIAVEYE56XZ4FTUNOWI
+      secret_access_key: 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
+      region: ap-southeast-1
+      bucket: modernpay-dev

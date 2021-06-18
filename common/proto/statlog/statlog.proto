@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package go.micro.srv.statlog;
+
+service Statlog {
+    //
+    rpc PushApiLog (PushApiLogRequest) returns (PushApiLogReply) {
+    }
+    //dddddddddddddddddddddddddd
+}
+
+message PushApiLogRequest {
+    string url = 1;
+    string method = 2;
+    string log_time = 3;
+    string during = 4;
+    string status_code = 5;
+    string account_no = 6;
+    string account_type = 7;
+    string ip = 8;
+    string trace_no = 9;
+    string serv = 10;
+    string ua = 11;
+}
+
+message PushApiLogReply {
+}

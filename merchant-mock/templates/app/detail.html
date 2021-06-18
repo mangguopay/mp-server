@@ -1,0 +1,61 @@
+{{define "app/detail.html"}}
+
+    {{template "common/header.html" .}}
+
+    <div class="container-fluid">
+        <form class="form-horizontal" action="" method="post">
+            <div class="form-group">
+                <label for="app_id" class="col-sm-2 control-label">应用ID</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="app_id" name="app_id" value="{{.app.AppId}}" readonly>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="app_name" class="col-sm-2 control-label">应用名称</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="app_name" name="app_name" value="{{.app.AppName}}" readonly>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="merchant_private_key" class="col-sm-2 control-label">商家私钥&nbsp;&nbsp;<span class="btn btn-primary" onclick="copyContent('merchant_private_key');">复制</span></label>
+                <div class="col-sm-6">
+                    <textarea class="form-control" rows="16" id="merchant_private_key" name="merchant_private_key" readonly>{{.app.MerchantPrivateKey}}</textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="merchant_public_key" class="col-sm-2 control-label">商家公钥&nbsp;&nbsp;<span class="btn btn-primary" onclick="copyContent('merchant_public_key');">复制</span></label>
+                <div class="col-sm-6">
+                    <textarea class="form-control" rows="6" id="merchant_public_key" name="merchant_public_key" readonly >{{.app.MerchantPublicKey}}</textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="platform_public_key" class="col-sm-2 control-label">平台公钥&nbsp;&nbsp;<span class="btn btn-primary" onclick="copyContent('platform_public_key');">复制</span></label>
+                <div class="col-sm-6">
+                    <textarea class="form-control" rows="6" id="platform_public_key" name="platform_public_key" readonly>{{.app.PlatformPublicKey}}</textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="merchant_key_type" class="col-sm-2 control-label">秘钥类型</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="merchant_key_type" name="merchant_key_type" value="{{.app.MerchantKeyType}}" readonly>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        function copyContent(objId)
+        {
+            var obj=document.getElementById(objId);
+            obj.select(); // 选择对象
+            document.execCommand("Copy"); // 执行浏览器复制命令
+            alert("已复制！");
+        }
+    </script>
+    {{template "common/footer.html"}}
+{{end}}

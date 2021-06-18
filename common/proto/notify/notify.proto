@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package go.micro.srv.notify;
+
+// 支付系统结果的通知
+message PaySystemResultNotify {
+    string order_no = 1;
+    string order_type = 2;
+}

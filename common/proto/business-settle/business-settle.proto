@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package go.micro.srv.business_settle;
+
+service BusinessSettle {
+    // 清算转账订单
+    rpc BusinessSettleFees (BusinessSettleFeesRequest) returns (BusinessSettleFeesReply) {
+    }
+    //dddddddddddddddddddddddddd
+}
+
+//======================================
+message BusinessSettleFeesRequest {
+    string order_no = 1;
+    // 1-入金;2-出金
+    string fees_type = 2;
+    // 手续费
+    string fees = 3;
+
+    string amount = 4; // 交易金额
+
+}
+
+message BusinessSettleFeesReply {
+    string result_code = 1;
+}
+//======================================

@@ -1,0 +1,5 @@
+package i
+
+func InitSrv() {
+
+}

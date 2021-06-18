@@ -1,0 +1,57 @@
+{{define "enterprise_transfer/list.html"}}
+
+    {{template "common/header.html" .}}
+
+    <div class="container-fluid">{{.errMsg}}<div>
+    <div class="container-fluid">
+
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>应用ID</th>
+                    <th>内部转账单号</th>
+                    <th>支付转账单号</th>
+                    <th>币种</th>
+                    <th>金额(单位:分)</th>
+                    <th>国家码</th>
+                    <th>收款人手机</th>
+                    <th>收款人邮箱</th>
+                    <th>备注</th>
+                    <th>创建时间</th>
+                    <th>状态</th>
+                    <th>操作&nbsp; <a href="/enterprise_transfer/index" class="btn btn-primary">企业付款</a></th>
+                </tr>
+                </thead>
+                <tbody>
+                {{range .transferList}}
+                    <tr>
+                        <td>{{.AppId}}</td>
+                        <td>{{.OutTransferNo}}</td>
+                        <td>{{.TransferNo}}</td>
+                        <td>{{.CurrencyType}}</td>
+                        <td>{{.Amount}}</td>
+                        <td>{{.CountryCode}}</td>
+                        <td>{{.PayeePhone}}</td>
+                        <td>{{.PayeeEmail}}</td>
+                        <td>{{.Remark}}</td>
+                        <td>{{.CreateTime}}</td>
+                        <td>
+                            {{if eq .Status 1}}
+                                <span class="label label-default">{{.StatusStr}}</span>
+                            {{else if eq .Status 2}}
+                                <span class="label label-success">{{.StatusStr}}</span>
+                            {{else if eq .Status 3}}
+                                <span class="label label-warning">{{.StatusStr}}</span>
+                            {{else }}
+                                <span class="label label-default">{{.StatusStr}}</span>
+                            {{end}}
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>
+                {{end}}
+                </tbody>
+            </table>
+    </div>
+
+    {{template "common/footer.html"}}
+{{end}}

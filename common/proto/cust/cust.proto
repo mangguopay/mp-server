@@ -1,0 +1,6908 @@
+syntax = "proto3";
+
+package go.micro.srv.cust;
+
+service Cust {
+    rpc GetCustList (GetCustListRequest) returns (GetCustListReply) {
+    }
+    rpc GetCustInfo (GetCustRequest) returns (GetCustReply) {
+    }
+    rpc ModifyCustInfo (ModifyCustInfoRequest) returns (ModifyCustInfoReply) {
+    }
+    rpc GetCustBills (GetCustBillsRequest) returns (GetCustBillsReply) {
+    }
+
+    // 获取ModernPay服务商信息列表
+    rpc GetServicerList (GetServicerListRequest) returns (GetServicerListReply) {
+    }
+    rpc GetServicerPhoneList (GetServicerPhoneListRequest) returns (GetServicerPhoneListReply) {
+    }
+    //获取ModernPay指定商户信息
+    rpc GetServicerInfo (GetServicerInfoRequest) returns (GetServicerInfoReply) {
+    }
+    // 修改ModernPay商户状态
+    rpc ModifyServicerStatus (ModifyServicerStatusRequest) returns (ModifyServicerStatusReply) {
+    }
+    // 修改ModernPay商户
+    rpc ModifyServicerConfig (ModifyServicerConfigRequest) returns (ModifyServicerConfigReply) {
+    }
+    //增加终端
+    rpc AddTerminal (AddTerminalRequest) returns (AddTerminalReply) {
+    }
+    //终端列表
+    rpc GetTerminalList (GetTerminalListRequest) returns (GetTerminalListReply) {
+    }
+    //修改终端
+    rpc UpdateTerminal (UpdateTerminalRequest) returns (UpdateTerminalReply) {
+    }
+    //删除终端
+    rpc DeleteTerminal (DeleteTerminalRequest) returns (DeleteTerminalReply) {
+    }
+    // 获取ModernPay指定商户统计信息
+    rpc GetServicerOrderCount (GetServicerOrderCountRequest) returns (GetServicerOrderCountReply) {
+    }
+    rpc GetFuncList (GetFuncListRequest) returns (GetFuncListReply) {
+    }
+    rpc GetWithdrawConfig (GetWithdrawConfigRequest) returns (GetWithdrawConfigReply) {
+    }
+    rpc UpdateWithdrawConfig (UpdateWithdrawConfigRequest) returns (UpdateWithdrawConfigReply) {
+    }
+    // 服务商交易查询
+    rpc GetServiceTransactions (GetServiceTransactionsRequest) returns (GetServiceTransactionsReply) {
+    }
+    // 收益明细查询查询
+    rpc GetServicerProfitLedgerList (GetServicerProfitLedgerListRequest) returns (GetServicerProfitLedgerListReply) {
+    }
+    rpc GetExchangeRateConfig (GetExchangeRateConfigRequest) returns (GetExchangeRateConfigReply) {
+    }
+    rpc UpdateExchangeRateConfig (UpdateExchangeRateConfigRequest) returns (UpdateExchangeRateConfigReply) {
+    }
+    rpc GetFinancialServicerCheckList (GetFinancialServicerCheckListRequest) returns (GetFinancialServicerCheckListReply) {
+    }
+    rpc GetBillingDetailsResultsList (GetBillingDetailsResultsListRequest) returns (GetBillingDetailsResultsListReply) {
+    }
+    rpc ModifyCollectStatus (ModifyCollectStatusRequest) returns (ModifyCollectStatusReply) {
+    }
+    rpc GetExchangeRate (GetExchangeRateRequest) returns (GetExchangeRateReply) {
+    }
+    rpc CollectionManagementList (CollectionManagementListRequest) returns (CollectionManagementListReply) {
+    }
+    rpc DelectCard (DelectCardRequest) returns (DelectCardReply) {
+    }
+    rpc GetCardInfo (GetCardInfoRequest) returns (GetCardInfoReply) {
+    }
+    rpc UpdateOrInsertCard (UpdateOrInsertCardRequest) returns (UpdateOrInsertCardReply) {
+    }
+    rpc GetHeadquartersProfitList (GetHeadquartersProfitListRequest) returns (GetHeadquartersProfitListReply) {
+    }
+    rpc GetToHeadquartersList (GetToHeadquartersListRequest) returns (GetToHeadquartersListReply) {
+    }
+    rpc GetToServicerList (GetToServicerListRequest) returns (GetToServicerListReply) {
+    }
+    rpc AddToServicer (AddToServicerRequest) returns (AddToServicerReply) {
+    }
+    rpc GetTransferOrderList (GetTransferOrderListRequest) returns (GetTransferOrderListReply) {
+    }
+    rpc GetOutgoOrderList (GetOutgoOrderListRequest) returns (GetOutgoOrderListReply) {
+    }
+    rpc GetIncomeOrderList (GetIncomeOrderListRequest) returns (GetIncomeOrderListReply) {
+    }
+    rpc GetExchangeOrderList (GetExchangeOrderListRequest) returns (GetExchangeOrderListReply) {
+    }
+    rpc GetFuncConfig (GetFuncConfigRequest) returns (GetFuncConfigReply) {
+    }
+    rpc UpdateFuncConfig (UpdateFuncConfigRequest) returns (UpdateFuncConfigReply) {
+    }
+    rpc SwapFuncConfigIdx (SwapFuncConfigIdxRequest) returns (SwapFuncConfigIdxReply) {
+    }
+    rpc DeleteFuncConfig (DeleteFuncConfigRequest) returns (DeleteFuncConfigReply) {
+    }
+    rpc ModifyUseStatusFuncConfig (ModifyUseStatusFuncConfigRequest) returns (ModifyUseStatusFuncConfigReply) {
+    }
+    rpc GetFuncConfigDetail (GetFuncConfigDetailRequest) returns (GetFuncConfigDetailReply) {
+    }
+
+    rpc GetTransferSecurityConfig (GetTransferSecurityConfigRequest) returns (GetTransferSecurityConfigReply) {
+    }
+    rpc UpdateTransferSecurityConfig (UpdateTransferSecurityConfigRequest) returns (UpdateTransferSecurityConfigReply) {
+    }
+    rpc GetIncomeOugoConfig (GetIncomeOugoConfigRequest) returns (GetIncomeOugoConfigReply) {
+    }
+    rpc UpdateIncomeOugoConfig (UpdateIncomeOugoConfigRequest) returns (UpdateIncomeOugoConfigReply) {
+    }
+    rpc UpdateIncomeOugoConfigUseStatus (UpdateIncomeOugoConfigUseStatusRequest) returns (UpdateIncomeOugoConfigUseStatusReply) {
+    }
+    rpc UpdateIncomeOugoConfigIdx (UpdateIncomeOugoConfigIdxRequest) returns (UpdateIncomeOugoConfigIdxReply) {
+    }
+    rpc GetLangs (GetLangsRequest) returns (GetLangsReply) {
+    }
+    rpc UpdateLang (UpdateLangRequest) returns (UpdateLangReply) {
+    }
+    rpc DeleteLang (DeleteLangRequest) returns (DeleteLangReply) {
+    }
+    rpc DeleteIncomeOugoConfig (DeleteIncomeOugoConfigRequest) returns (DeleteIncomeOugoConfigReply) {
+    }
+    rpc GetIncomeOugoConfigDetail (GetIncomeOugoConfigDetailRequest) returns (GetIncomeOugoConfigDetailReply) {
+    }
+    rpc GetLangDetail (GetLangDetailRequest) returns (GetLangDetailReply) {
+    }
+    rpc UpdateToHeadquarters (UpdateToHeadquartersRequest) returns (UpdateToHeadquartersReply) {
+    }
+    rpc GetServicer (GetServicerRequest) returns (GetServicerReply) {
+    }
+    rpc CustBills (CustBillsRequest) returns (CustBillsReply) {
+    }
+    rpc ServicerBills (ServicerBillsRequest) returns (ServicerBillsReply) {
+    }
+    rpc ServicerCollectLimit (ServicerCollectLimitRequest) returns (ServicerCollectLimitReply) {
+    }
+    rpc InsertOrUpdateCard (InsertOrUpdateCardRequest) returns (InsertOrUpdateCardReply) {
+    }
+    rpc GetHeadquartersCards (GetHeadquartersCardsRequest) returns (GetHeadquartersCardsReply) {
+    }
+    rpc GetPosChannelList (GetPosChannelListRequest) returns (GetPosChannelListReply) {
+    }
+    rpc GetUserCards (GetUserCardsRequest) returns (GetUserCardsReply) {
+    }
+    rpc GetUserCardDetail (GetUserCardDetailRequest) returns (GetUserCardDetailReply) {
+    }
+    rpc ModifyCardsDefalut (ModifyCardsDefalutRequest) returns (ModifyCardsDefalutReply) {
+    }
+    rpc GetChannels (GetChannelsRequest) returns (GetChannelsReply) {
+    }
+    rpc GetChannelDetail (GetChannelDetailRequest) returns (GetChannelDetailReply) {
+    }
+    rpc InsertOrUpdateChannel (InsertOrUpdateChannelRequest) returns (InsertOrUpdateChannelReply) {
+    }
+    rpc DeleteChannel (DeleteChannelRequest) returns (DeleteChannelReply) {
+    }
+    rpc ModifyChannelPosStatus (ModifyChannelPosStatusRequest) returns (ModifyChannelPosStatusReply) {
+    }
+    rpc ModifyChannelStatus (ModifyChannelStatusRequest) returns (ModifyChannelStatusReply) {
+    }
+    rpc UploadImage (UploadImageRequest) returns (UploadImageReply) {
+    }
+    rpc HeadquartersProfitWithdraws (HeadquartersProfitWithdrawsRequest) returns (HeadquartersProfitWithdrawsReply) {
+    }
+    rpc GetLogVaccounts (GetLogVaccountsRequest) returns (GetLogVaccountsReply) {
+    }
+    rpc UpdateServiceWithdraw (UpdateServiceWithdrawRequest) returns (UpdateServiceWithdrawReply) {
+    }
+    rpc UpdateCustWithdraw (UpdateCustWithdrawRequest) returns (UpdateCustWithdrawReply) {
+    }
+    rpc UpdateCustSave (UpdateCustSaveRequest) returns (UpdateCustSaveReply) {
+    }
+    rpc GetServicerBillingDetails (GetServicerBillingDetailsRequest) returns (GetServicerBillingDetailsReply) {
+    }
+    // 验证手机验证码
+    rpc CheckSms (CheckSmsRequest) returns (CheckSmsReply) {
+    }
+    rpc RegSms (RegSmsRequest) returns (RegSmsReply) {
+    }
+    rpc GetServicerAccounts (GetServicerAccountsRequest) returns (GetServicerAccountsReply) {
+    }
+
+    rpc AuthDownloadImage (AuthDownloadImageRequest) returns (AuthDownloadImageReply) {
+    }
+
+    rpc UnAuthDownloadImage (UnAuthDownloadImageRequest) returns (UnAuthDownloadImageReply) {
+    }
+
+    rpc GetCommonHelps (GetCommonHelpsRequest) returns (GetCommonHelpsReply) {
+    }
+    rpc GetAppCommonHelps (GetAppCommonHelpsRequest) returns (GetAppCommonHelpsReply) {
+    }
+    rpc GetCommonHelpDetail (GetCommonHelpDetailRequest) returns (GetCommonHelpDetailReply) {
+    }
+    rpc DeleteHelp (DeleteHelpRequest) returns (DeleteHelpReply) {
+    }
+    rpc ModifyHelpStatus (ModifyHelpStatusRequest) returns (ModifyHelpStatusReply) {
+    }
+    rpc InsertOrUpdateHelp (InsertOrUpdateHelpRequest) returns (InsertOrUpdateHelpReply) {
+    }
+    rpc SwapHelpIdx (SwapHelpIdxRequest) returns (SwapHelpIdxReply) {
+    }
+    rpc UpdateDefCard (UpdateDefCardRequest) returns (UpdateDefCardReply) {
+    }
+    rpc PosFence (PosFenceRequest) returns (PosFenceReply) {
+    }
+    rpc GetSerPos (GetSerPosRequest) returns (GetSerPosReply) {
+    }
+    rpc ModifySerPosStatus (ModifySerPosStatusRequest) returns (ModifySerPosStatusReply) {
+    }
+    rpc ModifyAppMessagesIsRead (ModifyAppMessagesIsReadRequest) returns (ModifyAppMessagesIsReadReply) {
+    }
+    rpc GetLogAppMessages (GetLogAppMessagesRequest) returns (GetLogAppMessagesReply) {
+    }
+    rpc GetCollectionOrders (GetCollectionOrdersRequest) returns (GetCollectionOrdersReply) {
+    }
+    rpc UnAuthDownloadImageBase64 (UnAuthDownloadImageBase64Request) returns (UnAuthDownloadImageBase64Reply) {
+    }
+    rpc GetConsultationConfigs (GetConsultationConfigsRequest) returns (GetConsultationConfigsReply) {
+    }
+    rpc GetConsultationConfigDetail (GetConsultationConfigDetailRequest) returns (GetConsultationConfigDetailReply) {
+    }
+    rpc InsertOrUpdateConsultationConfig (InsertOrUpdateConsultationConfigRequest) returns (InsertOrUpdateConsultationConfigReply) {
+    }
+    rpc DeleteConsultationConfig (DeleteConsultationConfigRequest) returns (DeleteConsultationConfigReply) {
+    }
+    rpc ModifyConsultationConfigStatus (ModifyConsultationConfigStatusRequest) returns (ModifyConsultationConfigStatusReply) {
+    }
+    rpc GetAgreements (GetAgreementsRequest) returns (GetAgreementsReply) {
+    }
+    rpc GetAgreementDetail (GetAgreementDetailRequest) returns (GetAgreementDetailReply) {
+    }
+    rpc InsertOrUpdateAgreement (InsertOrUpdateAgreementRequest) returns (InsertOrUpdateAgreementReply) {
+    }
+    rpc DeleteAgreement (DeleteAgreementRequest) returns (DeleteAgreementReply) {
+    }
+    rpc ModifyAgreementStatus (ModifyAgreementStatusRequest) returns (ModifyAgreementStatusReply) {
+    }
+    rpc GetAgreementAppDetail (GetAgreementAppDetailRequest) returns (GetAgreementAppDetailReply) {
+    }
+    rpc GetCreateXlsxFileContent (GetCreateXlsxFileContentRequest) returns (GetCreateXlsxFileContentReply) {
+    }
+    rpc ModifyServicerInfo (ModifyServicerInfoRequest) returns (ModifyServicerInfoReply) {
+    }
+    rpc GetAppVersions (GetAppVersionsRequest) returns (GetAppVersionsReply) {
+    }
+    rpc GetAppVersionsCount (GetAppVersionsCountRequest) returns (GetAppVersionsCountReply) {
+    }
+    rpc GetAppVersion (GetAppVersionRequest) returns (GetAppVersionReply) {
+    }
+    rpc ModifyAppVersionStatus (ModifyAppVersionStatusRequest) returns (ModifyAppVersionStatusReply) {
+    }
+    rpc ModifyAppVersionIsForce (ModifyAppVersionIsForceRequest) returns (ModifyAppVersionIsForceReply) {
+    }
+    rpc InsertOrUpdateAppVersion (InsertOrUpdateAppVersionRequest) returns (InsertOrUpdateAppVersionReply) {
+    }
+    rpc GetNewVersion (GetNewVersionRequest) returns (GetNewVersionReply) {
+    }
+    rpc GetCashiers (GetCashiersRequest) returns (GetCashiersReply) {
+    }
+    rpc GetCashierDetail (GetCashierDetailRequest) returns (GetCashierDetailReply) {
+    }
+    rpc DeleteCashier (DeleteCashierRequest) returns (DeleteCashierReply) {
+    }
+    rpc ModifyCashier (ModifyCashierRequest) returns (ModifyCashierReply) {
+    }
+    rpc GetCommonHelpCount (GetCommonHelpCountRequest) returns (GetCommonHelpCountReply) {
+    }
+    rpc GetAppConsultationConfigDetail (GetAppConsultationConfigDetailRequest) returns (GetAppConsultationConfigDetailReply) {
+    }
+    rpc SwapConsultationIdx (SwapConsultationIdxRequest) returns (SwapConsultationIdxReply) {
+    }
+    rpc GetPosChannels (GetPosChannelsRequest) returns (GetPosChannelsReply) {
+    }
+    rpc InsertPosChannel (InsertPosChannelRequest) returns (InsertPosChannelReply) {
+    }
+    rpc DeletePosChannel (DeletePosChannelRequest) returns (DeletePosChannelReply) {
+    }
+    rpc ModifyChannelPosIsRecom (ModifyChannelPosIsRecomRequest) returns (ModifyChannelPosIsRecomReply) {
+    }
+    rpc GetUseChannels (GetUseChannelsRequest) returns (GetUseChannelsReply) {
+    }
+    rpc InsertUseChannel (InsertUseChannelRequest) returns (InsertUseChannelReply) {
+    }
+    rpc DeleteUseChannel (DeleteUseChannelRequest) returns (DeleteUseChannelReply) {
+    }
+    rpc ModifyUseChannelStatus (ModifyUseChannelStatusRequest) returns (ModifyUseChannelStatusReply) {
+    }
+    rpc GetUseChannelDetail (GetUseChannelDetailRequest) returns (GetUseChannelDetailReply) {
+    }
+    rpc GetUseChannelList (GetUseChannelListRequest) returns (GetUseChannelListReply) {
+    }
+    rpc GetNearbyServicerList (GetNearbyServicerListRequest) returns (GetNearbyServicerListReply) {
+    }
+    rpc GetToCustList (GetToCustListRequest) returns (GetToCustListReply) {
+    }
+    rpc GetCustToHeadquartersList (GetCustToHeadquartersListRequest) returns (GetCustToHeadquartersListReply) {
+    }
+    rpc GetClientInfos (GetClientInfosRequest) returns (GetClientInfosReply) {
+    }
+    rpc GetLogToCusts (GetLogToCustsRequest) returns (GetLogToCustsReply) { //app用户获取提现订单
+    }
+    rpc GetLogCustToHeadquarters (GetLogCustToHeadquartersRequest) returns (GetLogCustToHeadquartersReply) { //app用户获取充值订单
+    }
+    rpc GetLogAccounts (GetLogAccountsRequest) returns (GetLogAccountsReply) { //app用户获取充值订单
+    }
+    rpc GetPushConfs (GetPushConfsRequest) returns (GetPushConfsReply) { //
+    }
+    rpc GetPushRecords (GetPushRecordsRequest) returns (GetPushRecordsReply) { //
+    }
+    rpc GetPushTemps (GetPushTempsRequest) returns (GetPushTempsReply) { //
+    }
+    rpc InsertOrUpdatePushConfs (InsertOrUpdatePushConfsRequest) returns (InsertOrUpdatePushConfsReply) { //
+    }
+    rpc DeletePushConf (DeletePushConfRequest) returns (DeletePushConfReply) { //
+    }
+    rpc ModifyPushConfStatus (ModifyPushConfStatusRequest) returns (ModifyPushConfStatusReply) { //
+    }
+    rpc GetPushConf (GetPushConfRequest) returns (GetPushConfReply) { //
+    }
+    rpc GetPushTemp (GetPushTempRequest) returns (GetPushTempReply) { //
+    }
+    rpc InsertOrUpdatePushTemp (InsertOrUpdatePushTempRequest) returns (InsertOrUpdatePushTempReply) { //
+    }
+    rpc GetEvents (GetEventsRequest) returns (GetEventsReply) { //
+    }
+    rpc GetEvent (GetEventRequest) returns (GetEventReply) { //
+    }
+    rpc InsertOrUpdateEvent (InsertOrUpdateEventRequest) returns (InsertOrUpdateEventReply) { //
+    }
+    rpc DeleteEvent (DeleteEventRequest) returns (DeleteEventReply) { //
+    }
+    rpc GetEvaParams (GetEvaParamsRequest) returns (GetEvaParamsReply) { //
+    }
+    rpc InsertOrUpdateEvaParam (InsertOrUpdateEvaParamRequest) returns (InsertOrUpdateEvaParamReply) { //
+    }
+    rpc DeleteEvaParam (DeleteEvaParamRequest) returns (DeleteEvaParamReply) { //
+    }
+    rpc GetGlobalParam (GetGlobalParamRequest) returns (GetGlobalParamReply) { //
+    }
+    rpc InsertOrUpdateGlobalParam (InsertOrUpdateGlobalParamRequest) returns (InsertOrUpdateGlobalParamReply) { //
+    }
+    rpc DeleteGlobalParam (DeleteGlobalParamRequest) returns (DeleteGlobalParamReply) { //
+    }
+    rpc GetLogResults (GetLogResultsRequest) returns (GetLogResultsReply) { //
+    }
+    rpc GetOps (GetOpsRequest) returns (GetOpsReply) { //
+    }
+    rpc GetOp (GetOpRequest) returns (GetOpReply) { //
+    }
+    rpc InsertOrUpdateOp (InsertOrUpdateOpRequest) returns (InsertOrUpdateOpReply) { //
+    }
+    rpc DeleteOp (DeleteOpRequest) returns (DeleteOpReply) { //
+    }
+    rpc GetRelaApiEvents (GetRelaApiEventsRequest) returns (GetRelaApiEventsReply) { //
+    }
+    rpc InsertOrUpdateRelaApiEvent (InsertOrUpdateRelaApiEventRequest) returns (InsertOrUpdateRelaApiEventReply) { //
+    }
+    rpc DeleteRelaApiEvent (DeleteRelaApiEventRequest) returns (DeleteRelaApiEventReply) { //
+    }
+    rpc GetRelaEventRules (GetRelaEventRulesRequest) returns (GetRelaEventRulesReply) { //
+    }
+    rpc InsertOrUpdateRelaEventRule (InsertOrUpdateRelaEventRuleRequest) returns (InsertOrUpdateRelaEventRuleReply) { //
+    }
+    rpc DeleteRelaEventRule (DeleteRelaEventRuleRequest) returns (DeleteRelaEventRuleReply) { //
+    }
+    rpc GetRiskThresholds (GetRiskThresholdsRequest) returns (GetRiskThresholdsReply) { //
+    }
+    rpc InsertOrUpdateRiskThreshold (InsertOrUpdateRiskThresholdRequest) returns (InsertOrUpdateRiskThresholdReply) { //
+    }
+    rpc DeleteRiskThreshold (DeleteRiskThresholdRequest) returns (DeleteRiskThresholdReply) { //
+    }
+    rpc GetRules (GetRulesRequest) returns (GetRulesReply) { //
+    }
+    rpc GetRule (GetRuleRequest) returns (GetRuleReply) { //
+    }
+    rpc InsertOrUpdateRule (InsertOrUpdateRuleRequest) returns (InsertOrUpdateRuleReply) { //
+    }
+    rpc DeleteRule (DeleteRuleRequest) returns (DeleteRuleReply) { //
+    }
+
+    //用户实名认证
+    rpc GetAuthMaterials (GetAuthMaterialsRequest) returns (GetAuthMaterialsReply) { //
+    }
+    rpc ModifyAuthMaterialStatus (ModifyAuthMaterialStatusRequest) returns (ModifyAuthMaterialStatusReply) { //
+    }
+
+    //个人商家认证
+    rpc GetAuthMaterialBusinessList (GetAuthMaterialBusinessListRequest) returns (GetAuthMaterialBusinessListReply) { //
+    }
+    rpc ModifyAuthMaterialBusinessStatus (ModifyAuthMaterialBusinessStatusRequest) returns (ModifyAuthMaterialBusinessStatusReply) { //
+    }
+
+    //企业商家认证
+    rpc GetAuthMaterialEnterpriseList (GetAuthMaterialEnterpriseListRequest) returns (GetAuthMaterialEnterpriseListReply) { //
+    }
+    rpc ModifyAuthMaterialEnterpriseStatus (ModifyAuthMaterialEnterpriseStatusRequest) returns (ModifyAuthMaterialEnterpriseStatusReply) { //
+    }
+
+    rpc AddAuthMaterialInfo (AddAuthMaterialInfoRequest) returns (AddAuthMaterialInfoReply) {
+    }
+    rpc GetAuthMaterialInfo (GetAuthMaterialInfoRequest) returns (GetAuthMaterialInfoReply) {
+    }
+    rpc CustOutgoBills (CustOutgoBillsRequest) returns (CustOutgoBillsReply) {
+    }
+    rpc CustIncomeBills (CustIncomeBillsRequest) returns (CustIncomeBillsReply) {
+    }
+
+    // 重新统计-统计数据
+    rpc ReStatistic (ReStatisticRequest) returns (ReStatisticReply) {
+    }
+
+    // 获取统计数据-用户提现-用来展示统计图表
+    rpc GetStatisticUserWithdraw (GetStatisticUserWithdrawRequest) returns (GetStatisticUserWithdrawReply) {
+    }
+
+    // 获取统计数据-用户提现-列表
+    rpc GetStatisticUserWithdrawList (GetStatisticUserWithdrawListRequest) returns (GetStatisticUserWithdrawListReply) {
+    }
+
+    // 获取统计数据-用户充值-用来展示统计图表
+    rpc GetStatisticUserRecharge (GetStatisticUserRechargeRequest) returns (GetStatisticUserRechargeReply) {
+    }
+
+    // 获取统计数据-用户充值-列表
+    rpc GetStatisticUserRechargeList (GetStatisticUserRechargeListRequest) returns (GetStatisticUserRechargeListReply) {
+    }
+
+    // 获取统计数据-用户转账-用来展示统计图表
+    rpc GetStatisticUserTransfer (GetStatisticUserTransferRequest) returns (GetStatisticUserTransferReply) {
+    }
+
+    // 获取统计数据-用户转账-列表
+    rpc GetStatisticUserTransferList (GetStatisticUserTransferListRequest) returns (GetStatisticUserTransferListReply) {
+    }
+
+    // 获取统计数据-用户兑换-用来展示统计图表
+    rpc GetStatisticUserExchange (GetStatisticUserExchangeRequest) returns (GetStatisticUserExchangeReply) {
+    }
+
+    // 获取统计数据-用户兑换-列表
+    rpc GetStatisticUserExchangeList (GetStatisticUserExchangeListRequest) returns (GetStatisticUserExchangeListReply) {
+    }
+
+    // 获取统计数据-按天统计-用来展示统计图表
+    rpc GetStatisticDate (GetStatisticDateRequest) returns (GetStatisticDateReply) {
+    }
+
+    // 获取统计数据-按天统计-列表
+    rpc GetStatisticDateList (GetStatisticDateListRequest) returns (GetStatisticDateListReply) {
+    }
+
+    rpc DeletePushTemp (DeletePushTempRequest) returns (DeletePushTempReply) {
+    }
+
+    // 获取统计数据-用户资金总留存-用来展示统计图表
+    rpc GetStatisticUserMoney (GetStatisticUserMoneyRequest) returns (GetStatisticUserMoneyReply) {
+    }
+
+    // 获取统计数据-用户兑换-列表
+    rpc GetStatisticUserMoneyList (GetStatisticUserMoneyListRequest) returns (GetStatisticUserMoneyListReply) {
+    }
+
+    //添加个人商家认证材料
+    rpc AddAuthMaterialBusiness (AddAuthMaterialBusinessRequest) returns (AddAuthMaterialBusinessReply) {
+    }
+    //添加企业商家认证材料
+    rpc AddAuthMaterialEnterprise (AddAuthMaterialEnterpriseRequest) returns (AddAuthMaterialEnterpriseReply) {
+    }
+
+
+    rpc GetAuthMaterialBusinessDetail (GetAuthMaterialBusinessDetailRequest) returns (GetAuthMaterialBusinessDetailReply) {
+    }
+    rpc GetAuthMaterialEnterpriseDetail (GetAuthMaterialEnterpriseDetailRequest) returns (GetAuthMaterialEnterpriseDetailReply) {
+    }
+    rpc GetBusinessAccountHome (GetBusinessAccountHomeRequest) returns (GetBusinessAccountHomeReply) {
+    }
+    rpc SendMail (SendMailRequest) returns (SendMailReply) {
+    }
+    rpc CheckMailCode (CheckMailCodeRequest) returns (CheckMailCodeReply) {
+    }
+    rpc CheckMail (CheckMailRequest) returns (CheckMailReply) {
+    }
+    rpc GetBusinessBaseInfo (GetBusinessBaseInfoRequest) returns (GetBusinessBaseInfoReply) {
+    }
+    rpc UpdateBusinessBaseInfo (UpdateBusinessBaseInfoRequest) returns (UpdateBusinessBaseInfoReply) {
+    }
+    rpc InsertOrUpdateBusinessCard (InsertOrUpdateBusinessCardRequest) returns (InsertOrUpdateBusinessCardReply) {
+    }
+    rpc GetBusinessCards (GetBusinessCardsRequest) returns (GetBusinessCardsReply) {
+    }
+    rpc GetBusinessCardDetail (GetBusinessCardDetailRequest) returns (GetBusinessCardDetailReply) {
+    }
+    rpc DelBusinessCard (DelBusinessCardRequest) returns (DelBusinessCardReply) {
+    }
+    rpc GetMainIndustryCascaderDatas (GetMainIndustryCascaderDatasRequest) returns (GetMainIndustryCascaderDatasReply) {
+    }
+    rpc AddBusinessToHead (AddBusinessToHeadRequest) returns (AddBusinessToHeadReply) {
+    }
+    rpc GetBusinessBills (GetBusinessBillsRequest) returns (GetBusinessBillsReply) {
+    }
+    rpc GetBusinessBillDetail (GetBusinessBillDetailRequest) returns (GetBusinessBillDetailReply) {
+    }
+    rpc GetBusinessIndustryList (GetBusinessIndustryListRequest) returns (GetBusinessIndustryListReply) {
+    }
+    rpc GetBusinessIndustryDetail (GetBusinessIndustryDetailRequest) returns (GetBusinessIndustryDetailReply) {
+    }
+    rpc InsertOrUpdateBusinessIndustry (InsertOrUpdateBusinessIndustryRequest) returns (InsertOrUpdateBusinessIndustryReply) {
+    }
+    rpc DelBusinessIndustry (DelBusinessIndustryRequest) returns (DelBusinessIndustryReply) {
+    }
+    rpc IdentityVerify (IdentityVerifyRequest) returns (IdentityVerifyReply) {
+    }
+    rpc GetCashRechargeOrderList (GetCashRechargeOrderListRequest) returns (GetCashRechargeOrderListReply) {
+    }
+    rpc GetWriteOffDurationDateConfig (GetWriteOffDurationDateConfigRequest) returns (GetWriteOffDurationDateConfigReply) {
+    }
+    rpc UpdateWriteOffDurationDateConfig (UpdateWriteOffDurationDateConfigRequest) returns (UpdateWriteOffDurationDateConfigReply) {
+    }
+    rpc GetBusinessSceneList (GetBusinessSceneListRequest) returns (GetBusinessSceneListReply) {
+    }
+    rpc GetBusinessSceneDetail (GetBusinessSceneDetailRequest) returns (GetBusinessSceneDetailReply) {
+    }
+    rpc InsertOrUpdateBusinessScene (InsertOrUpdateBusinessSceneRequest) returns (InsertOrUpdateBusinessSceneReply) {
+    }
+    rpc IsEnabledScene (IsEnabledSceneRequest) returns (IsEnabledSceneReply) {
+    }
+    rpc GetBusinessSignedList (GetBusinessSignedListRequest) returns (GetBusinessSignedListReply) {
+    }
+    rpc GetBusinessAppList (GetBusinessAppListRequest) returns (GetBusinessAppListReply) {
+    }
+    rpc GetBusinessAppDetail (GetBusinessAppDetailRequest) returns (GetBusinessAppDetailReply) {
+    }
+    rpc InsertOrUpdateBusinessApp (InsertOrUpdateBusinessAppRequest) returns (InsertOrUpdateBusinessAppReply) {
+    }
+    rpc DelBusinessApp (DelBusinessAppRequest) returns (DelBusinessAppReply) {
+    }
+    rpc UpdateBusinessAppStatus (UpdateBusinessAppStatusRequest) returns (UpdateBusinessAppStatusReply) {
+    }
+    rpc GetBusinessChannels (GetBusinessChannelsRequest) returns (GetBusinessChannelsReply) {
+    }
+    rpc GetBusinessChannelDetail (GetBusinessChannelDetailRequest) returns (GetBusinessChannelDetailReply) {
+    }
+    rpc InsertBusinessChannel (InsertBusinessChannelRequest) returns (InsertBusinessChannelReply) {
+    }
+    rpc DeleteBusinessChannel (DeleteBusinessChannelRequest) returns (DeleteBusinessChannelReply) {
+    }
+    rpc ModifyBusinessChannelStatus (ModifyBusinessChannelStatusRequest) returns (ModifyBusinessChannelStatusReply) {
+    }
+    rpc GetBusinessToHeadList (GetBusinessToHeadListRequest) returns (GetBusinessToHeadListReply) {
+    }
+    rpc GetToBusinessList (GetToBusinessListRequest) returns (GetToBusinessListReply) {
+    }
+    rpc GetBusinessToWithdrawDetail (GetBusinessToWithdrawDetailRequest) returns (GetBusinessToWithdrawDetailReply) {
+    }
+    rpc GetBusinessVAccBalance (GetBusinessVAccBalanceRequest) returns (GetBusinessVAccBalanceReply) {
+    }
+    rpc BusinessUpdateAppStatus (BusinessUpdateAppStatusRequest) returns (BusinessUpdateAppStatusReply) {
+    }
+    rpc GetBusinessList (GetBusinessListRequest) returns (GetBusinessListReply) {
+    }
+    rpc ModifyBusinessStatus (ModifyBusinessStatusRequest) returns (ModifyBusinessStatusReply) {
+    }
+    rpc GetChangeBalanceOrders (GetChangeBalanceOrdersRequest) returns (GetChangeBalanceOrdersReply) {
+    }
+    rpc GetBusinessToHeadDetail (GetBusinessToHeadDetailRequest) returns (GetBusinessToHeadDetailReply) {
+    }
+    rpc GetBusinessVAccLogList (GetBusinessVAccLogListRequest) returns (GetBusinessVAccLogListReply) {
+    }
+    rpc GetBusinessVAccLogDetail (GetBusinessVAccLogDetailRequest) returns (GetBusinessVAccLogDetailReply) {
+    }
+    rpc ChangeBalanceDetail (ChangeBalanceDetailRequest) returns (ChangeBalanceDetailReply) {
+    }
+    rpc GetBulletins (GetBulletinsRequest) returns (GetBulletinsReply) {
+    }
+    rpc GetBulletinDetail (GetBulletinDetailRequest) returns (GetBulletinDetailReply) {
+    }
+    rpc InsertOrUpdateBulletin (InsertOrUpdateBulletinRequest) returns (InsertOrUpdateBulletinReply) {
+    }
+    rpc DelBulletin (DelBulletinRequest) returns (DelBulletinReply) {
+    }
+    rpc UpdateBulletinStatus (UpdateBulletinStatusRequest) returns (UpdateBulletinStatusReply) {
+    }
+    rpc GetBusinessTransferOrderList (GetBusinessTransferOrderListRequest) returns (GetBusinessTransferOrderListReply) {
+    }
+    rpc GetBusinessTransferOrderDetail (GetBusinessTransferOrderDetailRequest) returns (GetBusinessTransferOrderDetailReply) {
+    }
+    rpc GetBusinessTransferBatchList (GetBusinessTransferBatchListRequest) returns (GetBusinessTransferBatchListReply) {
+    }
+    rpc GetBusinessMessagesList (GetBusinessMessagesListRequest) returns (GetBusinessMessagesListReply) {
+    }
+    rpc GetBusinessMessagesUnRead (GetBusinessMessagesUnReadRequest) returns (GetBusinessMessagesUnReadReply) {
+    }
+    rpc GetServicerBills (GetServicerBillsRequest) returns (GetServicerBillsReply) {
+    }
+    rpc ReadAllBusinessMessages (ReadAllBusinessMessagesRequest) returns (ReadAllBusinessMessagesReply) {
+    }
+    rpc BusinessUpdatePartial (BusinessUpdatePartialRequest) returns (BusinessUpdatePartialReply) {
+    }
+    rpc GetBusinessConfig (GetBusinessConfigRequest) returns (GetBusinessConfigReply) {
+    }
+    rpc UpdateBusinessConfig (UpdateBusinessConfigRequest) returns (UpdateBusinessConfigReply) {
+    }
+
+    rpc GetBusinessTransferBatchDetail (GetBusinessTransferBatchDetailRequest) returns (GetBusinessTransferBatchDetailReply) {
+    }
+    rpc GenerateKeys (GenerateKeysRequest) returns (GenerateKeysReply) {
+    }
+    rpc GetRefundBills (GetRefundBillsRequest) returns (GetRefundBillsReply) {
+    }
+    rpc GetRefundDetail (GetRefundDetailRequest) returns (GetRefundDetailReply) {
+    }
+    rpc CreateBillFile (CreateBillFileRequest) returns (CreateBillFileReply) {
+    }
+    rpc CreateRefundFile (CreateRefundFileRequest) returns (CreateRefundFileReply) {
+    }
+    rpc AddBusinessSigned (AddBusinessSignedRequest) returns (AddBusinessSignedReply) {
+    }
+    rpc BusinessGetSceneList (BusinessGetSceneListRequest) returns (BusinessGetSceneListReply) {
+    }
+    rpc UpdateBusinessSignedStatus (UpdateBusinessSignedStatusRequest) returns (UpdateBusinessSignedStatusReply) {
+    }
+    rpc UpdateBusinessSceneIdx (UpdateBusinessSceneIdxRequest) returns (UpdateBusinessSceneIdxReply) {
+    }
+    rpc UpdateBusinessSignedInfo (UpdateBusinessSignedInfoRequest) returns (UpdateBusinessSignedInfoReply) {
+    }
+    rpc ManagementGetBusinessTransferOrderList (ManagementGetBusinessTransferOrderListRequest) returns (ManagementGetBusinessTransferOrderListReply) {
+    }
+    rpc GetChannelBills (GetChannelBillsRequest) returns (GetChannelBillsReply) {
+    }
+    rpc AddPaymentChannel (AddPaymentChannelRequest) returns (AddPaymentChannelReply) {
+    }
+    rpc UpdatePaymentChannel (UpdatePaymentChannelRequest) returns (UpdatePaymentChannelReply) {
+    }
+    rpc GetAllPaymentChannel (GetAllPaymentChannelRequest) returns (GetAllPaymentChannelReply) {
+    }
+    rpc GetBusinessAccounts (GetBusinessAccountsRequest) returns (GetBusinessAccountsReply) {
+    }
+    rpc GetBusinessAccountsProfit (GetBusinessAccountsProfitRequest) returns (GetBusinessAccountsProfitReply) {
+    }
+    rpc GetBusinessProfitList (GetBusinessProfitListRequest) returns (GetBusinessProfitListReply) {
+    }
+    rpc GetBusinessBillList (GetBusinessBillListRequest) returns (GetBusinessBillListReply) {
+    }
+    rpc GetChannelRefundBills (GetChannelRefundBillsRequest) returns (GetChannelRefundBillsReply) {
+    }
+    rpc UpdateBusinessAuthMaterialInfo (UpdateBusinessAuthMaterialInfoRequest) returns (UpdateBusinessAuthMaterialInfoReply) {
+    }
+    rpc GetAuthMaterialBusinessUpdateList (GetAuthMaterialBusinessUpdateListRequest) returns (GetAuthMaterialBusinessUpdateListReply) {
+    }
+    rpc ModifyAuthMaterialBusinessUpdateStatus (ModifyAuthMaterialBusinessUpdateStatusRequest) returns (ModifyAuthMaterialBusinessUpdateStatusReply) {
+    }
+    rpc GetBusinessIndustryRateCycleList (GetBusinessIndustryRateCycleListRequest) returns (GetBusinessIndustryRateCycleListReply) {
+    }
+    rpc InsertOrUpdateBusinessIndustryRateCycle (InsertOrUpdateBusinessIndustryRateCycleRequest) returns (InsertOrUpdateBusinessIndustryRateCycleReply) {
+    }
+    rpc DelBusinessIndustryRateCycle (DelBusinessIndustryRateCycleRequest) returns (DelBusinessIndustryRateCycleReply) {
+    }
+    rpc GetWriteOffList (GetWriteOffListRequest) returns (GetWriteOffListReply) {
+    }
+    rpc DisposeWriteOffCode (DisposeWriteOffCodeRequest) returns (DisposeWriteOffCodeReply) {
+    }
+    rpc GetSceneSignedList (GetSceneSignedListRequest) returns (GetSceneSignedListReply) {
+    }
+    rpc AddBusinessSceneSigned (AddBusinessSceneSignedRequest) returns (AddBusinessSceneSignedReply) {
+    }
+    rpc UpdateBusinessSceneSignedStatus (UpdateBusinessSceneSignedStatusRequest) returns (UpdateBusinessSceneSignedStatusReply) {
+    }
+    rpc UpdateBusinessSceneSignedInfo (UpdateBusinessSceneSignedInfoRequest) returns (UpdateBusinessSceneSignedInfoReply) {
+    }
+    rpc GetBusinessSceneSignedList (GetBusinessSceneSignedListRequest) returns (GetBusinessSceneSignedListReply) {
+    }
+    rpc GetFingerprintList (GetFingerprintListRequest) returns (GetFingerprintListReply) {
+    }
+    rpc CloseFingerprintFunction (CloseFingerprintFunctionRequest) returns (CloseFingerprintFunctionReply) {
+    }
+    rpc CleanFingerprintData (CleanFingerprintDataRequest) returns (CleanFingerprintDataReply) {
+    }
+    rpc GetAppFingerprintOn (GetAppFingerprintOnRequest) returns (GetAppFingerprintOnReply) {
+    }
+    rpc GetApiPayLogList (GetApiPayLogListRequest) returns (GetApiPayLogListReply) {
+    }
+    rpc GetPersonalBusinessBalance (GetPersonalBusinessBalanceRequest) returns (GetPersonalBusinessBalanceReply) {
+    }
+    rpc GetPersonalBusinessBills (GetPersonalBusinessBillsRequest) returns (GetPersonalBusinessBillsReply) {
+    }
+    rpc GetPersonalBusinessBillDetail (GetPersonalBusinessBillDetailRequest) returns (GetPersonalBusinessBillDetailReply) {
+    }
+    rpc GetPersonalBusinessFixedCode (GetPersonalBusinessFixedCodeRequest) returns (GetPersonalBusinessFixedCodeReply) {
+    }
+    rpc GetPersonalBusinessInfo (GetPersonalBusinessInfoRequest) returns (GetPersonalBusinessInfoReply) {
+    }
+    rpc AddIndividualBusinessToHead (AddIndividualBusinessToHeadRequest) returns (AddIndividualBusinessToHeadReply) {
+    }
+
+    //dddddddddddddddddddddddddd
+}
+
+//=============================
+//服务商交易查询
+message GetServiceTransactionsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string nickname = 3;
+    string phone = 4;
+    string order_no = 5;
+    string currency_type = 6;
+    string bill_type = 7;
+    string start_time = 8;
+    string end_time = 9;
+    string account = 10;
+}
+
+message GetServiceTransactionsReply {
+    string result_code = 1;
+    repeated ServiceTransactionsData data_list = 2;
+    int32 total = 3;
+}
+
+message ServiceTransactionsData {
+    string order_no = 1;
+    string nickname = 2;
+    string phone = 3;
+    string amount = 4;
+    string currency_type = 5;
+    string bill_type = 6;
+    string create_time = 7;
+    string account = 8;
+
+}
+
+//=============================
+message GetServicerListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string servicer_no = 3;
+    string query_name = 4;
+    string query_phone = 5;
+    string start_time = 6;
+    string end_time = 7;
+    string account = 8;
+    string servicer_name = 9;
+}
+message GetServicerPhoneListRequest {
+    string query_phone = 1;
+}
+message GetServicerPhoneListReply {
+    string result_code = 1;
+    repeated ServicerPhoneData data_list = 2;
+}
+
+message ServicerPhoneData {
+    string phone = 1;
+    string account_no = 2;
+    string servicer_no = 3;
+}
+
+message GetServicerInfoRequest {
+    string servicer_no = 1;
+}
+
+message GetServicerInfoReply {
+    string result_code = 1;
+    ServicerData data = 2;
+    repeated ServicerCardPackData card_list = 3;
+    ServicerImgData servicer_img_data = 4;
+    repeated ServicerTerminalData servicer_terminal_data_list = 5;
+}
+
+message GetServicerRequest {
+    string iden_no = 1;
+    string servicer_no = 2;
+}
+
+message GetServicerReply {
+    string result_code = 1;
+    ServicerData data = 2;
+}
+
+//运营商图片
+message ServicerImgData {
+    //string servicer_img_no = 1;
+    //string create_time = 4;
+    //string img_url = 6;
+
+    string img_id = 1;
+    string img_type = 2;
+    string servicer_no = 3;
+    string servicer_img1 = 4;
+    string servicer_img2 = 5;
+    string servicer_img3 = 6;
+    string servicer_img4 = 7;
+}
+
+//卡包
+message ServicerCardPackData {
+    string card_no = 1;
+    string account_no = 2;
+    string channel_no = 3;
+    string name = 4;
+    string create_time = 5;
+    string is_delete = 6;
+    string card_number = 7;
+    string balance_type = 8;
+    string is_defalut = 9;
+
+    string channel_name = 10; //渠道名称
+}
+
+message GetServicerListReply {
+    string result_code = 1;
+    repeated ServicerData data_list = 2;
+    int32 total = 3;
+}
+
+message ServicerData {
+    string servicer_no = 1;
+    string account_no = 2;
+    string addr = 3;
+    string create_time = 4;
+    string is_delete = 5;
+    string use_status = 6;
+    string commission_sharing = 7;
+    string income_authorization = 8;
+    string outgo_authorization = 9;
+    string lat = 10;
+    string lng = 11;
+    string open_idx = 12;
+    string contact_person = 13;
+    string contact_phone = 14;
+    string contact_addr = 15;
+
+    string nickname = 16;
+    string phone = 17;
+
+    string usd_auth_collect_limit = 18;
+    string khr_auth_collect_limit = 19;
+
+    string income_sharing = 20;
+
+    string usd_balance = 21; //usd可用余额
+    string khr_balance = 22; //khr可用余额
+
+    string scope = 23; //范围
+    string account = 24; //账号
+    string scope_off = 25; //围栏开关（0关闭1开启）
+    string servicer_name = 26; //网点名称
+    string business_time = 27; //网点营业时间
+    string country_code = 28; //国家码
+}
+
+//获取ModernPay指定商户统计信息
+message GetServicerOrderCountRequest {
+    string servicer_no = 1;
+}
+message GetServicerOrderCountReply {
+    string result_code = 1;
+    GetServicerOrderCountData usd_data = 2;
+    GetServicerOrderCountData khr_data = 3;
+}
+
+message GetServicerOrderCountData {
+    string servicer_no = 1;
+    string balance_type = 2;
+    string income_total_sum = 3;
+    string income_amount_sum = 4;
+    string outgo_total_sum = 5;
+    string outgo_amount_sum = 6;
+    string profit_amount_sum = 7;
+    string profit_total_sum = 8;
+    string recharge_total_sum = 9;
+    string recharge_amount_sum = 10;
+    string withdraw_total_sum = 11;
+    string withdraw_amount_sum = 12;
+    string modify_time = 13;
+}
+
+//修改ModernPay商户状态（停用）
+message ModifyServicerStatusRequest {
+    string servicer_no = 1;
+    string use_status = 2;
+    string login_uid = 3;
+}
+message ModifyServicerStatusReply {
+    string result_code = 1;
+}
+//修改ModernPay商户配置
+message ModifyServicerConfigRequest {
+    string servicer_no = 1;
+    string income_authorization = 2;
+    string outgo_authorization = 3;
+    string commission_sharing = 4;
+    string income_sharing = 5;
+    string usd_auth_collect_limit = 6;
+    string khr_auth_collect_limit = 7;
+    string lat = 8; //维度
+    string lng = 9; //经度
+    string scope = 10; //范围
+    string scope_off = 11; //围栏开关 0关闭1开启
+    string login_uid = 12;
+    string servicer_name = 13;
+    string business_time = 14;
+    string addr = 15;
+    // string terminal_number_sn = 4;
+}
+message ModifyServicerConfigReply {
+    string result_code = 1;
+}
+
+message AddTerminalRequest {
+    string servicer_account = 1;
+    string terminal_number = 2;
+    string pos_sn = 3;
+    string use_status = 4;
+    string login_account = 5;
+    string country_code = 6;
+}
+
+message AddTerminalReply {
+    string result_code = 1;
+}
+
+message UpdateTerminalRequest {
+    string terminal_no = 1;
+    string use_status = 2;
+    string login_account = 3;
+}
+
+message UpdateTerminalReply {
+    string result_code = 1;
+}
+
+message DeleteTerminalRequest {
+    string terminal_no = 1;
+    string login_account = 2;
+}
+
+message DeleteTerminalReply {
+    string result_code = 1;
+}
+
+message GetTerminalListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string terminal_number = 3;
+    string pos_sn = 4;
+    string servicer_account = 5;
+    string use_status = 6;
+}
+
+message GetTerminalListReply {
+    string result_code = 1;
+    int32 total = 2;
+    repeated Terminal list = 3;
+}
+
+message Terminal {
+    string terminal_no = 1;
+    string servicer_account = 2;
+    string terminal_number = 3;
+    string pos_sn = 4;
+    string use_status = 5;
+    string create_time = 6;
+    string update_time = 7;
+}
+
+//获取会员信息
+message GetCustListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string uid = 3;
+    string start_time = 4;
+    string end_time = 5;
+    string query_nickname = 6;
+    string query_phone = 7;
+}
+message GetCustListReply {
+    string result_code = 1;
+    repeated CustData datas = 3;
+    int32 total = 4;
+}
+
+message GetCustRequest {
+    string uid = 1;
+}
+message GetCustReply {
+    string result_code = 1;
+    CustData cust_data = 3;
+    repeated UserCardsData card_datas = 4;
+    string card_total = 5;
+}
+
+message CustData {
+    string cust_no = 1;
+    string gender = 2;
+    string in_authorization = 3;
+    string out_authorization = 4;
+    string in_transfer_authorization = 5;
+    string out_transfer_authorization = 6;
+
+    string uid = 7;
+    string phone = 8;
+    string nickname = 9;
+    string create_time = 10;
+    string usd_balance = 11;
+    string khr_balance = 12;
+    string account = 13;
+    string auth_name = 14;
+    string auth_number = 15;
+    string auth_status = 16;
+}
+
+
+message ModifyCustInfoRequest {
+    string cust_no = 1;
+    string in_authorization = 2;
+    string out_authorization = 3;
+    string in_transfer_authorization = 4;
+    string out_transfer_authorization = 5;
+    string login_uid = 6;
+}
+
+message ModifyCustInfoReply {
+    string result_code = 1;
+    CustData data = 2;
+}
+
+//获取用户账单明细信息
+message GetCustBillsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string uid = 3;
+    string start_time = 4;
+    string end_time = 5;
+    string reason = 6;
+    string biz_log_no = 7;
+    string balance_type = 8;
+}
+message GetCustBillsReply {
+    string result_code = 1;
+    repeated CustBillDetailData datas = 2;
+    int32 total = 3;
+}
+message CustBillDetailData {
+    string create_time = 1;
+    string log_no = 2;
+    string amount = 3;
+    string balance = 4;
+    string op_type = 5;
+    string reason = 6;
+    string balance_type = 7;
+    string order_type = 8; //如果是手续费，则这里是产生该笔手续费的 订单类型
+
+}
+
+//获取授权收款额度
+message ServicerCollectLimitRequest {
+    string account_uid = 1;
+    string account_type = 2;
+}
+message ServicerCollectLimitReply {
+    string result_code = 1;
+    ServicerCollectLimitData datas = 2;
+}
+message ServicerCollectLimitData {
+    string usd_auth_collect_limit = 1;
+    string usd_no_spent_collect_limit = 2;
+    string khr_auth_collect_limit = 3;
+    string khr_no_spent_collect_limit = 4;
+}
+//================================
+message GetFuncListRequest {
+    int32 application_type = 1;
+}
+
+message GetFuncListReply {
+    string result_code = 1;
+    repeated FuncData datas = 2;
+}
+
+message FuncData {
+    string id = 1;
+    string name = 2;
+    string img = 3;
+    string target = 4;
+}
+//================================
+message GetWithdrawConfigRequest {
+    string config_type = 1;
+}
+
+message GetWithdrawConfigReply {
+    string result_code = 1;
+    FaceWithdrawConfigData face_withdraw_datas = 2;
+    PhoneWithdrawConfigData phone_withdraw_datas = 3;
+    DepositConfigData deposit_datas = 4;
+    TransferConfigData transfer_datas = 5;
+}
+
+message FaceWithdrawConfigData {
+    //面对面取款配置
+    string usd_face_withdraw_rate = 1;
+    string usd_face_min_withdraw_fee = 2;
+    string usd_face_free_fee_per_year = 3;
+    string usd_face_single_max = 4;
+    string usd_face_single_min = 5;
+
+    string khr_face_withdraw_rate = 6;
+    string khr_face_min_withdraw_fee = 7;
+    string khr_face_free_fee_per_year = 8;
+    string khr_face_single_max = 9;
+    string khr_face_single_min = 10;
+}
+
+message PhoneWithdrawConfigData {
+    //手机号取款配置
+    string usd_phone_withdraw_rate = 1;
+    string usd_phone_min_withdraw_fee = 2;
+    string usd_phone_free_fee_per_year = 3;
+    string usd_phone_single_max = 4;
+    string usd_phone_single_min = 5;
+
+    string khr_phone_withdraw_rate = 6;
+    string khr_phone_min_withdraw_fee = 7;
+    string khr_phone_free_fee_per_year = 8;
+    string khr_phone_single_max = 9;
+    string khr_phone_single_min = 10;
+}
+
+message TransferConfigData {
+    //转账配置
+    string khr_transfer_rate = 1;
+    string khr_min_transfer_fee = 2;
+    string khr_transfer_single_min = 3;
+    string khr_transfer_single_max = 4;
+
+    string usd_transfer_rate = 5;
+    string usd_min_transfer_fee = 6;
+    string usd_transfer_single_min = 7;
+    string usd_transfer_single_max = 8;
+}
+
+message DepositConfigData {
+    //存款配置
+    string khr_deposit_rate = 1;
+    string khr_min_deposit_fee = 2;
+    string khr_deposit_single_min = 3;
+    string khr_deposit_single_max = 4;
+
+    string usd_deposit_rate = 5;
+    string usd_min_deposit_fee = 6;
+    string usd_deposit_single_min = 7;
+    string usd_deposit_single_max = 8;
+}
+//================================
+message UpdateWithdrawConfigRequest {
+    //面对面取款配置
+    string usd_face_withdraw_rate = 1;
+    string usd_face_min_withdraw_fee = 2;
+    string usd_face_free_fee_per_year = 3;
+    string usd_face_single_max = 4;
+    string usd_face_single_min = 5;
+
+    string khr_face_withdraw_rate = 6;
+    string khr_face_min_withdraw_fee = 7;
+    string khr_face_free_fee_per_year = 8;
+    string khr_face_single_max = 9;
+    string khr_face_single_min = 10;
+
+    //存款配置
+    string khr_deposit_rate = 11;
+    string khr_min_deposit_fee = 12;
+    string khr_deposit_single_min = 13;
+    string khr_deposit_single_max = 14;
+
+    string usd_deposit_rate = 15;
+    string usd_min_deposit_fee = 16;
+    string usd_deposit_single_min = 17;
+    string usd_deposit_single_max = 18;
+
+    //转账配置
+    string khr_transfer_rate = 19;
+    string khr_min_transfer_fee = 20;
+    string khr_transfer_single_min = 21;
+    string khr_transfer_single_max = 22;
+
+    string usd_transfer_rate = 23;
+    string usd_min_transfer_fee = 24;
+    string usd_transfer_single_min = 25;
+    string usd_transfer_single_max = 26;
+
+    //类型
+    string config_type = 27;
+
+    //手机号取款配置
+    string usd_phone_withdraw_rate = 28;
+    string usd_phone_min_withdraw_fee = 29;
+    string usd_phone_free_fee_per_year = 30;
+    string usd_phone_single_max = 31;
+    string usd_phone_single_min = 32;
+
+    string khr_phone_withdraw_rate = 33;
+    string khr_phone_min_withdraw_fee = 34;
+    string khr_phone_free_fee_per_year = 35;
+    string khr_phone_single_max = 36;
+    string khr_phone_single_min = 37;
+
+    string login_uid = 38;
+}
+
+message UpdateWithdrawConfigReply {
+    string result_code = 1;
+}
+//=============================
+message GetServicerProfitLedgerListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string nickname = 3;
+    string phone = 4;
+    string currency_type = 5;
+    //    string op_type = 6;
+    string log_no = 7;
+    string start_time = 8;
+    string end_time = 9;
+    string order_type = 10;
+    string account = 11;
+}
+
+message GetServicerProfitLedgerListReply {
+    string result_code = 1;
+    repeated ServicerProfitLedgerData data_list = 2;
+    ServicerProfitLedgerCountData count_data = 3;
+    int32 total = 4;
+}
+
+message ServicerProfitLedgerCountData {
+    string usd_count = 1;
+    string usd_sum = 2;
+    string khr_count = 3;
+    string khr_sum = 4;
+}
+
+message ServicerProfitLedgerData {
+    string log_no = 1;
+    string amount_order = 2;
+    string servicefee_amount_sum = 3;
+    string split_proportion = 4;
+    string actual_income = 5;
+    string payment_time = 6;
+    string servicer_no = 7;
+    string currency_type = 8;
+
+    string nickname = 9;
+    string phone = 10;
+
+    string order_no = 11;
+    string order_type = 12;
+    string account = 13;
+}
+
+//================================
+message GetExchangeRateConfigRequest {
+}
+
+message GetExchangeRateConfigReply {
+    string result_code = 1;
+    ExchangeRateConfigData datas = 2;
+}
+
+message ExchangeRateConfigData {
+    string usd_to_khr = 1;
+    string khr_to_usd = 2;
+    string usd_to_khr_fee = 3;
+    string khr_to_usd_fee = 4;
+}
+//================================
+message UpdateExchangeRateConfigRequest {
+    string usd_to_khr = 1;
+    string khr_to_usd = 2;
+    string usd_to_khr_fee = 3;
+    string khr_to_usd_fee = 4;
+    string login_uid = 5;
+}
+
+message UpdateExchangeRateConfigReply {
+    string result_code = 1;
+}
+
+//服务商对账统计
+message GetFinancialCheckListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string day_start_date = 3;
+    string day_end_date = 4;
+    string settlement_status = 5;
+}
+//每天服务商的对账统计
+message GetFinancialServicerCheckListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string servicer_no = 5;
+    //    string settlement_status = 6;
+    string phone = 7;
+    string account = 8;
+    string id = 9;
+    string currency_type = 10;
+}
+
+message GetFinancialServicerCheckListReply {
+    string result_code = 1;
+    repeated FinancialServicerCheckData data_list = 2;
+    int32 total = 3;
+}
+
+message FinancialServicerCheckData {
+    string servicer_no = 1;
+    string currency_type = 2;
+    string create_time = 3;
+    string in_num = 4;
+    string in_amount = 5;
+
+    string out_num = 6;
+    string out_amount = 7;
+    string profit_num = 8;
+    string profit_amount = 9;
+    string recharge_num = 10;
+
+    string recharge_amount = 11;
+    string withdraw_num = 12;
+    string withdraw_amount = 13;
+    string id = 14;
+
+    string phone = 15;
+    string account = 16;
+    string dates = 17; //统计的数据日期
+
+}
+
+//查看指定服务商的某天账单明细
+message GetBillingDetailsResultsListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string order_no = 3;
+    string bill_type = 4;
+    string start_time = 5;
+    string end_time = 6;
+    string servicer_no = 7;
+    string currency_type = 8;
+}
+
+message GetBillingDetailsResultsListReply {
+    string result_code = 1;
+    repeated BillingDetailsResultsData data_list = 2;
+    int32 total = 3;
+}
+
+message BillingDetailsResultsData {
+    string create_time = 1;
+    string bill_no = 2;
+    string amount = 3;
+    string currency_type = 4;
+    string bill_type = 5;
+    string servicer_no = 6;
+    string order_no = 7;
+}
+
+//收款账户收款状态修改
+message ModifyCollectStatusRequest {
+    string set_status = 1;
+    string card_no = 2;
+    string login_uid = 3;
+}
+
+message ModifyCollectStatusReply {
+    string result_code = 1;
+}
+
+//==========================
+message GetExchangeRateRequest {
+}
+
+message GetExchangeRateReply {
+    string result_code = 1;
+    string msg = 2;
+    ExchangeRateData datas = 3;
+}
+
+message ExchangeRateData {
+    string khr_to_usd = 1;
+    string usd_to_khr = 2;
+    string usd_to_khr_fee = 3;
+    string khr_to_usd_fee = 4;
+}
+
+//========================
+
+message CollectionManagementListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string account_type = 3;
+}
+
+message CollectionManagementListReply {
+    string result_code = 1;
+    repeated CollectionManagementData data_list = 2;
+    int32 total = 3;
+}
+
+message CollectionManagementData {
+    string channel_name = 1;
+    string name = 3;
+    string collect_status = 4;
+    string card_number = 5;
+    string card_no = 6;
+    string note = 7;
+    string balance_type = 8;
+    string is_defalut = 9;
+    //    string logo_img_url = 9;
+
+
+}
+
+//收款账户收款状态修改
+message DelectCardRequest {
+    string card_no = 1;
+    string login_uid = 2;
+}
+
+message DelectCardReply {
+    string result_code = 1;
+}
+
+//获取指定服务商的收款账户
+message GetCardInfoRequest {
+    string card_no = 1;
+}
+
+message GetCardInfoReply {
+    string result_code = 1;
+    GetCardInfoData data = 2;
+}
+
+message GetCardInfoData {
+    string channel_name = 1;
+    string channel_no = 2;
+    string name = 3;
+    string card_number = 4;
+    string note = 5;
+    string collect_status = 6;
+    string balance_type = 7;
+
+    string account_type = 8; //用于哪个账号类型
+    string card_no = 9; //
+    string is_defalut = 10; //
+    string id = 11;
+}
+
+//修改指定服务商的收款账户或添加
+message UpdateOrInsertCardRequest {
+    string card_no = 1;
+    string channel_no = 2;
+    string name = 3;
+    string card_number = 4;
+    string note = 5;
+    string balance_type = 6;
+    string is_defalut = 7;
+    string account_type = 8; //用于哪个账号类型
+
+    string channel_id = 9; //channel_cust表中的id,由于渠道可分别配置两币种，所以为区分添加了该字段，原来的服务商的暂时没用到该字段（服务商是创建卡时候限定币种，用户是在渠道的时候就限定了币种，创建卡时不限定）
+    string login_uid = 10;
+}
+
+message UpdateOrInsertCardReply {
+    string result_code = 1;
+}
+
+message GetHeadquartersProfitListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string order_no = 3;
+    string start_time = 4;
+    string end_time = 5;
+    string profit_source = 6;
+    string balance_type = 7;
+}
+
+message GetHeadquartersProfitListReply {
+    string result_code = 1;
+    repeated HeadquartersProfitData data_list = 2;
+    int32 total = 3;
+    HeadquartersProfitCountData count_data = 4;
+}
+
+message HeadquartersProfitCountData {
+    string usd_profit_count = 1;
+    string usd_profit_sum = 2;
+    string khr_profit_count = 3;
+    string khr_profit_sum = 4;
+
+    string usd_cashable_balance = 5;
+    string khr_cashable_balance = 6;
+}
+
+message HeadquartersProfitData {
+    string log_no = 1;
+    string order_no = 2;
+    string amount = 3;
+    string create_time = 4;
+    string order_status = 5;
+    string finish_time = 6;
+    string balance_type = 7;
+    string profit_source = 8;
+    string op_type = 9;
+}
+
+
+message GetToHeadquartersListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string log_no = 3;
+    string start_time = 4;
+    string end_time = 5;
+    string servicer_no = 6;
+    string order_status = 7;
+    string order_type = 8;
+    string currency_type = 9;
+    string account = 10;
+
+}
+
+message GetToHeadquartersListReply {
+    string result_code = 1;
+    repeated ToHeadquartersData data_list = 2;
+    int32 total = 3;
+}
+
+message ToHeadquartersData {
+    string log_no = 1;
+    string servicer_no = 2;
+    string currency_type = 3;
+    string amount = 4;
+    string order_status = 5;
+    string collection_type = 6;
+    string card_no = 7;
+    string create_time = 8;
+    string finish_time = 9;
+    string order_type = 10;
+
+    string account = 11;
+    string card_number = 12;
+    string name = 13;
+    string image_id = 14;
+    string channel_name = 15;
+}
+
+
+message GetToServicerListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string log_no = 3;
+    string start_time = 4;
+    string end_time = 5;
+    string servicer_no = 6;
+    string order_status = 7;
+    string order_type = 8;
+    string currency_type = 9;
+    string account = 10;
+    string nickname = 11;
+
+}
+
+message GetToServicerListReply {
+    string result_code = 1;
+    repeated ToServicerData data_list = 2;
+    int32 total = 3;
+}
+
+message ToServicerData {
+    string log_no = 1;
+    string currency_type = 2;
+    string servicer_no = 3;
+    string collection_type = 4;
+    string card_no = 5;
+    string amount = 6;
+    string create_time = 7;
+    string order_type = 8;
+    string order_status = 9;
+    string finish_time = 10;
+
+    string account = 11;
+    string nickname = 12;
+    string phone = 13;
+
+    string name = 14; //收款人
+    string card_number = 15; //收款卡号
+    string channel_name = 16; //
+
+}
+
+message AddToServicerRequest {
+    string currency_type = 1;
+    string servicer_no = 2;
+    string collection_type = 3;
+    string card_no = 4;
+    string amount = 5;
+    string create_time = 6;
+    string order_type = 7;
+    string order_status = 8;
+}
+
+message AddToServicerReply {
+    string result_code = 1;
+}
+
+message GetTransferOrderListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string log_no = 3;
+    string start_time = 4;
+    string end_time = 5;
+    string from_account = 6;
+    string to_account = 7;
+    string order_status = 8;
+    string balance_type = 9;
+    string write_off = 10;
+}
+
+message GetTransferOrderListReply {
+    string result_code = 1;
+    repeated TransferOrderData data_list = 2;
+    int32 total = 3;
+}
+
+message TransferOrderData {
+    string log_no = 1;
+    string from_vaccount_no = 2;
+    string to_vaccount_no = 3;
+    string amount = 4;
+    string create_time = 5;
+    string finish_time = 6;
+    string order_status = 7;
+    string balance_type = 8;
+    string exchange_type = 9;
+    string fees = 10;
+    string write_off = 11;
+
+    string from_account = 12;
+    string to_account = 13;
+
+    string fee_rate = 14;
+    string real_amount = 15;
+}
+
+
+message GetOutgoOrderListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string log_no = 3;
+    string phone = 4;
+    string start_time = 5;
+    string end_time = 6;
+    string order_status = 7;
+    string balance_type = 8;
+    string account = 9; //服务商账号
+    string write_off = 11;
+
+    string out_account = 12; //取款人账号
+    string withdraw_type = 13;
+}
+
+message GetOutgoOrderListReply {
+    string result_code = 1;
+    repeated OutgoOrderData data_list = 2;
+    int32 total = 3;
+}
+
+message OutgoOrderData {
+    string log_no = 1;
+    string vaccount_no = 2;
+    string amount = 3;
+    string create_time = 4;
+    string order_status = 5;
+    string finish_time = 6;
+    string balance_type = 7;
+    string fees = 8;
+    string write_off = 9;
+    string servicer_no = 10;
+
+    string phone = 11;
+    string account = 12;
+    string rate = 13;
+    string real_amount = 14;
+    string cancel_reason = 15;
+    string out_account = 16; //取款人账号
+
+    string withdraw_type = 17; //0-手机号提现;1-扫码提现;2-全部提现(现是扫码的全部提现,手机号提现是一个核销码对应的订单金额必需一次性全取出来)
+}
+
+message GetIncomeOrderListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string log_no = 3;
+    string start_time = 4;
+    string end_time = 5;
+    string order_status = 6;
+    string servicer_no = 7;
+    string balance_type = 8;
+
+    string income_phone = 9;
+    string income_account = 10;
+    string account = 11;
+    string recv_phone = 12;
+    string fee_rate = 13;
+    string real_amount = 14;
+    string write_off = 15;
+    string recv_account = 16;
+
+}
+
+message GetIncomeOrderListReply {
+    string result_code = 1;
+    repeated IncomeOrderData data_list = 2;
+    int32 total = 3;
+}
+
+message IncomeOrderData {
+    string log_no = 1;
+    string act_acc_no = 2;
+    string amount = 3;
+    string servicer_no = 4;
+    string create_time = 5;
+    string order_status = 6;
+    string finish_time = 7;
+    string query_time = 8;
+    string balance_type = 9;
+    string fees = 10;
+    string write_off = 11;
+
+    string income_phone = 12;
+    string income_account = 13;
+    string account = 14;
+    string recv_phone = 15;
+    string fee_rate = 16;
+    string real_amount = 17;
+    string recv_account = 18;
+}
+
+message GetExchangeOrderListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string log_no = 3;
+    string phone = 4;
+    string start_time = 5;
+    string end_time = 6;
+    string order_status = 7;
+    string exchange_type = 8;
+    string account = 9;
+
+}
+
+message GetExchangeOrderListReply {
+    string result_code = 1;
+    repeated ExchangeOrderData data_list = 2;
+    int32 total = 3;
+}
+
+message ExchangeOrderData {
+    string log_no = 1;
+    string in_type = 2;
+    string out_type = 3;
+    string amount = 4;
+    string create_time = 5;
+    string rate = 6;
+    string order_status = 7;
+    string finish_time = 8;
+    string account_no = 9;
+    string trans_from = 10;
+    string trans_amount = 11;
+    string err_reason = 12;
+
+    string phone = 13;
+    string account = 14;
+    //string fee = 14;
+
+    string exchange_type = 15;
+
+    string fees = 16;
+
+    string order_type = 17;
+}
+
+message GetFuncConfigRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string application_type = 3;
+    string func_name = 4;
+}
+
+message GetFuncConfigReply {
+    string result_code = 1;
+    repeated FuncConfigData data_list = 2;
+    int32 total = 3;
+}
+
+message FuncConfigData {
+    string func_no = 1;
+    string func_name = 2;
+    string idx = 3;
+    string use_status = 4;
+    string is_delete = 5;
+    string img = 6; //图片地址
+    string jump_url = 7;
+    string application_type = 8;
+    string img_id = 9; //图片id
+    string img_base64 = 10; //图片base64字符串
+}
+
+message UpdateFuncConfigRequest {
+    string func_name = 1;
+    string jump_url = 2;
+    string img = 3;
+    string img_base64 = 4;
+    string application_type = 5;
+    string func_no = 6;
+}
+
+message UpdateFuncConfigReply {
+    string result_code = 1;
+}
+
+message GetTransferSecurityConfigRequest {
+    string continuous_err_password = 1;
+    string defrozen_trading_rights_time = 2;
+}
+
+message GetTransferSecurityConfigReply {
+    string result_code = 1;
+    TransferSecurityConfigData datas = 2;
+}
+
+message TransferSecurityConfigData {
+    string err_payment_pwd_count = 1;
+    string continuous_err_password = 2;
+}
+
+message UpdateTransferSecurityConfigRequest {
+    string continuous_err_password = 1;
+    string err_payment_pwd_count = 2;
+    string login_uid = 4;
+}
+
+message UpdateTransferSecurityConfigReply {
+    string result_code = 1;
+    string msg = 2;
+}
+//===============================================
+message SwapFuncConfigIdxRequest {
+    string idx = 1;
+    string swap_type = 2;
+    string app_type = 3;
+}
+
+message SwapFuncConfigIdxReply {
+    string result_code = 1;
+}
+//===============================================
+message DeleteFuncConfigRequest {
+    string func_no = 1;
+}
+
+message DeleteFuncConfigReply {
+    string result_code = 1;
+}
+//===============================================
+message ModifyUseStatusFuncConfigRequest {
+    string func_no = 1;
+    string use_status = 2;
+}
+
+message ModifyUseStatusFuncConfigReply {
+    string result_code = 1;
+}
+//===============================================
+message GetFuncConfigDetailRequest {
+    string func_no = 1;
+}
+
+message GetFuncConfigDetailReply {
+    string result_code = 1;
+    FuncConfigData data = 2;
+}
+
+//===============================================
+
+message GetIncomeOugoConfigRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string config_type = 3;
+    string name = 4;
+    string currency_type = 5;
+}
+
+message GetIncomeOugoConfigReply {
+    string result_code = 1;
+    repeated IncomeOugoConfigData data_list = 2;
+    int32 total = 3;
+}
+message IncomeOugoConfigData {
+    string income_ougo_config_no = 1;
+    string currency_type = 2;
+    string name = 3;
+    string use_status = 4;
+    string idx = 5;
+    string config_type = 6;
+}
+message UpdateIncomeOugoConfigRequest {
+    string income_ougo_config_no = 1;
+    string currency_type = 2;
+    string name = 3;
+    string use_status = 4;
+    string idx = 5;
+    string config_type = 6;
+}
+
+message UpdateIncomeOugoConfigReply {
+    string result_code = 1;
+}
+
+message UpdateIncomeOugoConfigUseStatusRequest {
+    string income_ougo_config_no = 1;
+    string use_status = 2;
+}
+
+message UpdateIncomeOugoConfigUseStatusReply {
+    string result_code = 1;
+}
+
+message UpdateIncomeOugoConfigIdxRequest {
+    string idx = 1;
+    string swap_type = 2;
+    string config_type = 3;
+}
+
+message UpdateIncomeOugoConfigIdxReply {
+    string result_code = 1;
+}
+
+
+message GetLangsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string type = 3;
+    string key = 4;
+    string search_key = 5; //push_temp处获取时会发送此字段来筛选
+    string lang_ch = 6;
+    string lang_en = 7;
+    string lang_km = 8;
+}
+
+message GetLangsReply {
+    string result_code = 1;
+    int32 total = 2;
+    repeated LangData data_list = 3;
+}
+message LangData {
+    string id = 1;
+    string key = 2;
+    string type = 3;
+    string lang_km = 4;
+    string lang_en = 5;
+    string lang_ch = 6;
+}
+
+message UpdateLangRequest {
+    string id = 1;
+    string key = 2;
+    string type = 3;
+    string lang_km = 4;
+    string lang_en = 5;
+    string lang_ch = 6;
+}
+
+message UpdateLangReply {
+    string result_code = 1;
+}
+
+message DeleteLangRequest {
+    string key = 1;
+}
+
+message DeleteLangReply {
+    string result_code = 1;
+}
+
+message DeleteIncomeOugoConfigRequest {
+    string income_ougo_config_no = 1;
+}
+
+message DeleteIncomeOugoConfigReply {
+    string result_code = 1;
+}
+
+message GetIncomeOugoConfigDetailRequest {
+    string income_ougo_config_no = 1;
+}
+
+message GetIncomeOugoConfigDetailReply {
+    string result_code = 1;
+    IncomeOugoConfigData data = 2;
+}
+
+message GetLangDetailRequest {
+    string key = 1;
+}
+
+message GetLangDetailReply {
+    string result_code = 1;
+    LangData data = 2;
+}
+
+message UpdateToHeadquartersRequest {
+    string log_no = 1;
+    string order_status = 2;
+    string login_uid = 3;
+}
+
+message UpdateToHeadquartersReply {
+    string result_code = 1;
+}
+
+message CustBillsRequest {
+    string account_uid = 1;
+    string query_time = 2;
+    string currency_type = 3;
+    int32 page = 4;
+    int32 page_size = 5;
+}
+
+message CustBillsReply {
+    string result_code = 1;
+    repeated CustBillsData data_list = 2;
+    string spending_sum = 3;
+    string Income_sum = 4;
+    int32 total = 5;
+}
+
+message CustBillsData {
+    string create_time = 1;
+    string log_no = 2;
+    string amount = 3;
+    string currency_type = 4;
+    string reason = 5;
+    string balance = 6;
+    string order_no = 7;
+    string op_type = 8;
+    string order_type = 9;
+    string code = 10;
+}
+
+message ServicerBillsRequest {
+    string account_uid = 1;
+    string start_time = 2;
+    string end_time = 3;
+    string currency_type = 4;
+    int32 page = 5;
+    int32 page_size = 6;
+    string account_type = 7;
+    string bill_type = 8;
+    string iden_no = 9;
+    string op_no = 10;
+    string order_status = 11;
+}
+
+message ServicerBillsReply {
+    string result_code = 1;
+    int32 total = 2;
+    repeated ServicerBillsData datas = 3;
+}
+
+
+message ServicerBillsData {
+    string create_time = 1;
+    string bill_no = 2;
+    string amount = 3;
+    string currency_type = 4;
+    string bill_type = 5;
+    string account_no = 6;
+    string account_type = 7;
+    string balance = 8;
+    string order_no = 9;
+    string order_status = 10;
+
+    string time = 11;
+    string usd_income_sum = 12;
+    string usd_outgo_sum = 13;
+    string khr_income_sum = 14;
+    string khr_outgo_sum = 15;
+
+    string op_no = 16;
+    string op_type = 17;
+}
+//==========================================
+message InsertOrUpdateCardRequest {
+    string card_no = 1;
+    string account_no = 2;
+    string channel_no = 3;
+    string card_acc_name = 4;
+    string card_number = 5;
+    string balance_type = 6;
+    string is_default = 7;
+    string collect_status = 8;
+    string audit_status = 9;
+    string account_type = 10;
+}
+
+message InsertOrUpdateCardReply {
+    string result_code = 1;
+}
+//==========================================
+message InsertOrUpdateBusinessCardRequest {
+    string card_no = 1;
+    string account_no = 2;
+    string channel_id = 3;
+    string name = 4;
+    string card_number = 5;
+
+    string is_default = 6;
+    string account_type = 7;
+    //    string collect_status = 8;
+    //    string audit_status = 9;
+
+    //    string pay_password = 11;
+    //    string non_str = 12;
+    //    string iden_no = 13;
+}
+
+message InsertOrUpdateBusinessCardReply {
+    string result_code = 1;
+}
+
+//==========================================
+
+message GetHeadquartersCardsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string money_type = 3;
+    string account_type = 4;
+}
+
+
+message GetHeadquartersCardsReply {
+    string result_code = 1;
+    repeated HeadquartersCardsData data_list = 2;
+    int32 total = 5;
+}
+
+message HeadquartersCardsData {
+    string card_no = 1;
+    string channel_name = 2;
+    string name = 3;
+    string card_number = 4;
+    string money_type = 5;
+
+    string logo_img_url = 6;
+    string save_rate = 7; //存款手续费率
+    string withdraw_rate = 8; //提现手续费率
+    string withdraw_max_amount = 9; //单笔提现最大金额
+    string save_single_min_fee = 10; //存款单笔手续费
+
+    string withdraw_single_min_fee = 11; //提现单笔手续费
+    string save_charge_type = 12; //存款计算手续费类型(1-按比例收取手续费，2按单笔手续费收取)
+    string withdraw_charge_type = 13; //提现计算手续费类型(1-按比例收取手续费，2按单笔手续费收取)
+    string support_type = 14; //该渠道支持的业务类型（1-只支持存款，2只支持取款，3两个都支持）
+    string save_max_amount = 15; //单笔存款最大金额
+    string channel_no = 16; //渠道No
+
+    string logo_img_url_grey = 17; //灰色logo图片url
+    string color_begin = 18; //渐变开始颜色
+    string color_end = 19; //渐变结束颜色
+
+    string temp = 59; //主要给前端修改该值的，选中就修改。
+}
+
+message GetUserCardDetailRequest {
+    string account_no = 1;
+    string account_type = 2;
+    string iden_no = 3;
+    string card_no = 4;
+}
+
+message GetUserCardDetailReply {
+    string result_code = 1;
+    UserCardsData data = 2;
+}
+
+message GetUserCardsRequest {
+    string account_no = 1;
+    string account_type = 2;
+    string balance_type = 3;
+    int32 page = 4;
+    int32 page_size = 5;
+    string iden_no = 6;
+}
+
+message GetUserCardsReply {
+    string result_code = 1;
+    repeated UserCardsData data_list = 2;
+    int32 total = 3;
+}
+
+message UserCardsData {
+    string card_no = 1;
+    string channel_name = 2;
+    string name = 3;
+    string card_number = 4;
+    string is_defalut = 5;
+    string balance_type = 6;
+    string logo_img_no = 7;
+    string logo_img_url = 8;
+    string channel_no = 9;
+    string use_status = 10; //用户卡是否可提现的状态
+    string logo_img_no_grey = 11;
+    string logo_img_url_grey = 12;
+    string color_begin = 13; //渐变开始颜色
+    string color_end = 14; //渐变结束颜色
+    string create_time = 15; //创建时间
+    string channel_type = 16; //渠道类型（1-普通渠道，2-第三方渠道）
+}
+
+//===================================
+message GetBusinessCardsRequest {
+    string account_no = 1;
+    string account_type = 2;
+    string balance_type = 3;
+    int32 page = 4;
+    int32 page_size = 5;
+}
+
+message GetBusinessCardsReply {
+    string result_code = 1;
+    repeated BusinessCardData data_list = 2;
+    int32 total = 3;
+}
+
+
+message GetBusinessCardDetailRequest {
+    string account_no = 1;
+    string account_type = 2;
+    string card_no = 4;
+}
+
+message GetBusinessCardDetailReply {
+    string result_code = 1;
+    BusinessCardData data = 2;
+}
+
+
+message BusinessCardData {
+    string card_no = 1;
+    string channel_name = 2;
+    string name = 3;
+    string card_number = 4;
+    string is_defalut = 5;
+    string balance_type = 6;
+    string logo_img_no = 7;
+    string logo_img_url = 8;
+    string channel_no = 9;
+    string use_status = 10; //商家卡是否可提现的状态
+    string logo_img_no_grey = 11;
+    string logo_img_url_grey = 12;
+    string color_begin = 13; //渐变开始颜色
+    string color_end = 14; //渐变结束颜色
+    string create_time = 15;
+    string withdraw_charge_type = 16; //提现手续费类型
+    string withdraw_max_amount = 17; //单笔提现最大金额
+    string withdraw_rate = 18; //提现费率
+    string withdraw_single_min_fee = 19; //单笔提现手续费
+    string save_charge_type = 20; //存款计算手续费类型
+    string save_rate = 21; //存款手续费率
+    string save_single_min_fee = 22; //存款单笔手续费
+    string save_max_amount = 23; //单笔存款最大金额
+}
+
+//==========================================
+message GetPosChannelListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string currency_type = 3;
+    string role_type = 4;
+}
+
+message GetPosChannelListReply {
+    string result_code = 1;
+    repeated ChannelDataSimple datas = 2;
+    int32 total = 3;
+}
+
+message ChannelDataSimple {
+    string channel_no = 1;
+    string channel_name = 2;
+    string is_recom = 3;
+    string currency_type = 4;
+    string logo_img_no = 5;
+    string logo_img_url = 6;
+
+    string logo_img_no_grey = 7;
+    string logo_img_url_grey = 8;
+    string color_begin = 9;
+    string color_end = 10;
+    string id = 11;
+    string channel_type = 12;
+    string temp = 55; //让前端修改的一个字段，选择则修改
+}
+
+message GetChannelsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string channel_name = 3;
+    string channel_type = 4;
+    string use_status = 5;
+}
+
+message GetChannelsReply {
+    string result_code = 1;
+    repeated ChannelDetailData datas = 2;
+    int32 total = 3;
+}
+
+
+message ModifyCardsDefalutRequest {
+    string card_no = 1;
+    string is_defalut = 2;
+    string account_uid = 3;
+    string balance_type = 4;
+}
+
+message ModifyCardsDefalutReply {
+    string result_code = 1;
+}
+
+
+message ChannelDetailData {
+    string channel_no = 1;
+    string channel_name = 2;
+    string create_time = 3;
+    string use_status = 4;
+    string channel_type = 5;
+
+    string logo_img_no = 6;
+    string logo_img_url = 7;
+    string logo_img = 8; //图片base64字符串
+    string logo_img_no_grey = 9; //灰色的
+    string logo_img_url_grey = 10; //灰色的
+
+    string logo_img_grey = 12; //图片base64字符串
+
+    string color_begin = 13; //渐变开始颜色
+    string color_end = 14; //渐变结束颜色
+}
+message GetChannelDetailRequest {
+    string channel_no = 1;
+}
+
+message GetChannelDetailReply {
+    string result_code = 1;
+    ChannelDetailData data = 2;
+}
+
+message InsertOrUpdateChannelRequest {
+    string channel_no = 1;
+    string channel_name = 2;
+    string channel_type = 5;
+    string use_status = 6;
+    string logo_img_no = 7;
+    string logo_img_no_grey = 8; //灰图片
+    string login_uid = 9;
+
+    string color_begin = 10;
+    string color_end = 11;
+}
+
+message InsertOrUpdateChannelReply {
+    string result_code = 1;
+}
+
+message DeleteChannelRequest {
+    string channel_no = 1;
+    string login_uid = 2;
+}
+
+message DeleteChannelReply {
+    string result_code = 1;
+}
+
+message ModifyChannelPosStatusRequest {
+    string id = 1;
+    string use_status = 2;
+    string login_uid = 3;
+}
+
+message ModifyChannelPosStatusReply {
+    string result_code = 1;
+}
+
+message ModifyChannelStatusRequest {
+    string channel_no = 1;
+    string use_status = 2;
+    string login_uid = 3;
+}
+
+message ModifyChannelStatusReply {
+    string result_code = 1;
+}
+
+
+message UploadImageRequest {
+    // 图片bade64字符串
+    string image_str = 1;
+
+    string account_uid = 2;
+    // 1-需要授权;2-不需要授权
+    int32 type = 3;
+
+    string img_type = 4; //1上传头像图片，2身份认证图片，3凭证图片
+
+    string add_watermark = 5; //1-添加水印，0或空则不添加
+}
+
+message UploadImageReply {
+    string result_code = 1;
+    string msg = 2;
+    string image_url = 3;
+    string image_name = 4;
+    string image_id = 5;
+}
+
+
+message AuthDownloadImageRequest {
+    string image_id = 1;
+    string account_uid = 2;
+}
+
+message AuthDownloadImageReply {
+    string result_code = 1;
+    string msg = 2;
+    string image_str = 3;
+    string image_url = 4;
+}
+
+message HeadquartersProfitWithdrawsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string order_no = 5;
+    string currency_type = 6;
+}
+
+message HeadquartersProfitWithdrawsReply {
+    string result_code = 1;
+    repeated HeadquartersProfitWithdrawsData datas = 2;
+    int32 total = 3;
+    CountHeadquartersProfitWithdrawsData count_data = 4;
+}
+
+message HeadquartersProfitWithdrawsData {
+    string order_no = 1;
+    string currency_type = 2;
+    string amount = 3;
+    string note = 4;
+    string create_time = 5;
+    string account_no = 6;
+    string nickname = 7;
+}
+
+message CountHeadquartersProfitWithdrawsData {
+    int32 usd_cnt = 1;
+    int32 usd_sum = 2;
+    int32 khr_cnt = 3;
+    int32 khr_sum = 4;
+
+}
+
+
+message GetLogVaccountsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string op_type = 5;
+    string log_no = 6;
+    string balance_type = 7;
+    string biz_log_no = 8;
+    string reason = 9;
+    string account = 10;
+    string va_type = 11;
+}
+
+message GetLogVaccountsReply {
+    string result_code = 1;
+    repeated LogVaccountData datas = 2;
+    int32 total = 3;
+}
+
+
+message LogVaccountData {
+    string log_no = 1;
+    string vaccount_no = 2;
+    string create_time = 3;
+    string amount = 4;
+    string op_type = 5;
+    string frozen_balance = 6;
+    string balance = 7;
+    string reason = 8;
+    string settle_hourly_log_no = 9;
+    string settle_daily_log_no = 10;
+    string biz_log_no = 11;
+
+    string balance_type = 12;
+    string account_no = 13;
+
+    string nickname = 14;
+    string account = 15;
+    string order_type = 16;
+
+
+    string alter_balnace = 17; //余额变化金额
+    string alter_balnace_symbol = 18; //余额变化符号
+    string alter_frozen_balance = 19; //冻结变化金额
+    string alter_frozen_balance_symbol = 20; //冻结变化符号
+
+    string va_type = 21;
+
+}
+
+message UpdateServiceWithdrawRequest {
+    string order_no = 1;
+    int32 status = 2;
+    string login_uid = 3;
+}
+
+message UpdateServiceWithdrawReply {
+    string result_code = 1;
+    string msg = 2;
+}
+
+message UpdateCustWithdrawRequest {
+    string order_no = 1;
+    int32 order_status = 2;
+    string image_base64 = 3;
+    string notes = 4;
+    string login_uid = 5;
+}
+
+message UpdateCustWithdrawReply {
+    string result_code = 1;
+}
+message UpdateCustSaveRequest {
+    string order_no = 1;
+    int32 order_status = 2;
+    string login_uid = 3;
+}
+
+message UpdateCustSaveReply {
+    string result_code = 1;
+}
+
+message GetServicerBillingDetailsRequest {
+    string account_no = 1;
+    string account_type = 2;
+    int32 page = 3;
+    int32 page_size = 4;
+    string currency_type = 5;
+}
+
+message GetServicerBillingDetailsReply {
+    string result_code = 1;
+    int32 total = 2;
+    repeated ServicerBillingDetailsData datas = 3;
+}
+
+//==========================================
+message CheckSmsRequest {
+    string phone = 1;
+    string sms = 2;
+    string function = 3;
+    string pub_key = 4;
+    string country_code = 5;
+}
+
+message CheckSmsReply {
+    string result_code = 1;
+    string msg = 2;
+}
+
+message ServicerBillingDetailsData {
+    string create_time = 1;
+    string bill_type = 2;
+    string amount = 3;
+    string bill_no = 4;
+    string currency_type = 5;
+    string op_type = 6;
+}
+
+//==========================================
+message RegSmsRequest {
+    string phone = 1;
+    string lang = 2;
+    string function = 3;
+    string pub_key = 4;
+    string country_code = 5;
+}
+
+message RegSmsReply {
+    string result_code = 1;
+    string msg = 2;
+}
+
+message ServicerTerminalData {
+    string terminal_no = 1;
+    string terminal_number = 2;
+    string pos_sn = 3;
+    string use_status = 4;
+}
+
+//==========================================
+
+message GetServicerAccountsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string account = 3;
+    string sort_type = 4;
+}
+
+message GetServicerAccountsReply {
+    string result_code = 1;
+    repeated GetServicerAccountsData datas = 2;
+    int32 total = 3;
+}
+
+message GetServicerAccountsData {
+    string account_no = 1;
+    string servicer_no = 2;
+    string account = 3;
+    string usd_balance = 4;
+    string khr_balance = 5;
+}
+
+//获取服务商账单明细信息
+message GetServicerBillsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string uid = 3;
+    string start_time = 4;
+    string end_time = 5;
+    string reason = 6;
+    string biz_log_no = 7;
+    string balance_type = 8;
+}
+message GetServicerBillsReply {
+    string result_code = 1;
+    string msg = 2;
+    repeated ServicerBillDetailData datas = 3;
+    int32 total = 4;
+}
+
+message ServicerBillDetailData {
+    string create_time = 1;
+    string log_no = 2;
+    string amount = 3;
+    string balance = 4;
+    string op_type = 5;
+    string reason = 6;
+    string balance_type = 7;
+    string order_type = 8; //如果是手续费，则这里是产生该笔手续费的 订单类型
+}
+
+message UnAuthDownloadImageRequest {
+    string image_id = 1;
+    string pub_key = 2;
+}
+
+message UnAuthDownloadImageReply {
+    string result_code = 1;
+    string msg = 2;
+    string image_str = 3;
+    string image_url = 4;
+}
+
+
+message GetCommonHelpsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string use_status = 3;
+    string problem = 4;
+    string lang = 5;
+    string vs_type = 6;
+}
+message GetCommonHelpsReply {
+    string result_code = 1;
+    repeated CommonHelpData datas = 2;
+    int32 total = 3;
+}
+
+message GetAppCommonHelpsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string use_status = 3;
+    string problem = 4;
+    string lang = 5;
+    string vs_type = 6;
+}
+message GetAppCommonHelpsReply {
+    string result_code = 1;
+    repeated CommonHelpData datas = 2;
+    int32 total = 3;
+}
+
+message CommonHelpData {
+    string help_no = 1;
+    string problem = 2; //问题标题
+    string answer = 3; //答案
+    string use_status = 4; //使用状态
+    string idx = 5;
+    string lang = 6;
+    string vs_type = 7;
+    string file_id = 8;
+}
+
+message GetCommonHelpDetailRequest {
+    string help_no = 1;
+}
+message GetCommonHelpDetailReply {
+    string result_code = 1;
+    CommonHelpData data = 2;
+}
+
+message DeleteHelpRequest {
+    string help_no = 1;
+}
+message DeleteHelpReply {
+    string result_code = 1;
+}
+
+message ModifyHelpStatusRequest {
+    string help_no = 1;
+    string use_status = 2;
+}
+message ModifyHelpStatusReply {
+    string result_code = 1;
+}
+
+message InsertOrUpdateHelpRequest {
+    string help_no = 1;
+    string problem = 2;
+    string answer = 3;
+    string lang = 4;
+    string vs_type = 5;
+}
+message InsertOrUpdateHelpReply {
+    string result_code = 1;
+}
+
+message SwapHelpIdxRequest {
+    string help_no = 1;
+    string idx = 2;
+    string swap_type = 3;
+    string lang = 4;
+    string vs_type = 5;
+}
+message SwapHelpIdxReply {
+    string result_code = 1;
+}
+
+message PosFenceRequest {
+    string lat = 1; // 维度
+    string lng = 2; // 经度
+    string pos_sn = 3; // pos 机码
+}
+
+message PosFenceReply {
+    string result_code = 1;
+}
+
+//=================================
+message UpdateDefCardRequest {
+    string cust_no = 1;
+    string def_pay_no = 2;
+}
+
+message UpdateDefCardReply {
+    string result_code = 1;
+}
+//================================
+
+message GetSerPosRequest {
+    string account_uid = 1;
+    string account_type = 2;
+    int32 page = 3;
+    int32 page_size = 4;
+}
+message GetSerPosReply {
+    string result_code = 1;
+    int32 Total = 2;
+    repeated ServicerTerminalData datas = 3;
+}
+
+message ModifySerPosStatusRequest {
+    string terminal_no = 1;
+    string use_status = 2;
+    string account_uid = 3;
+    string account_type = 4;
+}
+message ModifySerPosStatusReply {
+    string result_code = 1;
+}
+
+message ModifyAppMessagesIsReadRequest {
+    string account_no = 1;
+}
+message ModifyAppMessagesIsReadReply {
+    string result_code = 1;
+}
+
+
+message GetLogAppMessagesRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string account_no = 3;
+}
+message GetLogAppMessagesReply {
+    string result_code = 1;
+    repeated LogAppMessagesData datas = 2;
+    int32 total = 3;
+}
+
+message LogAppMessagesData {
+    string log_no = 1;
+    string order_status = 2;
+    string create_time = 3;
+    string amount = 4;
+    string balance_type = 5;
+    string payment_type = 6;
+    string finish_time = 7;
+    string order_type = 8; //订单类型
+    string order_no = 9;
+
+    string is_read = 10;
+
+    //收款里的付款放账号
+    string from_account = 11;
+
+    //要推送的账号
+    string account_no = 12;
+    //1+,2-
+    string op_type = 13;
+
+    //兑换订单特有返回值
+    string in_type = 14;
+    string out_type = 15;
+    string rate = 16;
+    string trans_from = 17;
+    string trans_amount = 18;
+    string err_reason = 19;
+    string fees = 20;
+
+    string app_mess_type = 21; //消息类型
+}
+
+
+message CustIncomeBillsDetailData {
+    string log_no = 1;
+    string amount = 2;
+    string order_status = 3;
+    string payment_type = 4;
+    string create_time = 5;
+    string finish_time = 6;
+    string balance_type = 7;
+
+    string op_type = 8;
+    string fees = 9;
+
+    string order_type = 10;
+}
+
+
+message CustOutgoBillsDetailData {
+    string log_no = 1;
+    string amount = 2;
+    string order_status = 3;
+    string payment_type = 4;
+    string fees = 5;
+    string create_time = 6;
+    string finish_time = 7;
+    string balance_type = 8;
+
+    string op_type = 9;
+
+    string order_type = 10;
+}
+
+
+message CustTransferBillsDetailData {
+    string log_no = 1;
+    string amount = 2;
+    string order_status = 3;
+    string payment_type = 4;
+    string fees = 5;
+    string create_time = 6;
+    string finish_time = 7;
+    string balance_type = 8;
+    string to_phone = 9;
+    string op_type = 10;
+
+    string from_vaccount_no = 11;
+    string to_vaccount_no = 12;
+
+    string order_type = 13;
+
+    string from_phone = 14;
+}
+
+
+message CustCollectionBillsDetailData {
+    string log_no = 1;
+    string amount = 2;
+    string order_status = 3;
+    string payment_type = 4;
+    string create_time = 5;
+    string finish_time = 6;
+    string balance_type = 7;
+    string from_account = 8;
+
+    string order_type = 9;
+}
+
+
+message GetCollectionOrdersRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string log_no = 3;
+    string start_time = 4;
+    string end_time = 5;
+    string from_account = 6;
+    string to_account = 7;
+    string order_status = 8;
+    string balance_type = 9;
+
+    string no_paging = 10; //是否分页，如果空则分页
+}
+
+message GetCollectionOrdersReply {
+    string result_code = 1;
+    repeated CollectionOrderData data_list = 2;
+    int32 total = 3;
+}
+
+message CollectionOrderData {
+    string log_no = 1;
+    string from_vaccount_no = 2;
+    string to_vaccount_no = 3;
+    string amount = 4;
+    string create_time = 5;
+    string finish_time = 6;
+    string order_status = 7;
+    string balance_type = 8;
+    string fees = 9;
+    string payment_type = 10;
+
+    string from_account = 11;
+    string to_account = 12;
+}
+
+
+message UnAuthDownloadImageBase64Request {
+    string image_id = 1;
+}
+
+message UnAuthDownloadImageBase64Reply {
+    string result_code = 1;
+    string image_base64 = 2;
+}
+
+message GetConsultationConfigsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string use_status = 3;
+    string lang = 4;
+    string name = 5;
+}
+
+message GetConsultationConfigsReply {
+    string result_code = 1;
+    repeated ConsultationConfigData datas = 2;
+    int32 total = 3;
+}
+
+message ConsultationConfigData {
+    string id = 1;
+    string use_status = 2;
+    string lang = 3;
+    string idx = 4;
+    string logo_img_no = 5;
+    string logo_img_url = 6;
+    string logo_img_base64 = 7;
+    string name = 8;
+    string text = 9;
+}
+
+message GetConsultationConfigDetailRequest {
+    string id = 1;
+}
+
+message GetConsultationConfigDetailReply {
+    string result_code = 1;
+    ConsultationConfigData data = 2;
+}
+
+message InsertOrUpdateConsultationConfigRequest {
+    string id = 1;
+    string name = 2;
+    string text = 3;
+    string use_status = 4;
+    string lang = 5;
+    string logo_img_no = 6;
+}
+
+message InsertOrUpdateConsultationConfigReply {
+    string result_code = 1;
+}
+
+message DeleteConsultationConfigRequest {
+    string id = 1;
+    string login_uid = 2;
+}
+
+message DeleteConsultationConfigReply {
+    string result_code = 1;
+}
+
+message ModifyConsultationConfigStatusRequest {
+    string id = 1;
+    string use_status = 2;
+    string login_uid = 3;
+}
+
+message ModifyConsultationConfigStatusReply {
+    string result_code = 1;
+}
+
+message GetAgreementsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string type = 3;
+    string lang = 4;
+}
+
+message GetAgreementsReply {
+    string result_code = 1;
+    repeated AgreementData datas = 2;
+    int32 total = 3;
+}
+
+message AgreementData {
+    string id = 1;
+    string text = 2;
+    string lang = 3;
+    string type = 4; //0 协议  1隐私
+    string create_time = 5;
+    string modify_time = 6;
+    string use_status = 7; //0禁用，1启用
+}
+
+
+message GetAgreementDetailRequest {
+    string id = 3;
+}
+
+message GetAgreementDetailReply {
+    string result_code = 1;
+    AgreementData data = 2;
+}
+
+message InsertOrUpdateAgreementRequest {
+    string id = 1;
+    string text = 2;
+    string lang = 3;
+    string type = 4; //0 用户协议  1隐私协议
+    string use_status = 7; //0禁用，1启用
+    string login_uid = 8;
+}
+
+message InsertOrUpdateAgreementReply {
+    string result_code = 1;
+}
+message DeleteAgreementRequest {
+    string id = 1;
+    string login_uid = 2;
+}
+
+message DeleteAgreementReply {
+    string result_code = 1;
+}
+
+message ModifyAgreementStatusRequest {
+    string id = 1;
+    string use_status = 2;
+    string login_uid = 3;
+}
+
+message ModifyAgreementStatusReply {
+    string result_code = 1;
+}
+message GetAgreementAppDetailRequest {
+    string type = 1;
+    string lang = 2;
+}
+
+message GetAgreementAppDetailReply {
+    string result_code = 1;
+    AgreementData data = 2;
+}
+
+message GetCreateXlsxFileContentRequest {
+    string bill_file_type = 1;
+    //    string no_paging = 2;
+    string account_no = 2;
+    string role_type = 3;
+
+    GetExchangeOrderListRequest exchange_req = 10;
+    GetIncomeOrderListRequest income_req = 11;
+    GetOutgoOrderListRequest outgo_req = 12;
+    GetTransferOrderListRequest transfer_req = 13;
+    GetCollectionOrdersRequest collection_req = 14;
+    GetToHeadquartersListRequest to_head_req = 15;
+    GetToServicerListRequest to_ser_req = 16;
+    GetLogVaccountsRequest log_vacc_req = 17;
+}
+
+message GetCreateXlsxFileContentReply {
+    string result_code = 1;
+    string bill_type = 3;
+    string queryStr = 4;
+    XlsxFileContentData datas = 5;
+}
+
+message XlsxFileContentData {
+    repeated ExchangeOrderData exchange_datas = 1;
+    repeated IncomeOrderData income_datas = 2;
+    repeated OutgoOrderData outgo_datas = 3;
+    repeated TransferOrderData transfer_datas = 4;
+    repeated CollectionOrderData collection_datas = 5;
+    repeated ToHeadquartersData to_headquarters_datas = 6;
+    repeated ToServicerData to_servicer_datas = 7;
+    repeated LogVaccountData log_vaccount_datas = 8;
+
+}
+
+
+message ModifyServicerInfoRequest {
+    //    string servicer_base64_img = 1;
+    //    string img_type = 2;
+    string account_no = 3;
+    string servicer_no = 4;
+    string servicer_img1 = 5;
+    string servicer_img2 = 6;
+    string servicer_img3 = 7;
+    string servicer_img4 = 8;
+    string nickname = 9;
+    string phone = 10;
+    string addr = 11;
+    string country_code = 12;
+    string login_uid = 13;
+
+}
+message ModifyServicerInfoReply {
+    //    string img_url = 1; //修改后图片的url
+    string result_code = 2;
+}
+
+message GetAppVersionsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string vs_type = 3;
+    string system = 4;
+}
+
+message GetAppVersionsReply {
+    int32 total = 1;
+    string result_code = 2;
+    repeated AppVersionData datas = 3;
+}
+
+message AppVersionData {
+    string v_id = 1;
+    string description = 2;
+    string version = 3;
+    string create_time = 4;
+    string update_time = 5;
+
+    string app_url = 6;
+    string vs_code = 7;
+    string vs_type = 8;
+    string is_force = 9;
+    string system = 10;
+
+    string note = 11;
+    string account = 12;
+    string status = 13;
+
+}
+
+message GetAppVersionsCountRequest {
+}
+
+message GetAppVersionsCountReply {
+    string result_code = 1;
+    GetAppVersionsCountData ios_app_count_data = 2; //ios系统app包的统计数据
+    GetAppVersionsCountData ios_pos_count_data = 3; //ios系统pos包的统计数据
+    GetAppVersionsCountData android_app_count_data = 4; //Android系统app包的统计数据
+    GetAppVersionsCountData android_pos_count_data = 5; //Android系统pos包的统计数据
+    repeated GetAppVersionsCountData count_data = 6; //这是如果用列表展示数据的话就全部放一起
+}
+
+message GetAppVersionsCountData {
+    string system = 1; //系统
+    string vs_type = 2; //0-app;1-pos
+    string sum_total = 3; //总计
+    string disable_total = 4; //禁用数量
+    string enable = 5; //启用数量
+
+    string new_version = 6; //最新版本
+    string update_time = 7; //更新时间
+}
+
+message GetAppVersionRequest {
+    string v_id = 1;
+}
+
+message GetAppVersionReply {
+    string result_code = 1;
+    AppVersionData data = 2;
+}
+
+
+message ModifyAppVersionStatusRequest {
+    string v_id = 1;
+    string status = 2;
+    string login_uid = 3;
+}
+
+message ModifyAppVersionStatusReply {
+    string result_code = 1;
+}
+
+message ModifyAppVersionIsForceRequest {
+    string v_id = 1;
+    string is_force = 2;
+    string login_uid = 3;
+}
+
+message ModifyAppVersionIsForceReply {
+    string result_code = 1;
+}
+
+message InsertOrUpdateAppVersionRequest {
+    string v_id = 1;
+    string vs_type = 2;
+    string system = 3;
+    string up_type = 4; //选择版本更新（1-大版本；2-小版本；3-BUG版本）
+    string description = 5;
+
+    string note = 6;
+    string vs_code = 7;
+    string is_force = 8;
+    string status = 9;
+    string account_no = 10;
+
+    string file_id = 11;
+    string consecutive_liters_number = 12; //连续升版本数
+}
+
+message InsertOrUpdateAppVersionReply {
+    string result_code = 1;
+}
+
+
+message GetNewVersionRequest {
+    string vs_type = 1;
+    string system = 2;
+}
+
+message GetNewVersionReply {
+    string new_version = 1;
+    string update_time = 2;
+    string result_code = 3;
+}
+
+
+message GetCashiersRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string servicer_no = 3;
+    string servicer_acc_no = 4;
+}
+
+message GetCashiersReply {
+    int32 total = 1;
+    repeated CashierData datas = 2;
+    string result_code = 3;
+}
+
+message CashierData {
+    string account = 1; //店员账号
+    string phone = 2;
+    string nickname = 3;
+    string ser_account = 4; //所属服务商账号
+    string create_time = 5;
+    string cashier_no = 6;
+    //    string cashier_acc_no =7;
+}
+
+message GetCashierDetailRequest {
+    string cashier_no = 1;
+}
+
+message GetCashierDetailReply {
+    CashierData datas = 1;
+    string result_code = 2;
+}
+
+message DeleteCashierRequest {
+    string cashier_no = 1;
+    string login_uid = 2;
+    string servicer_acc_no = 3;
+}
+
+message DeleteCashierReply {
+    string result_code = 2;
+}
+
+message ModifyCashierRequest {
+    string cashier_no = 1;
+    string phone = 2;
+}
+
+message ModifyCashierReply {
+    string result_code = 2;
+}
+
+message GetCommonHelpCountRequest {
+    string cashier_no = 1;
+    string phone = 2;
+}
+
+message GetCommonHelpCountReply {
+    repeated CommonHelpCountData datas = 1;
+    string result_code = 2;
+}
+
+message CommonHelpCountData {
+    string sum_total = 1; //总计
+    string disable_total = 2; //禁用数量
+    string enable = 3; //启用数量
+    string lang = 4; //语言
+    string vs_type = 5; //0-app;1-pos;
+}
+
+message GetAppConsultationConfigDetailRequest {
+    string lang = 1;
+}
+
+message GetAppConsultationConfigDetailReply {
+    repeated ConsultationConfigData datas = 1;
+    string result_code = 2;
+}
+
+message SwapConsultationIdxRequest {
+    string id = 1;
+    string idx = 2;
+    string swap_type = 3;
+    string lang = 4;
+}
+message SwapConsultationIdxReply {
+    string result_code = 1;
+}
+
+
+message GetPosChannelsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string channel_name = 3;
+}
+
+message GetPosChannelsReply {
+    string result_code = 1;
+    repeated PosChannelData datas = 2;
+    int32 total = 3;
+}
+
+message PosChannelData {
+    string channel_no = 1;
+    string channel_name = 2;
+    string is_recom = 3;
+    string create_time = 4;
+    string is_delete = 5;
+    string currency_type = 6;
+    string use_status = 7;
+    string idx = 8;
+    string logo_img_no = 9;
+    string logo_img_url = 10;
+    string logo_img = 11; //图片base64字符串
+    string id = 12; //
+    //灰色图片的
+    string logo_img_no_grey = 13;
+    string logo_img_url_grey = 14;
+    string logo_img_grey = 15; //图片base64字符串
+}
+
+
+message InsertPosChannelRequest {
+    string channel_no = 1;
+    string is_recom = 2;
+    string currency_type = 3;
+    string login_uid = 4;
+}
+
+message InsertPosChannelReply {
+    string result_code = 1;
+}
+
+
+message DeletePosChannelRequest {
+    string id = 1;
+    string login_uid = 2;
+}
+
+message DeletePosChannelReply {
+    string result_code = 1;
+}
+
+message ModifyChannelPosIsRecomRequest {
+    string id = 1;
+    string is_recom = 2;
+    string login_uid = 3;
+}
+
+message ModifyChannelPosIsRecomReply {
+    string result_code = 1;
+}
+
+
+message GetUseChannelsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string channel_name = 3;
+    string currency_type = 4;
+    string channel_type = 5;
+}
+
+message GetUseChannelsReply {
+    string result_code = 1;
+    repeated UseChannelData datas = 2;
+    int32 total = 3;
+}
+
+message UseChannelData {
+    string channel_no = 1;
+    string channel_name = 2;
+    string is_recom = 3;
+    string create_time = 4;
+    string is_delete = 5;
+
+    string currency_type = 6;
+    string use_status = 7;
+    string idx = 8;
+    string logo_img_no = 9;
+    string logo_img_url = 10;
+
+    string logo_img = 11; //图片base64字符串
+    string id = 12; //
+    string save_rate = 13; //存款手续费率
+    string withdraw_rate = 14; //提现手续费率
+    string withdraw_max_amount = 15; //单笔提现最大金额
+
+    string save_single_min_fee = 16; //存款单笔手续费
+    string withdraw_single_min_fee = 17; //提现单笔手续费
+    string save_charge_type = 18; //存款计算手续费类型(1-按比例收取手续费，2按单笔手续费收取)
+    string withdraw_charge_type = 19; //提现计算手续费类型(1-按比例收取手续费，2按单笔手续费收取)
+    string support_type = 20; //该渠道支持的业务类型（1-只支持存款，2只支持取款，3两个都支持）
+
+    string save_max_amount = 21; //单笔存款最大金额
+
+    //灰色图片
+    string logo_img_no_grey = 22;
+    string logo_img_url_grey = 23;
+    string logo_img_grey = 24; //图片base64字符串
+
+    string channel_type = 25; //渠道类型（1-普通渠道，2-第三方渠道）
+
+}
+
+
+message InsertUseChannelRequest {
+    string channel_no = 1;
+    string currency_type = 2;
+    string id = 3;
+    string support_type = 4; //该渠道支持的业务类型（1-只支持存款，2只支持取款，3两个都支持）
+
+    string save_rate = 6; //存款手续费率
+    string save_single_min_fee = 7; //存款单笔手续费
+    string save_max_amount = 8; //单笔存款最大金额
+    string save_charge_type = 9; //存款计算手续费类型(1-按比例收取手续费，2按单笔手续费收取)
+
+    string withdraw_rate = 10; //提现手续费率
+    string withdraw_single_min_fee = 11; //提现单笔手续费
+    string withdraw_max_amount = 12; //单笔提现最大金额
+    string withdraw_charge_type = 13; //提现计算手续费类型(1-按比例收取手续费，2按单笔手续费收取)
+
+    string login_uid = 14;
+}
+
+message InsertUseChannelReply {
+    string result_code = 1;
+}
+
+
+message DeleteUseChannelRequest {
+    string id = 1;
+    string login_uid = 2;
+}
+
+message DeleteUseChannelReply {
+    string result_code = 1;
+}
+
+
+message ModifyUseChannelStatusRequest {
+    string id = 1;
+    string use_status = 2;
+    string login_uid = 3;
+}
+
+message ModifyUseChannelStatusReply {
+    string result_code = 1;
+}
+
+message GetUseChannelDetailRequest {
+    string id = 1;
+}
+
+message GetUseChannelDetailReply {
+    UseChannelData data = 1;
+    string result_code = 2;
+}
+
+message GetUseChannelListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string currency_type = 3;
+}
+
+message GetUseChannelListReply {
+    string result_code = 1;
+    repeated ChannelDataSimple datas = 2;
+    int32 total = 3;
+}
+
+message GetNearbyServicerListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string lat = 3; //当前纬度
+    string lng = 4; //当前经度
+    string account_uid = 5;
+}
+
+message GetNearbyServicerListReply {
+    string result_code = 1;
+    repeated NearbyServicerData datas = 2;
+    int32 total = 3;
+}
+
+message NearbyServicerData {
+    string lat = 1;
+    string lng = 2;
+    string servicer_no = 3;
+    string servicer_name = 4; //服务网点名称
+    string distance = 5;
+}
+
+message GetToCustListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string log_no = 5;
+    string order_status = 6;
+    string account = 7;
+    string account_uid = 8;
+}
+
+message GetToCustListReply {
+    string result_code = 1;
+    repeated ToCustData datas = 2;
+    int32 total = 3;
+}
+
+message ToCustData {
+    string log_no = 1;
+    string currency_type = 2;
+    string cust_no = 3;
+    string collection_type = 4; //服务网点名称
+    string card_no = 5;
+
+    string amount = 6;
+    string create_time = 7;
+    string order_type = 9;
+    string order_status = 10;
+
+    string finish_time = 11;
+    string motify_time = 12;
+    string lat = 13;
+    string lng = 14;
+    string fees = 15;
+
+    string ip = 16;
+    string image_id = 17;
+
+
+    string account = 18; //用户账号
+    string card_number = 19; //用户收款卡号
+    string name = 20; //用户收款卡的收款名
+
+    string op_type = 21;
+    string channel_name = 22;
+}
+
+message GetCustToHeadquartersListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string log_no = 5;
+    string order_status = 6;
+    string account = 7;
+    string account_uid = 8;
+}
+
+message GetCustToHeadquartersListReply {
+    string result_code = 1;
+    repeated CustToHeadquartersData datas = 2;
+    int32 total = 3;
+}
+
+message CustToHeadquartersData {
+    string log_no = 1;
+    string currency_type = 2;
+    string cust_no = 3;
+    string collection_type = 4; //服务网点名称
+    string card_no = 5;
+
+    string amount = 6;
+    string create_time = 7;
+    string order_type = 9;
+    string order_status = 10;
+
+    string finish_time = 11;
+    string motify_time = 12;
+    string lat = 13;
+    string lng = 14;
+    string fees = 15;
+
+    string ip = 16;
+    string image_id = 17;
+    string account = 18; //用户账号
+    string card_number = 19; //总部收款的卡号
+    string name = 20; //总部收款卡的收款名
+    string op_type = 21;
+    string channel_name = 22; //渠道名称
+}
+
+message GetClientInfosRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string client_type = 3; //cust还是servicer的
+    string id = 4;
+    string platform = 5;
+    string uuid = 6;
+    string account = 7;
+}
+
+message GetClientInfosReply {
+    string result_code = 1;
+    repeated ClientInfoData datas = 2;
+    int32 total = 3;
+}
+
+message ClientInfoData {
+    string id = 1;
+    string device_brand = 2;
+    string device_model = 3;
+    string resolution = 4;
+    string screen_size = 5;
+
+    string imei1 = 6;
+    string imei2 = 7;
+    string system_ver = 8;
+    string create_time = 9;
+    string upload_point = 10;
+
+    string user_agent = 11;
+    string platform = 12;
+    string app_ver = 13;
+    string account = 14;
+    string uuid = 15;
+}
+
+message GetLogToCustsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string currency_type = 3;
+    string account_uid = 4;
+}
+
+message GetLogToCustsReply {
+    string result_code = 1;
+    repeated ToCustData datas = 2;
+    int32 total = 3;
+}
+
+message GetLogCustToHeadquartersRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string currency_type = 3;
+    string account_uid = 4;
+}
+
+message GetLogCustToHeadquartersReply {
+    string result_code = 1;
+    repeated CustToHeadquartersData datas = 2;
+    int32 total = 3;
+}
+
+
+message GetLogAccountsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string log_type = 5; //web、cli_app、cli_pos的
+    string log_no = 6;
+    string type = 7;
+    string account = 8;
+}
+
+message GetLogAccountsReply {
+    string result_code = 1;
+    repeated LogAccountData datas = 2;
+    int32 total = 3;
+}
+
+message LogAccountData {
+    string log_no = 1;
+    string description = 2;
+    string account_uid = 3;
+    string create_time = 4;
+    string type = 5;
+    string account = 6;
+    string account_type = 7;
+}
+
+message GetPushConfsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string use_status = 5;
+    string pusher = 6;
+}
+
+message GetPushConfsReply {
+    string result_code = 1;
+    repeated PushConfData datas = 2;
+    int32 total = 3;
+}
+
+message InsertOrUpdatePushConfsRequest {
+    string pusher = 1;
+    string config = 2;
+    string use_status = 3;
+    string pusher_no = 4;
+    string login_uid = 5;
+    string condition_type = 6;
+    string condition_value = 7;
+}
+
+message InsertOrUpdatePushConfsReply {
+    string result_code = 1;
+}
+
+message DeletePushConfRequest {
+    string pusher_no = 1;
+    string login_uid = 2;
+}
+
+message DeletePushConfReply {
+    string result_code = 1;
+}
+message ModifyPushConfStatusRequest {
+    string pusher_no = 1;
+    string use_status = 2;
+    string login_uid = 3;
+}
+
+message ModifyPushConfStatusReply {
+    string result_code = 1;
+}
+message GetPushConfRequest {
+    string pusher_no = 1;
+}
+
+message GetPushConfReply {
+    string result_code = 1;
+    PushConfData data = 2;
+
+}
+
+message PushConfData {
+    string pusher = 1;
+    string config = 2;
+    string use_status = 3;
+    string create_time = 4;
+    string update_time = 5;
+    string pusher_no = 6;
+    string condition_type = 7; //条件类型(0:没有条件,1:国家码条件)
+    string condition_value = 8; //条件值(condition_type=1时有: 855|86)
+}
+
+message GetPushRecordsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string status = 5;
+}
+
+message GetPushRecordsReply {
+    string result_code = 1;
+    repeated PushRecordData datas = 2;
+    int32 total = 3;
+}
+
+message PushRecordData {
+    string id = 1;
+    string business = 2;
+    string phone = 3;
+    string content = 4;
+    string status = 5;
+    string create_time = 6;
+    string push_no = 7;
+    string temp_no = 8;
+    string message = 9;
+}
+
+message GetPushTempsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+}
+
+message GetPushTempsReply {
+    string result_code = 1;
+    repeated PushTempData datas = 2;
+    int32 total = 3;
+}
+
+message PushTempData {
+    string temp_no = 1;
+    string push_nos = 2;
+    string title_key = 3;
+    string content_key = 4;
+    string len_args = 5;
+    string push_nos2 = 6;
+}
+
+message GetPushTempRequest {
+    string temp_no = 1;
+}
+
+message GetPushTempReply {
+    string result_code = 1;
+    PushTempData data = 2;
+
+}
+
+message InsertOrUpdatePushTempRequest {
+    string temp_no = 1;
+    string push_nos = 2;
+    string title_key = 3;
+    string content_key = 4;
+    string len_args = 5;
+    int32 op_type = 6; // 1-新增,2-更改
+    string login_uid = 7;
+}
+
+message InsertOrUpdatePushTempReply {
+    string result_code = 1;
+}
+
+message GetEventsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+}
+
+message GetEventsReply {
+    string result_code = 1;
+    repeated EventData datas = 2;
+    int32 total = 3;
+}
+message GetEventRequest {
+    string event_no = 1;
+}
+
+message GetEventReply {
+    string result_code = 1;
+    EventData data = 2;
+}
+
+message EventData {
+    string event_no = 1;
+    string event_name = 2;
+    string create_time = 3;
+    string is_delete = 4;
+}
+
+message InsertOrUpdateEventRequest {
+    string event_no = 1;
+    string event_name = 2;
+}
+
+message InsertOrUpdateEventReply {
+    string result_code = 1;
+}
+message DeleteEventRequest {
+    string event_no = 1;
+}
+
+message DeleteEventReply {
+    string result_code = 1;
+}
+
+
+message GetEvaParamsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+}
+
+message GetEvaParamsReply {
+    string result_code = 1;
+    repeated EvaParamsData datas = 2;
+    int32 total = 3;
+}
+message InsertOrUpdateEvaParamRequest {
+    string key = 1;
+    string val = 2;
+}
+
+message InsertOrUpdateEvaParamReply {
+    string result_code = 1;
+}
+message DeleteEvaParamRequest {
+    string key = 1;
+}
+
+message DeleteEvaParamReply {
+    string result_code = 1;
+}
+message EvaParamsData {
+    string key = 1;
+    string val = 2;
+}
+
+message GetGlobalParamRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+}
+
+message GetGlobalParamReply {
+    string result_code = 1;
+    repeated GlobalParamData datas = 2;
+    int32 total = 3;
+}
+message InsertOrUpdateGlobalParamRequest {
+    string param_key = 1;
+    string param_value = 2;
+    string remark = 3;
+}
+
+message InsertOrUpdateGlobalParamReply {
+    string result_code = 1;
+}
+message DeleteGlobalParamRequest {
+    string param_key = 1;
+}
+
+message DeleteGlobalParamReply {
+    string result_code = 1;
+}
+
+message GlobalParamData {
+    string param_key = 1;
+    string param_value = 2;
+    string remark = 3;
+}
+message GetLogResultsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+}
+
+message GetLogResultsReply {
+    string result_code = 1;
+    repeated LogResultsData datas = 2;
+    int32 total = 3;
+}
+
+message LogResultsData {
+    string log_no = 1;
+    string event_no = 2;
+    string rule_no = 3;
+    string op_no = 4;
+    string result = 5;
+}
+message GetOpsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+}
+
+message GetOpsReply {
+    string result_code = 1;
+    repeated OpData datas = 2;
+    int32 total = 3;
+}
+message GetOpRequest {
+    string op_no = 1;
+}
+
+message GetOpReply {
+    string result_code = 1;
+    OpData data = 2;
+}
+message InsertOrUpdateOpRequest {
+    string op_no = 1;
+    string op_name = 2;
+    string script_name = 3;
+    string param = 4;
+    string score = 5;
+}
+
+message InsertOrUpdateOpReply {
+    string result_code = 1;
+    OpData data = 2;
+}
+message DeleteOpRequest {
+    string op_no = 1;
+}
+
+message DeleteOpReply {
+    string result_code = 1;
+}
+message OpData {
+    string op_no = 1;
+    string op_name = 2;
+    string script_name = 3;
+    string param = 4;
+    string is_delete = 5;
+    string score = 6;
+}
+
+message GetRelaApiEventsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+}
+
+message GetRelaApiEventsReply {
+    string result_code = 1;
+    repeated RelaApiEventData datas = 2;
+    int32 total = 3;
+}
+
+message InsertOrUpdateRelaApiEventRequest {
+    string api_type = 1;
+    string event_no = 2;
+}
+
+message InsertOrUpdateRelaApiEventReply {
+    string result_code = 1;
+}
+message DeleteRelaApiEventRequest {
+    string api_type = 1;
+}
+
+message DeleteRelaApiEventReply {
+    string result_code = 1;
+}
+message RelaApiEventData {
+    string api_type = 1;
+    string event_no = 2;
+    string create_time = 3;
+}
+
+message GetRelaEventRulesRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+}
+
+message GetRelaEventRulesReply {
+    string result_code = 1;
+    repeated RelaEventRuleData datas = 2;
+    int32 total = 3;
+}
+message InsertOrUpdateRelaEventRuleRequest {
+    string rela_no = 1;
+    string event_no = 2;
+    string rule_no = 3;
+}
+
+message InsertOrUpdateRelaEventRuleReply {
+    string result_code = 1;
+}
+message DeleteRelaEventRuleRequest {
+    string rela_no = 1;
+}
+
+message DeleteRelaEventRuleReply {
+    string result_code = 1;
+}
+message RelaEventRuleData {
+    string rela_no = 1;
+    string event_no = 2;
+    string rule_no = 3;
+    string create_time = 4;
+}
+
+message GetRiskThresholdsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+}
+
+message GetRiskThresholdsReply {
+    string result_code = 1;
+    repeated RiskThresholdData datas = 2;
+    int32 total = 3;
+}
+message InsertOrUpdateRiskThresholdRequest {
+    string rule_no = 1;
+    string risk_threshold = 2;
+}
+
+message InsertOrUpdateRiskThresholdReply {
+    string result_code = 1;
+}
+message DeleteRiskThresholdRequest {
+    string rule_no = 1;
+}
+
+message DeleteRiskThresholdReply {
+    string result_code = 1;
+}
+message RiskThresholdData {
+    string rule_no = 1;
+    string risk_threshold = 2;
+    string create_time = 3;
+    string is_delete = 4;
+}
+
+message GetRulesRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+}
+
+message GetRulesReply {
+    string result_code = 1;
+    repeated RuleData datas = 2;
+    int32 total = 3;
+}
+message GetRuleRequest {
+    string rule_no = 1;
+}
+
+message GetRuleReply {
+    string result_code = 1;
+    RuleData data = 2;
+}
+message InsertOrUpdateRuleRequest {
+    string rule_no = 1;
+    string rule_name = 2;
+    string rule = 3;
+}
+
+message InsertOrUpdateRuleReply {
+    string result_code = 1;
+}
+message DeleteRuleRequest {
+    string rule_no = 1;
+}
+
+message DeleteRuleReply {
+    string result_code = 1;
+}
+
+message RuleData {
+    string rule_no = 1;
+    string rule_name = 2;
+    string rule = 3;
+    string create_time = 4;
+    string is_delete = 5;
+}
+
+message GetAuthMaterialsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string auth_material_no = 5;
+    string account = 6;
+    string status = 7;
+}
+
+message GetAuthMaterialsReply {
+    string result_code = 1;
+    int32 total = 2;
+    repeated AuthMaterialData datas = 3;
+}
+
+
+message GetAuthMaterialBusinessListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string auth_material_no = 5;
+    string account = 6;
+    string status = 7;
+}
+
+message GetAuthMaterialBusinessListReply {
+    string result_code = 1;
+    int32 total = 2;
+    repeated AuthMaterialBusinessData datas = 3;
+}
+
+message GetAuthMaterialEnterpriseListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string auth_material_no = 5;
+    string account = 6;
+    string status = 7;
+}
+
+message GetAuthMaterialEnterpriseListReply {
+    string result_code = 1;
+    int32 total = 2;
+    repeated AuthMaterialEnterpriseData datas = 3;
+}
+
+
+message ModifyAuthMaterialStatusRequest {
+    string auth_material_no = 1;
+    string status = 2;
+    string account_uid = 3; //该条认证信息的账号uid
+    string login_uid = 4;
+}
+
+message ModifyAuthMaterialStatusReply {
+    string result_code = 1;
+}
+
+message ModifyAuthMaterialBusinessStatusRequest {
+    string auth_material_no = 1;
+    string status = 2;
+    string login_uid = 3;
+}
+
+message ModifyAuthMaterialBusinessStatusReply {
+    string result_code = 1;
+}
+
+message ModifyAuthMaterialEnterpriseStatusRequest {
+    string auth_material_no = 1;
+    string status = 2;
+    string account_uid = 3; //该条认证信息的账号uid
+    string login_uid = 4;
+}
+
+message ModifyAuthMaterialEnterpriseStatusReply {
+    string result_code = 1;
+}
+
+message AuthMaterialData {
+    string auth_material_no = 1;
+    string front_img_no = 2;
+    string back_img_no = 3;
+    string auth_name = 4;
+    string auth_number = 5;
+    string create_time = 6;
+    string account_uid = 7;
+    string status = 8;
+
+    string account = 9;
+}
+
+
+message AddAuthMaterialInfoRequest {
+    string front_img_no = 1;
+    string back_img_no = 2;
+    string auth_name = 3;
+    string auth_number = 4;
+    string account_uid = 5;
+}
+
+message AddAuthMaterialInfoReply {
+    string result_code = 1;
+}
+
+message GetAuthMaterialInfoRequest {
+    string front_img_no = 1;
+    string back_img_no = 2;
+    string auth_name = 3;
+    string auth_number = 4;
+    string account_uid = 5;
+}
+
+message GetAuthMaterialInfoReply {
+    string result_code = 1;
+    AuthMaterialData data = 2;
+}
+
+
+message CustOutgoBillsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string currency_type = 3;
+    string account_uid = 4;
+}
+
+message CustOutgoBillsReply {
+    string result_code = 1;
+    repeated CustOutgoBillData datas = 2;
+    int32 total = 3;
+}
+
+message CustOutgoBillData {
+    string log_no = 1;
+    string amount = 2;
+    string create_time = 3;
+    string order_status = 4;
+    string currency_type = 5;
+    string fees = 6;
+    string op_type = 7;
+    string order_type = 8;
+    string finish_time = 9;
+}
+
+message CustIncomeBillsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string currency_type = 3;
+    string account_uid = 4;
+}
+
+message CustIncomeBillsReply {
+    string result_code = 1;
+    repeated CustIncomeBillData datas = 2;
+    int32 total = 3;
+}
+
+message CustIncomeBillData {
+    string log_no = 1;
+    string amount = 2;
+    string create_time = 3;
+    string order_status = 4;
+    string currency_type = 5;
+    string fees = 6;
+    string op_type = 7;
+    string order_type = 8;
+    string finish_time = 9;
+}
+
+//==============获取统计数据-用户兑换-列表===============
+message GetStatisticUserExchangeListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    // 开始日期
+    string start_date = 3;
+    // 结束日期
+    string end_date = 4;
+}
+message GetStatisticUserExchangeListReply {
+    string result_code = 1;
+    string msg = 2;
+    repeated StatisticUserExchangeData data_list = 4;
+    int32 total = 5;
+}
+message StatisticUserExchangeData {
+    string id = 1;
+    string date = 2;
+    string usd2khr_num = 3;
+    string usd2khr_amount = 4;
+    string usd2khr_fee = 5;
+    string khr2usd_num = 6;
+    string khr2usd_amount = 7;
+    string khr2usd_fee = 8;
+    string create_time = 9;
+    string update_time = 10;
+}
+//===================================================
+
+//============获取统计数据-用户兑换-用来展示统计图表=====
+message GetStatisticUserExchangeRequest {
+    string start_date = 2;
+    string end_date = 3;
+}
+message GetStatisticUserExchangeReply {
+    string result_code = 1;
+    string msg = 2;
+    repeated string date_list = 3;
+    repeated sint64 usd2khr_num_list = 4;
+    repeated sint64 usd2khr_amount_list = 5;
+    repeated sint64 usd2khr_fee_list = 6;
+    repeated sint64 khr2usd_num_list = 7;
+    repeated sint64 khr2usd_amount_list = 8;
+    repeated sint64 khr2usd_fee_list = 9;
+}
+//====================================================
+
+//==============获取统计数据-用户转账-列表===============
+message GetStatisticUserTransferListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    // 开始日期
+    string start_date = 3;
+    // 结束日期
+    string end_date = 4;
+    // 币种
+    string currency_type = 5;
+}
+message GetStatisticUserTransferListReply {
+    string result_code = 1;
+    string msg = 2;
+    repeated StatisticUserTransferData data_list = 4;
+    int32 total = 5;
+}
+message StatisticUserTransferData {
+    string id = 1;
+    string date = 2;
+    string currency_type = 3;
+    string num = 4;
+    string amount = 5;
+    string fee = 6;
+    string create_time = 7;
+    string update_time = 8;
+}
+//===================================================
+
+//============获取统计数据-用户转账-用来展示统计图表=====
+message GetStatisticUserTransferRequest {
+    string start_date = 2;
+    string end_date = 3;
+}
+message GetStatisticUserTransferReply {
+    string result_code = 1;
+    string msg = 2;
+    repeated string date_list = 3;
+    repeated sint64 usd_num_list = 4;
+    repeated sint64 khr_num_list = 5;
+    repeated sint64 usd_amount_list = 6;
+    repeated sint64 khr_amount_list = 7;
+    repeated sint64 usd_fee_list = 8;
+    repeated sint64 khr_fee_list = 9;
+}
+//====================================================
+
+//==============获取统计数据-用户充值-列表===============
+message GetStatisticUserRechargeListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    // 开始日期
+    string start_date = 3;
+    // 结束日期
+    string end_date = 4;
+    // 充值类型
+    string recharge_type = 5;
+    // 币种
+    string currency_type = 6;
+}
+message GetStatisticUserRechargeListReply {
+    string result_code = 1;
+    string msg = 2;
+    repeated StatisticUserRechargeData data_list = 4;
+    int32 total = 5;
+}
+message StatisticUserRechargeData {
+    string id = 1;
+    string date = 2;
+    string recharge_type = 3;
+    string currency_type = 4;
+    string num = 5;
+    string amount = 6;
+    string fee = 7;
+    string create_time = 8;
+    string update_time = 9;
+}
+//===================================================
+
+//============获取统计数据-用户充值-用来展示统计图表=====
+message GetStatisticUserRechargeRequest {
+    string start_date = 2;
+    string end_date = 3;
+}
+message GetStatisticUserRechargeReply {
+    string result_code = 1;
+    string msg = 2;
+    repeated string date_list = 3;
+    repeated sint64 usd_num_list = 4;
+    repeated sint64 khr_num_list = 5;
+    repeated sint64 usd_amount_list = 6;
+    repeated sint64 khr_amount_list = 7;
+    repeated sint64 usd_fee_list = 8;
+    repeated sint64 khr_fee_list = 9;
+}
+//====================================================
+
+//==============获取统计数据-用户提现-列表===============
+message GetStatisticUserWithdrawListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    // 开始日期
+    string start_date = 3;
+    // 结束日期
+    string end_date = 4;
+    // 提现类型
+    string withdraw_type = 5;
+    // 币种
+    string currency_type = 6;
+}
+message GetStatisticUserWithdrawListReply {
+    string result_code = 1;
+    string msg = 2;
+    repeated StatisticUserWithdrawData data_list = 4;
+    int32 total = 5;
+}
+message StatisticUserWithdrawData {
+    string id = 1;
+    string date = 2;
+    string withdraw_type = 3;
+    string currency_type = 4;
+    string num = 5;
+    string amount = 6;
+    string fee = 7;
+    string create_time = 8;
+    string update_time = 9;
+}
+//========================================================
+
+//============获取统计数据-用户提现-用来展示统计图表==========
+message GetStatisticUserWithdrawRequest {
+    string start_date = 2;
+    string end_date = 3;
+}
+message GetStatisticUserWithdrawReply {
+    string result_code = 1;
+    string msg = 2;
+    repeated string date_list = 3;
+    repeated sint64 usd_num_list = 4;
+    repeated sint64 khr_num_list = 5;
+    repeated sint64 usd_amount_list = 6;
+    repeated sint64 khr_amount_list = 7;
+    repeated sint64 usd_fee_list = 8;
+    repeated sint64 khr_fee_list = 9;
+}
+//========================================================
+
+//============获取统计数据-按天统计-用来展示统计图表==========
+message GetStatisticDateRequest {
+    string start_date = 2;
+    string end_date = 3;
+}
+message GetStatisticDateReply {
+    string result_code = 1;
+    string msg = 2;
+    repeated string date_list = 3;
+    repeated sint64 reg_user_num_list = 4;
+    repeated sint64 reg_servicer_num_list = 5;
+}
+//========================================================
+
+//==============获取统计数据-按天统计-列表===============
+message GetStatisticDateListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    // 开始日期
+    string start_date = 3;
+    // 结束日期
+    string end_date = 4;
+}
+message GetStatisticDateListReply {
+    string result_code = 1;
+    string msg = 2;
+    repeated StatisticDateData data_list = 3;
+    int32 total = 4;
+}
+message StatisticDateData {
+    string id = 1;
+    string date = 2;
+    string create_time = 3;
+    string update_time = 4;
+    string reg_user_num = 5;
+    string reg_servicer_num = 6;
+}
+//========================================================
+
+//============重新统计-统计数据=============================
+message ReStatisticRequest {
+    string type = 1;
+    string start_date = 2;
+    string end_date = 3;
+}
+message ReStatisticReply {
+    string result_code = 1;
+    string msg = 2;
+}
+//========================================================
+
+message DeletePushTempRequest {
+    string temp_no = 1;
+    string login_uid = 2;
+}
+
+message DeletePushTempReply {
+    string result_code = 1;
+}
+
+//============获取统计数据-用户资金总留存-用来展示统计图表=====
+message GetStatisticUserMoneyRequest {
+    string start_time = 1;
+    string end_time = 2;
+}
+message GetStatisticUserMoneyReply {
+    string result_code = 1;
+    string msg = 2;
+    repeated string time_list = 3;
+    repeated sint64 usd_balance_list = 4;
+    repeated sint64 khr_balance_list = 5;
+    repeated sint64 usd_frozen_balance_list = 6;
+    repeated sint64 khr_frozen_balance_list = 7;
+}
+//====================================================
+
+//==============获取统计数据-用户资金总留存-列表===============
+message GetStatisticUserMoneyListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    // 开始日期
+    string start_time = 3;
+    // 结束日期
+    string end_time = 4;
+}
+message GetStatisticUserMoneyListReply {
+    string result_code = 1;
+    string msg = 2;
+    repeated StatisticUserMoneyData data_list = 3;
+    int32 total = 4;
+}
+message StatisticUserMoneyData {
+    string id = 1;
+    string create_time = 2;
+    string usd_balance = 3;
+    string khr_balance = 4;
+    string khr_frozen_balance = 5;
+    string usd_frozen_balance = 6;
+    string update_time = 7;
+}
+
+message MerchantData {
+    string merchant_name = 1;
+    string merchant_account = 2;
+    string merchant_no = 3;
+    string merchant_type = 4;
+    string agency_name = 5;
+    string use_status = 6;
+
+    string auth_status = 7;
+    string recharge_auth = 8;
+    string create_time = 9;
+    string phone = 10;
+    string agency_no = 11;
+
+    string amount = 12;
+    string frozen_amount = 13;
+    string margin_status = 14;
+    string min_amount = 15;
+    string max_amount = 16;
+    string ip_whitelist = 17;
+
+    string sign_method = 18;
+}
+message MerchantCountData {
+    // 要有商户数量、代理数量、可提现金额、冻结金额、已结算保证金、冻结保证金
+    string merchant_total = 1;
+    string agency_total = 2;
+    string balance = 3;
+    string frozen_balance = 4;
+    string deposit = 5;
+    string frozen_deposit = 6;
+}
+
+
+message AddAuthMaterialBusinessRequest {
+    //    string img_base64 = 1;
+    string img_id = 1;
+    string auth_name = 2;
+    string auth_number = 3;
+    string account_uid = 4;
+    string start_date = 5;
+
+    string end_date = 6;
+    string term_type = 7;
+    string simplify_name = 8;
+    string industry_no = 9; //经营类目id
+}
+
+message AddAuthMaterialBusinessReply {
+    string result_code = 1;
+    string msg = 2;
+}
+
+message AddAuthMaterialEnterpriseRequest {
+    string img_base64 = 1;
+    string auth_name = 2;
+    string auth_number = 3;
+    string account_uid = 4;
+    string start_date = 5;
+
+    string end_date = 6;
+    string term_type = 7;
+    string addr = 8;
+    string simplify_name = 9;
+}
+
+message AddAuthMaterialEnterpriseReply {
+    string result_code = 1;
+    string msg = 2;
+}
+
+message GetAuthMaterialBusinessDetailRequest {
+    string account_uid = 1;
+}
+
+message GetAuthMaterialBusinessDetailReply {
+    string result_code = 1;
+    AuthMaterialBusinessData data = 2;
+}
+
+message AuthMaterialBusinessData {
+    string auth_material_no = 1;
+    string license_img_no = 2;
+    string auth_name = 3;
+    string auth_number = 4;
+    string account_uid = 5;
+
+    string start_date = 6;
+    string end_date = 7;
+    string create_time = 8;
+    string status = 9;
+    string term_type = 10;
+
+    string addr = 11;
+    string account = 12;
+    string auth_time = 13;
+    string simplify_name = 14; //商家简称
+    string update_status = 15; //修改简称的审核状态
+    string industry_no = 16; //行业类目
+    string industry_name = 17; //行业类目名称
+    string up_industry_no = 18; //行业类目父id
+}
+
+message GetAuthMaterialEnterpriseDetailRequest {
+    string account_uid = 1;
+}
+
+message GetAuthMaterialEnterpriseDetailReply {
+    string result_code = 1;
+    AuthMaterialEnterpriseData data = 2;
+}
+
+message AuthMaterialEnterpriseData {
+    string auth_material_no = 1;
+    string license_img_no = 2;
+    string auth_name = 3;
+    string auth_number = 4;
+    string account_uid = 5;
+
+    string start_date = 6;
+    string end_date = 7;
+    string create_time = 8;
+    string status = 9;
+    string term_type = 10;
+
+    string addr = 11;
+    string account = 12;
+    string auth_time = 13;
+    string simplify_name = 14;
+    string update_status = 15;
+}
+
+message GetBusinessAccountHomeRequest {
+    string account_uid = 1;
+    string acc_type = 2;
+    string iden_no = 3;
+}
+
+message GetBusinessAccountHomeReply {
+    string result_code = 1;
+    BusinessData business_data = 2; //商户信息
+    BusinessWalletData wallet_data = 3; //商家钱包
+    BusinessBillsSumData sum_data = 4; //交易统计(订单统计)
+    //公告
+}
+
+message BusinessWalletData {
+    string usd_balance = 1;
+    string khr_balance = 2;
+    string usd_frozen_balance = 3;
+    string khr_frozen_balance = 4;
+}
+
+message BusinessBillsSumData {
+    string usd_cnt = 1;
+    string usd_sum = 2;
+    string khr_cnt = 3;
+    string khr_sum = 4;
+    string refund_usd_sum = 5;
+    string refund_khr_sum = 6;
+}
+
+message GetBusinessBaseInfoRequest {
+    string account_uid = 1;
+    string acc_type = 2;
+}
+
+message GetBusinessBaseInfoReply {
+    BusinessData data = 2; //商户信息
+    string result_code = 1;
+}
+message UpdateBusinessBaseInfoRequest {
+    string account_uid = 1;
+    string main_industry = 2; //主要行业应用
+    string main_business = 3; //主营业务
+    string contact_person = 4; //联系人
+    string contact_phone = 5; //联系电话
+    string country_code = 6; //连续电话的国家码
+}
+
+message UpdateBusinessBaseInfoReply {
+    string result_code = 1;
+}
+
+message BusinessData {
+    string business_no = 1;
+    string account_no = 2;
+    string create_time = 3;
+    string use_status = 4;
+    string full_name = 5; //商家全称
+    string business_id = 6;
+    string business_type = 7; //商家类型（7个人商家，8企业商家）
+    string main_industry = 8; //主要行业应用id
+    string up_main_industry = 9; //主要行业应用父id
+    string main_business = 10; //主营业务
+    string contact_person = 11; //联系人
+    string contact_phone = 12; //联系电话
+
+    string income_authorization = 13; //收款权限,0-禁用;1-开
+    string outgo_authorization = 14; //出款权限,0-禁用;1-开
+
+    string usd_balance = 15; //已结算余额
+    string khr_balance = 16;
+    string usd_frozen_balance = 17; //未结束金额
+    string khr_frozen_balance = 18;
+
+    string account = 19; //商家账号
+    string auth_status = 20; //认证状态
+    string email = 21;
+    string phone = 22; //手机号
+    string country_code = 23; //国家码
+}
+
+message SendMailRequest {
+    string email = 1;
+    string function = 2;
+    string lang = 3;
+}
+
+message SendMailReply {
+    string result_code = 1;
+}
+
+message CheckMailCodeRequest {
+    string mail = 1;
+    string function = 2;
+    string mail_code = 3; //邮箱收到的验证码
+}
+
+message CheckMailCodeReply {
+    string result_code = 1;
+}
+
+message CheckMailRequest {
+    string email = 1;
+}
+
+message CheckMailReply {
+    string result_code = 1;
+}
+
+message DelBusinessCardRequest {
+    string card_no = 1;
+    string login_uid = 2;
+}
+
+message DelBusinessCardReply {
+    string result_code = 1;
+}
+
+message GetMainIndustryCascaderDatasRequest {
+    string lang = 1;
+}
+
+message GetMainIndustryCascaderDatasReply {
+    string result_code = 1;
+    repeated MainIndustryCascaderData datas = 2;
+}
+
+message MainIndustryCascaderData {
+    string value = 1;
+    string label = 2;
+    repeated MainIndustryCascaderData children = 3;
+}
+
+message MainIndustryData {
+    string code = 1;
+    string name_ch = 2;
+    string name_en = 3;
+    string name_km = 4;
+    string level = 5;
+
+    string up_code = 6;
+    string create_time = 7;
+    string modify_time = 8;
+}
+
+message AddBusinessToHeadRequest {
+    string account_uid = 1;
+    string account_type = 2;
+    string card_no = 3;
+    string amount = 4;
+    string money_type = 5;
+    string pay_pwd = 6;
+    string image_base64 = 7;
+    string iden_no = 8;
+    string non_str = 9;
+}
+
+message AddBusinessToHeadReply {
+    string log_no = 1;
+    string result_code = 2;
+}
+
+message GetBusinessBillsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string business_no = 3;
+    string business_name = 4;
+    string business_id = 5;
+    string order_status = 6; //订单状态（1待支付,2支付成功,3支付超时)
+    string is_settled = 7; //是否已结算0-未结算1-已结算
+    string currency_type = 8; //币种
+    string start_time = 9;
+    string end_time = 10;
+    string order_no = 11;
+    string scene_no = 12;
+    string channel_type = 13;
+    string business_account = 14;
+    string subject = 15;
+    string settle_id = 16; //结算批次
+    string lang = 17; //
+}
+
+message GetBusinessBillsReply {
+    repeated BusinessBillData datas = 1;
+    int32 total = 2;
+    string usd_cnt = 3; //usd订单数量统计
+    string usd_sum = 4; //usd 订单金额统计
+    string khr_cnt = 5;
+    string khr_sum = 6;
+    string result_code = 7;
+}
+
+message GetBusinessBillDetailRequest {
+    string order_no = 1;
+    string lang = 2;
+}
+
+message GetBusinessBillDetailReply {
+    BusinessBillData data = 1;
+    string result_code = 2;
+}
+
+message BusinessBillData {
+    string order_no = 1; //平台订单号
+    string fee = 2; //手续费
+    string is_count = 3; //手续费是否统计完毕;0-否;1-已统计
+    string create_time = 4; //创建时间
+    string amount = 5; //交易金额
+    string real_amount = 6; //实际金额
+    string order_status = 7; //订单状态（1待支付,2支付成功,3支付超时)
+    string settle_id = 8; //结算id(有值证明已结算了)
+    string notify_status = 9; //异步通知状态(0未通知,1成功,2失败,3超时)
+    string is_wallted = 10; //是否清算完毕;0-否;1-已统计
+    string notify_url = 11; //异步通知地址
+    string return_url = 12; //同步跳转地址
+    string out_order_no = 13; //外部订单
+    string frozen_status = 14; //订单冻结状态(0未冻结，1冻结中，2已解冻)
+    string rate = 15; //费率
+    string business_no = 16; //收款人账号id
+    string app_id = 17; //商户appid
+    string account_no = 18; //付款人账号id
+    string vaccount_no = 19; //付款人虚拟账号id
+    string currency_type = 20; //币种
+    string notify_fail_times = 21; //通知失败的次数
+    string pay_time = 22; //支付时间
+    string subject = 23; //订单名称
+    string remark = 24; //描述或备注
+    string business_vaccount_no = 25; //收款人虚账id
+
+    string scene_name = 26; //支付类型
+    string app_name = 27; //商家App名称
+    string refunded_amount = 28; //订单已退金额
+    string cycle = 29; //结算周期
+    string settle_date = 30; //结算日期
+    string business_name = 31;
+    string business_id = 32;
+    string business_account = 33; //商家账号
+    string account = 34; //付款人账号
+    string refund_time = 35;
+    string is_settled = 36;
+}
+
+
+message GetBusinessIndustryListRequest {
+    string page = 1;
+    string page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string code = 5;
+
+    string name_ch = 6;
+    string name_en = 7;
+    string level = 8;
+    string up_code = 9;
+    string search = 10;
+}
+
+message GetBusinessIndustryListReply {
+    repeated MainIndustryData datas = 1;
+    int32 total = 2;
+    string result_code = 3;
+}
+
+message GetBusinessIndustryDetailRequest {
+    string code = 1;
+}
+
+message GetBusinessIndustryDetailReply {
+    MainIndustryData data = 1;
+    string result_code = 2;
+}
+
+message InsertOrUpdateBusinessIndustryRequest {
+    string code = 1;
+    string name_ch = 2;
+    string name_en = 3;
+    string name_km = 4;
+    string level = 5;
+
+    string up_code = 6;
+}
+
+message InsertOrUpdateBusinessIndustryReply {
+    string result_code = 3;
+}
+
+message DelBusinessIndustryRequest {
+    string code = 1;
+}
+
+message DelBusinessIndustryReply {
+    string result_code = 3;
+}
+
+//
+message IdentityVerifyRequest {
+    string account = 1;
+    string verifyid = 2; //图片id
+    string verifynum = 3; //验证码
+}
+
+message IdentityVerifyReply {
+    string result_code = 1;
+    string msg = 2;
+    string phone = 3;
+    string email = 4;
+}
+//
+message GetCashRechargeOrderListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string log_no = 3;
+    string start_time = 4; //
+    string end_time = 5; //
+    string order_status = 6;
+    string currency_type = 7;
+    string acc_account = 8; //服务商账号
+    string op_acc_account = 9; //管理员账号
+}
+
+message GetCashRechargeOrderListReply {
+    string result_code = 1;
+    string msg = 2;
+    repeated CashRechargeOrderData datas = 3;
+    int32 total = 4;
+}
+
+message CashRechargeOrderData {
+    string log_no = 1;
+    string acc_no = 2;
+    string amount = 3;
+    string iden_no = 4;
+    string create_time = 5;
+
+    string order_status = 6;
+    string currency_type = 7;
+    string op_acc_no = 8;
+    string payment_type = 9;
+    string notes = 10;
+
+    string acc_account = 20; //充值的账号
+    string op_acc_account = 21; //操作充值的账号
+}
+//
+message GetWriteOffDurationDateConfigRequest {
+}
+
+message GetWriteOffDurationDateConfigReply {
+    string result_code = 1;
+    string duration_date = 2;
+}
+
+
+message UpdateWriteOffDurationDateConfigRequest {
+    string login_uid = 1;
+    string duration_date = 2;
+}
+
+message UpdateWriteOffDurationDateConfigReply {
+    string result_code = 1;
+}
+
+
+message GetBusinessSceneListRequest {
+    string page = 1;
+    string page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string scene_name = 5;
+    string is_delete = 6;
+    string lang = 7;
+}
+
+message GetBusinessSceneListReply {
+    repeated BusinessSceneData datas = 1;
+    int32 total = 2;
+    string result_code = 3;
+}
+message GetBusinessSceneDetailRequest {
+    string scene_no = 1;
+    string lang = 2;
+}
+
+message GetBusinessSceneDetailReply {
+    BusinessSceneData data = 1;
+    string result_code = 3;
+}
+
+message BusinessSceneData {
+    string scene_no = 1;
+    string scene_name = 2;
+    string is_enabled = 3;
+    string create_time = 4;
+    string update_time = 5;
+
+    string notes = 6;
+    string img_no = 7; //图标id
+    string img_url = 8; //图标url
+    string img_base64 = 9; //图标base64
+    string trade_type = 10; //交易类型
+
+    string idx = 11;
+    string example_img_nos = 12; //使用案例图片ids
+    string example_img_urls = 13; //使用案例图片urls
+    string example_img_names = 14; //使用案例图片names
+    string float_rate = 15; //浮动费率
+
+    string apply_type = 16; //应用类型 1-移动应用，2-网页应用
+    string business_channel_no = 17; //支付渠道
+    string channel_name = 18; //支付渠道名称
+
+    string is_manual_signed = 19;
+
+}
+
+message InsertOrUpdateBusinessSceneRequest {
+    string scene_no = 1;
+    string scene_name = 2;
+    string notes = 3;
+    string login_uid = 4;
+    string image_str = 5;
+    string example_imgs = 6;
+    string example_names = 7;
+    string trade_type = 8;
+    string payment_channel = 9; //支付渠道
+    string float_rate = 10; //浮动费率
+    string apply_type = 11; //应用类型 1-移动应用，2-网页应用
+    int32 is_manual_signed = 12; //是否可手动签约
+}
+
+message InsertOrUpdateBusinessSceneReply {
+    string result_code = 3;
+}
+
+message IsEnabledSceneRequest {
+    string scene_no = 1;
+    string is_enabled = 2;
+}
+
+message IsEnabledSceneReply {
+    string result_code = 1;
+}
+
+message GetBusinessSignedListRequest {
+    string page = 1;
+    string page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string account_uid = 5;
+    string app_id = 6;
+    string account = 7;
+    string status = 8;
+    bool is_business_req = 9; //是否是商家前端的请求（商家前端只有通过和已过期的）
+    string lang = 10;
+}
+
+message GetBusinessSignedListReply {
+    repeated BusinessSignedData datas = 1;
+    int32 total = 2;
+    string result_code = 3;
+}
+
+message BusinessSignedData {
+    string signed_no = 1;
+    string industry_no = 2;
+    string scene_no = 3;
+    string start_time = 4;
+    string end_time = 5;
+
+    string cycle = 6;
+    string rate = 7;
+    string industry_name_ch = 8; //经营类目名称(中文)
+    string industry_name_en = 9; //经营类目名称(英文)
+    string scene_name = 10; //产品名称
+
+    string account = 11; //签约的账号
+    string account_type = 12; //签约的账号类型
+    string status = 13; //签约状态
+    string parent_industry_no = 14; //经营类目的父节点id
+    string create_time = 15; //创建时间
+
+    string app_id = 16;
+    string app_name = 17;
+    string notes = 18;
+}
+
+message GetBusinessAppListRequest {
+    string page = 1;
+    string page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string iden_no = 5;
+    string account = 6;
+    string app_id = 7;
+}
+
+message GetBusinessAppListReply {
+    repeated BusinessAppData datas = 1;
+    int32 total = 2;
+    string result_code = 3;
+}
+
+message GetBusinessAppDetailRequest {
+    string iden_no = 1;
+    string app_id = 2;
+}
+
+message GetBusinessAppDetailReply {
+    BusinessAppData data = 1;
+    string result_code = 2;
+}
+
+message BusinessAppData {
+    string app_id = 1; //应用id
+    string business_no = 2; //商户id
+    string ip_white_list = 3; //ip白名单(逗号分隔)
+    string create_time = 4; //创建时间
+    string update_time = 5; //更新时间
+
+    string status = 6; //状态(0关闭,1开启)
+    string platform_pub_key = 7; //平台公钥
+    string business_pub_key = 8; //商户公钥
+    string sign_method = 9; //签名方式
+    string fixed_qrcode = 10; // 固定收款二维码
+
+    string apply_type = 11; //应用类型1-移动应用，2-网页应用
+    string account = 12; //商家账号
+    string small_img_no = 13; //小图标id
+    string big_img_no = 14; //大图标id
+    string small_img_url = 15; //小图标url
+
+    string big_img_url = 16; //大图标url
+    string small_img_base64 = 17; //小图标base64字符串
+    string big_img_base64 = 18; //大图标base64字符串
+    string app_name = 19; //应用名称
+    string describe = 20; //应用描述
+
+    string acc_uid = 21; //商家账号uid
+    string notes = 22; //审核备注
+}
+
+message InsertOrUpdateBusinessAppRequest {
+    string iden_no = 1;
+    string account_uid = 2;
+    string account_type = 3;
+    string apply_type = 4;
+    string app_name = 5; //应用名称
+    string describe = 6; //应用描述
+
+    string small_img_no = 7; //小图标id
+    string big_img_no = 8; //大图标id
+    string business_pub_key = 9; //商家公钥
+    string sign_method = 10; //签名方式
+    string scene_no = 11; //产品id
+    string industry_no = 12; //经营类目id
+
+    string app_id = 13; //应用id，审核不通过时，通过修改资料重新申请。
+    string ip_white_list = 14; //ip白名单
+}
+
+message InsertOrUpdateBusinessAppReply {
+    string result_code = 1;
+}
+
+message DelBusinessAppRequest {
+    string app_id = 1;
+    string iden_no = 2;
+}
+
+message DelBusinessAppReply {
+    string result_code = 1;
+}
+
+message UpdateBusinessAppStatusRequest {
+    string app_id = 1;
+    string status = 2;
+    string notes = 3;
+}
+
+message UpdateBusinessAppStatusReply {
+    string result_code = 1;
+}
+
+
+message GetBusinessChannelsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string channel_name = 3;
+    string currency_type = 4;
+    string channel_type = 5;
+    string use_status = 6;
+}
+
+message GetBusinessChannelsReply {
+    string result_code = 1;
+    repeated BusinessChannelData datas = 2;
+    int32 total = 3;
+}
+
+
+message BusinessChannelData {
+    string channel_no = 1;
+    string channel_name = 2;
+    string create_time = 4;
+
+    string currency_type = 6;
+    string use_status = 7;
+    string idx = 8;
+    string logo_img_no = 9;
+    string logo_img_url = 10;
+
+    string logo_img = 11; //图片base64字符串
+    string id = 12; //
+    string save_rate = 13; //存款手续费率
+    string withdraw_rate = 14; //提现手续费率
+    string withdraw_max_amount = 15; //单笔提现最大金额
+
+    string save_single_min_fee = 16; //存款单笔手续费
+    string withdraw_single_min_fee = 17; //提现单笔手续费
+    string save_charge_type = 18; //存款计算手续费类型(1-按比例收取手续费，2按单笔手续费收取)
+    string withdraw_charge_type = 19; //提现计算手续费类型(1-按比例收取手续费，2按单笔手续费收取)
+    string support_type = 20; //该渠道支持的业务类型（1-只支持存款，2只支持取款，3两个都支持）
+
+    string save_max_amount = 21; //单笔存款最大金额
+
+    //灰色图片
+    string logo_img_no_grey = 22;
+    string logo_img_url_grey = 23;
+    string logo_img_grey = 24; //图片base64字符串
+
+    string channel_type = 25; //渠道类型（1-普通渠道，2-第三方渠道）
+}
+
+message GetBusinessChannelDetailRequest {
+    string id = 1;
+}
+
+message GetBusinessChannelDetailReply {
+    string result_code = 1;
+    BusinessChannelData data = 2;
+}
+
+
+message InsertBusinessChannelRequest {
+    string channel_no = 1;
+    string currency_type = 2;
+    string id = 3;
+    string support_type = 4; //该渠道支持的业务类型（1-只支持存款，2只支持取款，3两个都支持）
+
+    string save_rate = 6; //存款手续费率
+    string save_single_min_fee = 7; //存款单笔手续费
+    string save_max_amount = 8; //单笔存款最大金额
+    string save_charge_type = 9; //存款计算手续费类型(1-按比例收取手续费，2按单笔手续费收取)
+
+    string withdraw_rate = 10; //提现手续费率
+    string withdraw_single_min_fee = 11; //提现单笔手续费
+    string withdraw_max_amount = 12; //单笔提现最大金额
+    string withdraw_charge_type = 13; //提现计算手续费类型(1-按比例收取手续费，2按单笔手续费收取)
+
+    string login_uid = 14;
+}
+
+message InsertBusinessChannelReply {
+    string result_code = 1;
+}
+
+message DeleteBusinessChannelRequest {
+    string id = 1;
+    string login_uid = 2;
+}
+
+message DeleteBusinessChannelReply {
+    string result_code = 1;
+}
+
+
+message ModifyBusinessChannelStatusRequest {
+    string id = 1;
+    string use_status = 2;
+    string login_uid = 3;
+}
+
+message ModifyBusinessChannelStatusReply {
+    string result_code = 1;
+}
+message GetBusinessToHeadListRequest {
+    string page = 1;
+    string page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string money_type = 5;
+    string log_no = 6;
+    string iden_no = 7;
+    string account = 8;
+    string order_status = 9;
+    string account_no = 10;
+}
+
+message GetBusinessToHeadListReply {
+    repeated BusinessToHeadData datas = 1;
+    int32 total = 2;
+    string result_code = 3;
+}
+
+
+message BusinessToHeadData {
+    string log_no = 1;
+    string business_no = 2;
+    string currency_type = 3;
+    string amount = 4;
+    string order_status = 5;
+
+    string collection_type = 6;
+    string card_no = 7;
+    string create_time = 8;
+    string modify_time = 9;
+    string image_id = 10;
+
+    string arrive_amount = 11;
+    string fee = 12;
+    string notes = 13;
+    string account = 14; //商家账号
+
+    string card_number = 15; //平台卡号
+    string name = 16; //收款人名
+    string channel_name = 17; //
+    string business_type = 18;
+
+}
+
+message GetToBusinessListRequest {
+    string page = 1;
+    string page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string iden_no = 5;
+    string money_type = 6;
+    string log_no = 7;
+    string account = 8; //商家账号
+    string order_status = 9; //订单状态
+}
+
+message GetToBusinessListReply {
+    repeated ToBusinessData datas = 1;
+    int32 total = 2;
+    string result_code = 3;
+}
+
+message GetBusinessToWithdrawDetailRequest {
+    string log_no = 1;
+}
+
+message GetBusinessToWithdrawDetailReply {
+    string result_code = 1;
+    ToBusinessData data = 2;
+}
+
+message ToBusinessData {
+    string log_no = 1; //商家提现流水
+    string currency_type = 2; //币种
+    string business_no = 3; //商家id
+    string collection_type = 4; //商家收款方式,1-支票;2-现金;3-银行转账;4-其他
+    string card_no = 5; //卡主键uid
+
+    string amount = 6; //订单金额
+    string create_time = 7; //创建时间
+    string order_type = 8; //订单类型（1-交易转账、2-结算转账）
+    string order_status = 9; //订单状态(0-待审核、1-已完成，2-驳回)
+    string finish_time = 10; //完成时间
+
+    string fee = 11; //手续费
+    string image_id = 12; //凭证图片id
+    string notes = 13; //备注
+    string real_amount = 14; //实际到账金额
+    string image_url = 15; //凭证图片url
+
+    string card_number = 16; //卡号
+    string name = 17; //卡开户名称
+    string account = 18; //商家账号
+    string channel_name = 19; //
+}
+
+message BusinessUpdateAppStatusRequest {
+    string app_id = 1;
+    string status = 2;
+    string iden_no = 3;
+}
+
+message BusinessUpdateAppStatusReply {
+    string result_code = 1;
+}
+message GetBusinessListRequest {
+    string page = 1;
+    string page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string auth_status = 5; //认证状态
+    string use_status = 6; //商户状态
+    string account = 7; //商家账号
+    string business_id = 8; //商家id
+}
+
+message GetBusinessListReply {
+    repeated BusinessData datas = 1;
+    int32 total = 2;
+    string result_code = 3;
+}
+message ModifyBusinessStatusRequest {
+    string status = 1; //要修改成的状态
+    string business_no = 2; //商家no
+    string status_type = 3; //状态类型（use_status、income_authorization、outgo_authorization）
+}
+
+message ModifyBusinessStatusReply {
+    string result_code = 1;
+}
+
+message GetChangeBalanceOrdersRequest {
+    string page = 1; //
+    string page_size = 2; //
+    string start_time = 3; //
+    string end_time = 4; //
+    string log_no = 5; //
+    string account_no = 6;
+    string account_type = 7;
+    string account = 8;
+}
+
+message GetChangeBalanceOrdersReply {
+    repeated ChangeBalanceOrderData datas = 1;
+    int32 total = 2;
+    string result_code = 3;
+}
+
+message ChangeBalanceOrderData {
+    string log_no = 1;
+    string account_no = 2;
+    string currency_type = 3;
+    string before_balance = 4;
+    string change_amount = 5;
+
+    string after_balance = 6;
+    string change_type = 7;
+    string change_reason = 8;
+    string order_status = 9;
+    string account_type = 10;
+
+    string create_time = 11;
+    string account = 12;
+    string op_type = 13;
+}
+
+message GetBusinessToHeadDetailRequest {
+    string log_no = 1;
+}
+
+message GetBusinessToHeadDetailReply {
+    BusinessToHeadData data = 1;
+    string result_code = 2;
+}
+
+message GetBusinessVAccBalanceRequest {
+    string business_account_no = 1;
+    string money_type = 2;
+}
+
+message GetBusinessVAccBalanceReply {
+    string result_code = 1;
+    string balance = 2;
+    string frozen_balance = 3;
+    string recorded_amount = 4;
+    string expenditure_amount = 5;
+    string money_type = 6;
+}
+
+message GetBusinessVAccLogListRequest {
+    string page = 1;
+    string page_size = 2;
+    string money_type = 3;
+    string businessAccNo = 4;
+    string start_time = 5;
+    string end_time = 6;
+}
+
+message GetBusinessVAccLogListReply {
+    string result_code = 1;
+    int32 total = 2;
+    repeated BusinessVAccLog log_list = 3;
+
+}
+
+message BusinessVAccLog {
+    string log_no = 1;
+    string change_amount = 2;
+    string change_before_balance = 3;
+    string change_after_balance = 4;
+    string reason = 5;
+    string create_time = 6;
+    string op_type = 7;
+}
+
+//商家账户流水详情
+message GetBusinessVAccLogDetailRequest {
+    string log_no = 1;
+    string reason = 2;
+}
+
+message GetBusinessVAccLogDetailReply {
+    string result_code = 1;
+    BusinessVAccLogDetail data = 2;
+}
+
+message BusinessVAccLogDetail {
+    string log_no = 1;
+    string payer_account = 2; //付款方账号
+    string payer_name = 3; //付款方名称
+    string payee_account = 4; //收款方账号
+    string payee_name = 5; //收款方名称
+    string op_type = 6; //操作类型
+    string amount = 7;
+    string currency_type = 8;
+    string fee = 9;
+    string payment_type = 10;
+    string real_amount = 11;
+    string order_status = 12;
+    string remarks = 13;
+    string create_time = 14;
+}
+
+// 平台修改余额订单明细
+message ChangeBalanceDetailRequest {
+    string order_no = 1;
+}
+message ChangeBalanceDetailReply {
+    string result_code = 1;
+    ChangeBalanceOrderData data = 2;
+}
+// 获取公告列表
+message GetBulletinsRequest {
+    string page = 1;
+    string page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string use_status = 5; //使用状态（0未发布，1发布全部，2只发布给个人商家，3只发布给企业商家）
+    string title = 6; //标题
+    string account_type = 7;
+}
+
+message GetBulletinsReply {
+    string result_code = 1;
+    repeated BulletinData datas = 2;
+    int32 total = 3;
+}
+// 获取公告详情
+message GetBulletinDetailRequest {
+    string bulletin_id = 1;
+}
+
+message GetBulletinDetailReply {
+    string result_code = 1;
+    BulletinData data = 2;
+}
+// 插入或更新公告
+message InsertOrUpdateBulletinRequest {
+    string bulletin_id = 1;
+    string title = 2;
+    string content = 3;
+}
+
+message InsertOrUpdateBulletinReply {
+    string result_code = 1;
+}
+
+// 删除公告
+message DelBulletinRequest {
+    string bulletin_id = 1;
+}
+
+message DelBulletinReply {
+    string result_code = 1;
+}
+// 修改公告状态
+message UpdateBulletinStatusRequest {
+    string bulletin_id = 1;
+    string status = 2;
+    string status_type = 3;
+}
+
+message UpdateBulletinStatusReply {
+    string result_code = 1;
+}
+
+message BulletinData {
+    string bulletin_id = 1;
+    string title = 2;
+    string content = 3;
+    string use_status = 4;
+    string create_time = 5;
+    string bulletin_time = 6;
+    string top_status = 7;
+}
+
+message GetBusinessTransferOrderListRequest {
+    string business_no = 1;
+    string business_acc_no = 2;
+    string log_no = 3;
+    string order_status = 4;
+    string to_account_no = 5;
+    string start_time = 6;
+    string end_time = 7;
+    string batch_no = 8;
+    string page = 9;
+    string page_size = 10;
+    string currency_type = 11;
+    string lang = 12;
+    string transfer_type = 13;
+    string out_transfer_no = 14;
+}
+
+message GetBusinessTransferOrderListReply {
+    string result_code = 1;
+    int32 total = 2;
+    repeated BusinessTransferOrder list = 3;
+}
+
+message GetBusinessTransferOrderDetailRequest {
+    string log_no = 1;
+}
+
+message GetBusinessTransferOrderDetailReply {
+    string result_code = 1;
+    BusinessTransferOrder data = 2;
+}
+
+message BusinessTransferOrder {
+    string log_no = 1;
+    string payer_account = 2; //付款方账号
+    string payer_name = 3; //付款方名称
+    string payee_account = 4; //收款方账号
+    string payee_name = 5; //收款方名称
+    string amount = 6;
+    string currency_type = 7;
+    string fee = 8;
+    string payment_type = 9;
+    string real_amount = 10;
+    string order_status = 11;
+    string batch_no = 12;
+    string remarks = 13;
+    string create_time = 14;
+
+    string wrong_reason = 15; //批次转账错误原因
+    string auth_name = 16; //认证名称（批量转账产生的转账才有）
+    string to_account = 17; //付款方账号（该字段是批量转账产生的转账才有）
+    string transfer_type = 18; //转账类型(转账类型:1-普通付款 2-企业付款)
+    string out_transfer_no = 19;
+}
+
+message GetBusinessTransferBatchListRequest {
+    string business_no = 1;
+    string business_acc_no = 2;
+    string batch_no = 3;
+    string status = 4;
+    string start_time = 5;
+    string end_time = 6;
+    string page = 7;
+    string page_size = 8;
+    string currency_type = 9;
+    string account = 10;
+}
+
+message GetBusinessTransferBatchListReply {
+    string result_code = 1;
+    int32 total = 2;
+    repeated BusinessTransferBatchData datas = 3;
+}
+
+message BusinessTransferBatchData {
+    string batch_no = 1;
+    string total_number = 2;
+    string total_amount = 3;
+    string successful_number = 4;
+    string successful_amount = 5;
+    string fail_number = 6;
+    string fail_amount = 7;
+    string processing_number = 8; //处理中笔数
+    string status = 9; //订单状态：0处理中，1-成功，2-失败, 3-支付成功
+    string payment_type = 10; //支付方式： 1-现金，2-余额
+    string remarks = 11;
+    string business_no = 12;
+    string create_time = 13;
+    string finish_time = 14;
+    string update_time = 15;
+    string real_amount = 16;
+    string account = 17;
+    string currency_type = 18;
+    string fee = 19;
+}
+
+// 获取商家消息列表
+message GetBusinessMessagesListRequest {
+    string page = 1;
+    string page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string account = 5;
+    string account_type = 6;
+    string account_no = 7;
+}
+
+message GetBusinessMessagesListReply {
+    string result_code = 1;
+    repeated BusinessMessagesData datas = 2;
+    int32 total = 3;
+}
+
+message BusinessMessagesData {
+    string log_no = 1;
+    string is_read = 2;
+    string account_no = 3;
+    string create_time = 4;
+    string content = 5;
+    string account_type = 6;
+    string account = 7;
+
+}
+
+message GetBusinessMessagesUnReadRequest {
+    string account = 5;
+    string account_type = 6;
+    string account_no = 7;
+}
+
+message GetBusinessMessagesUnReadReply {
+    string result_code = 1;
+    string number = 2;
+}
+
+message ReadAllBusinessMessagesRequest {
+    string account_no = 1;
+}
+
+message ReadAllBusinessMessagesReply {
+    string result_code = 1;
+}
+
+
+message BusinessUpdatePartialRequest {
+    string iden_no = 1;
+    string app_id = 2;
+    string pub_key = 3;
+    string sign_method = 4;
+    string ip_white_list = 5;
+}
+
+message BusinessUpdatePartialReply {
+    string result_code = 1;
+}
+
+message GetBusinessConfigRequest {
+}
+
+message GetBusinessConfigReply {
+    BusinessTransferConfigData transfer_config_data = 1;
+    string result_code = 2;
+}
+
+message BusinessTransferConfigData {
+    string usd_amount_min_limit = 1;
+    string usd_amount_max_limit = 2;
+    string khr_amount_min_limit = 3;
+    string khr_amount_max_limit = 4;
+    string usd_rate = 5;
+    string khr_rate = 6;
+    string batch_number = 7;
+    string usd_min_fee = 8;
+    string khr_min_fee = 9;
+}
+
+
+message UpdateBusinessConfigRequest {
+    string usd_amount_min_limit = 1;
+    string usd_amount_max_limit = 2;
+    string khr_amount_min_limit = 3;
+    string khr_amount_max_limit = 4;
+    string usd_rate = 5;
+    string khr_rate = 6;
+    string batch_number = 7;
+    string usd_min_fee = 8;
+    string khr_min_fee = 9;
+
+    string login_uid = 10;
+}
+
+
+message UpdateBusinessConfigReply {
+    string result_code = 1;
+}
+
+
+message GetBusinessTransferBatchDetailRequest {
+    string batch_no = 1;
+}
+
+message GetBusinessTransferBatchDetailReply {
+    BusinessTransferBatchData batch_data = 1;
+    string result_code = 2;
+}
+
+//=================生成秘钥对======================
+message GenerateKeysRequest {
+    string key_type = 1;
+}
+
+message GenerateKeysReply {
+    string result_code = 1;
+    string file_name = 2;
+    string file_content = 3;
+}
+
+//=================商家退款列表=======================
+message GetRefundBillsRequest {
+    string page = 1;
+    string page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string business_no = 5;
+    string account_type = 6;
+    string currency_type = 7;
+    string refund_no = 8;
+    string trans_order_no = 9;
+    string order_status = 10;
+    string business_name = 11;
+    string business_id = 12;
+    string scene_no = 13;
+    string channel_type = 14;
+    string payee_account = 15;
+    string lang = 16;
+}
+
+message GetRefundBillsReply {
+    string result_code = 1;
+    int64 usd_cnt = 2;
+    int64 usd_sum = 3;
+    int64 khr_cnt = 4;
+    int64 khr_sum = 5;
+    int32 total = 7;
+    repeated RefundBill list = 8;
+}
+
+message GetRefundDetailRequest {
+    string refund_no = 1;
+    string lang = 2;
+}
+
+message GetRefundDetailReply {
+    string result_code = 1;
+    RefundBill data = 2;
+}
+
+message RefundBill {
+    string refund_no = 1;
+    string out_refund_no = 2;
+    string trans_order_no = 3;
+    string order_status = 4;
+    string amount = 5;
+    string currency_type = 6;
+    string create_time = 7;
+    string finish_time = 8;
+    string subject = 9;
+    string trans_amount = 10;
+    string scene_name = 11;
+    string app_name = 12;
+    string payee_account = 13;
+    string business_name = 14;
+    string business_id = 15;
+}
+
+message CreateBillFileRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string uid = 3;
+    string iden_no = 4;
+    string order_status = 5; //订单状态（1待支付,2支付成功,3支付超时)
+    string is_settled = 6; //是否已结算0-未结算1-已结算
+    string currency_type = 7; //币种
+    string start_time = 8;
+    string end_time = 9;
+    string order_no = 10;
+    string scene_name = 11;
+    string channel_type = 12;
+    string lang = 13;
+}
+
+message CreateBillFileReply {
+    string result_code = 1;
+    string file_name = 2;
+    string file_path = 3;
+}
+
+message CreateRefundFileRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string account_no = 5;
+    string business_no = 6;
+    string order_status = 7;
+    string currency_type = 8; //币种
+    string refund_no = 9;
+    string trans_order_no = 10;
+    string channel_type = 11;
+}
+
+message CreateRefundFileReply {
+    string result_code = 1;
+    string file_name = 2;
+    string file_path = 3;
+}
+
+message AddBusinessSignedRequest {
+    string acc_uid = 1;
+    string business_no = 2;
+    string app_id = 3;
+    string scene_no = 4;
+    string industry_no = 5;
+}
+
+message AddBusinessSignedReply {
+    string result_code = 1;
+}
+
+
+message BusinessGetSceneListRequest {
+    string app_id = 1;
+    string acc_uid = 2;
+    string business_no = 3;
+    string apply_type = 4;
+    string lang = 5;
+}
+
+message BusinessGetSceneListReply {
+    repeated BusinessGetSceneData datas = 1;
+    int32 total = 2;
+    string result_code = 3;
+}
+
+message BusinessGetSceneData {
+    string scene_no = 1;
+    string scene_name = 2; //产品名称
+    bool show_signed_btn = 3; //是否显示签约按钮  true显示
+    string status = 4; //签约状态(1申请中,2未通过,3已通过,4已过期)
+    string notes = 5; //签约审核备注
+
+}
+
+message UpdateBusinessSignedStatusRequest {
+    string signed_id = 1;
+    string status = 2;
+    string notes = 3;
+    string login_uid = 4;
+}
+
+message UpdateBusinessSignedStatusReply {
+    string result_code = 1;
+}
+message UpdateBusinessSceneIdxRequest {
+    string scene_no = 1;
+    string swap_idx = 2; //要修改到的序号
+}
+
+message UpdateBusinessSceneIdxReply {
+    string result_code = 1;
+}
+
+message UpdateBusinessSignedInfoRequest {
+    string signed_id = 1;
+    string cycle = 2;
+    string rate = 3;
+    string login_uid = 4;
+}
+
+message UpdateBusinessSignedInfoReply {
+    string result_code = 1;
+}
+
+
+message ManagementGetBusinessTransferOrderListRequest {
+    string page = 1;
+    string page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string log_no = 5;
+    string batch_no = 6;
+    string order_status = 7;
+    string currency_type = 8;
+    string from_account = 9;
+    string to_account = 10;
+    string transfer_type = 11;
+}
+
+message ManagementGetBusinessTransferOrderListReply {
+    string result_code = 1;
+    int32 total = 2;
+    repeated BusinessTransferOrderData datas = 3;
+}
+
+//111111111111111
+message BusinessTransferOrderData {
+    string log_no = 1;
+    string from_account = 2; //付款方账号
+    string to_account = 3; //收款方账号
+    string amount = 4;
+    string currency_type = 5;
+
+    string fee = 6;
+    string rate = 7;
+    string payment_type = 8;
+    string real_amount = 9;
+    string order_status = 10;
+
+    string remarks = 11;
+    string create_time = 12;
+    string batch_no = 13; //批次号
+    string batch_row_num = 14; //批次行号
+    string wrong_reason = 15; //批次转账错误原因
+    string transfer_type = 16; //转账类型:1-普通付款 2-企业付款
+}
+
+message GetChannelBillsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string account = 5;
+    string order_status = 6;
+    string scene_no = 7;
+    string currency_type = 8;
+    string is_settled = 9;
+    string channel_no = 10;
+}
+
+message GetChannelBillsReply {
+    string result_code = 1;
+    int32 total = 2;
+    repeated ChannelBillData list = 3;
+}
+
+message ChannelBillData {
+    string order_no = 1; //平台订单号
+    string out_order_no = 2; //外部订单
+    string subject = 3; //订单名称
+    string amount = 4; //交易金额
+    string real_amount = 5; //实际金额
+    string currency_type = 6; //币种
+    string order_status = 7; //订单状态（1待支付,2支付成功,3支付超时)
+    string rate = 8; //费率
+    string fee = 9; //手续费
+    string remark = 10; //描述或备注
+    string create_time = 11; //创建时间
+    string pay_time = 12; //支付时间
+    string scene_name = 13; //支付类型
+    string app_name = 14; //商家App名称
+    string refunded_amount = 15; //订单已退金额
+    string cycle = 16; //结算周期
+    string settle_date = 17; //结算日期
+    string business_name = 18; //商家名称
+    string business_id = 19; //商家ID
+    string business_account = 20; //商家账号
+    string channel_name = 21; //渠道名称
+    string channel_rate = 22; //渠道费率
+}
+
+message AddPaymentChannelRequest {
+    string channel_name = 1;
+    string channel_type = 2;
+    string upstream_no = 3;
+    string login_account = 4;
+}
+
+message AddPaymentChannelReply {
+    string result_code = 1;
+    string channel_no = 2;
+}
+
+message UpdatePaymentChannelRequest {
+    string channel_no = 1;
+    string channel_name = 2;
+    string channel_type = 3;
+    string upstream_no = 4;
+    string login_account = 5;
+}
+
+message UpdatePaymentChannelReply {
+    string result_code = 1;
+}
+
+message GetAllPaymentChannelRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string channel_name = 5;
+}
+
+message GetAllPaymentChannelReply {
+    string result_code = 1;
+    int32 total = 2;
+    repeated PaymentChannel channel = 3;
+}
+
+message PaymentChannel {
+    string channel_no = 1;
+    string channel_name = 2;
+    string channel_type = 3;
+    string upstream_no = 4;
+    string create_time = 5;
+}
+
+
+message GetBusinessAccountsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string account = 3;
+    string sort_type = 4;
+}
+
+message GetBusinessAccountsReply {
+    string result_code = 1;
+    int32 total = 2;
+    repeated BusinessAccountsData datas = 3;
+}
+
+message BusinessAccountsData {
+    string account_no = 1;
+    string business_no = 2;
+    string account = 3;
+    string usd_balance = 4;
+    string khr_balance = 5;
+    string business_type = 6;
+}
+
+message GetBusinessAccountsProfitRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string account = 3;
+    string sort_type = 4;
+}
+
+message GetBusinessAccountsProfitReply {
+    string result_code = 1;
+    int32 total = 2;
+    repeated BusinessAccountsProfitData list = 3;
+}
+
+message BusinessAccountsProfitData {
+    string business_account_no = 1;
+    string business_no = 2;
+    string business_account = 3;
+    string business_type = 4;
+    string usd_profit = 5;
+    string khr_profit = 6;
+    string usd_expenditure = 7;
+    string khr_expenditure = 8;
+}
+
+message GetBusinessProfitListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string reason = 5;
+    string currency_type = 6;
+    string business_account_no = 7;
+    string op_type = 8;
+}
+
+message GetBusinessProfitListReply {
+    string result_code = 1;
+    int32 total = 2;
+    repeated GetBusinessBillData list = 3;
+}
+
+
+message GetBusinessBillListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string reason = 5;
+
+    string uid = 6;
+    string log_no = 7;
+    string currency_type = 8;
+    string va_type = 9;
+}
+
+message GetBusinessBillListReply {
+    string result_code = 1;
+    int32 total = 2;
+    repeated GetBusinessBillData datas = 3;
+}
+
+message GetBusinessBillData {
+    string create_time = 1;
+    string log_no = 2;
+    string amount = 3;
+    string balance = 4;
+    string op_type = 5;
+    string reason = 6;
+    string currency_type = 7;
+    string order_type = 8; //如果是手续费，则这里是产生该笔手续费的 订单类型
+    string va_type = 9; //虚帐类型
+}
+message GetChannelRefundBillsRequest {
+    string business_account = 1;
+    string business_id = 2;
+    string refund_no = 3;
+    string out_refund_no = 4;
+    string refund_status = 5;
+    string currency_type = 6;
+    string start_time = 7;
+    string end_time = 8;
+    int32 page = 9;
+    int32 page_size = 10;
+    string scene_name = 11;
+    string channel_no = 12;
+}
+
+message GetChannelRefundBillsReply {
+    string result_code = 1;
+    int32 total = 2;
+    repeated ChannelRefundBill list = 3;
+
+}
+
+message ChannelRefundBill {
+    string refund_no = 1;
+    string out_refund_no = 2;
+    string refund_status = 3;
+    string refund_amount = 4;
+    string currency_type = 5;
+    string create_time = 6;
+    string finish_time = 7;
+    string subject = 8;
+    string trans_order_no = 9;
+    string trans_amount = 10;
+    string scene_name = 11;
+    string payee_account = 12;
+    string business_name = 13;
+    string business_id = 14;
+    string business_account = 15;
+    string channel_name = 16;
+    string channel_rate = 17;
+}
+
+message UpdateBusinessAuthMaterialInfoRequest {
+    string account_uid = 1;
+    string account_type = 2;
+    string simplify_name = 3; //新的简称
+}
+
+message UpdateBusinessAuthMaterialInfoReply {
+    string info_id = 1; //修改信息的审核记录id
+    string result_code = 2;
+}
+
+
+message GetAuthMaterialBusinessUpdateListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string account = 5;
+    string auth_material_no = 6;
+    string status = 7;
+}
+
+message GetAuthMaterialBusinessUpdateListReply {
+    int32 total = 1;
+    repeated AuthMaterialBusinessUpdateData datas = 2;
+    string result_code = 3;
+}
+
+message AuthMaterialBusinessUpdateData {
+    string auth_material_no = 1;
+    string create_time = 2;
+    string account_uid = 3;
+    string status = 4;
+    string check_time = 5;
+    string simplify_name = 6;
+    string account_type = 7;
+    string notes = 8;
+    string old_simplify_name = 9;
+    string id = 10;
+
+    string account = 11;
+}
+
+
+message ModifyAuthMaterialBusinessUpdateStatusRequest {
+    string id = 1;
+    string status = 2;
+    string notes = 3;
+}
+
+message ModifyAuthMaterialBusinessUpdateStatusReply {
+    string result_code = 1;
+}
+message GetBusinessIndustryRateCycleListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string code = 5;
+    string up_code = 6;
+    string industry_name = 7;
+    string channel_name = 8;
+}
+
+message GetBusinessIndustryRateCycleListReply {
+    repeated BusinessIndustryRateCycleData datas = 1;
+    int32 total = 2;
+    string result_code = 3;
+}
+
+message BusinessIndustryRateCycleData {
+    string id = 1;
+    string code = 2;
+    string up_code = 3;
+    string business_channel_no = 4;
+    string rate = 5;
+    string cycle = 6;
+
+    string create_time = 7;
+    string modify_time = 8;
+
+    string industry_name = 9; //经营类目名称
+    string channel_name = 10; //支付渠道名称
+}
+
+message InsertOrUpdateBusinessIndustryRateCycleRequest {
+    string id = 1;
+    string code = 2;
+    string business_channel_no = 3;
+    string rate = 4;
+    string cycle = 5;
+
+    string login_uid = 6;
+}
+
+message InsertOrUpdateBusinessIndustryRateCycleReply {
+    string result_code = 1;
+}
+
+message DelBusinessIndustryRateCycleRequest {
+    string id = 1;
+    string login_uid = 2;
+}
+
+message DelBusinessIndustryRateCycleReply {
+    string result_code = 1;
+}
+
+message GetWriteOffListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string code = 5;
+    string payer_account = 6;
+    string payee_account = 7;
+    string use_status = 8;
+}
+
+message GetWriteOffListReply {
+    string result_code = 1;
+    int32 total = 2;
+    repeated WriteOff list = 3;
+}
+
+message DisposeWriteOffCodeRequest {
+    string code = 1;
+    string op_type = 2;
+    string Login_uid = 3;
+}
+
+message DisposeWriteOffCodeReply {
+    string result_code = 1;
+}
+
+message WriteOff {
+    string code = 1; //核销码
+    string code_type = 2; //核销码类型
+    string use_status = 3; //核销码使用状态
+    string order_no = 4; //订单号
+    string order_amount = 5; //订单金额
+    string real_amount = 6; //实际到账金额
+    string currency_type = 7; //币种
+    string create_time = 8; //创建时间
+    string finish_time = 9; //完成时间
+    string duration_time = 10; //到期时间
+    string payer_account = 11; //付款人账号
+    string payee_account = 12; //收款人账号
+    string payee_account_type = 13; //收款人账号类型
+
+}
+
+message GetSceneSignedListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string scene_name = 5;
+    string status = 6;
+    string lang = 7;
+    string business_acc_no = 8;
+    string scene_no = 9;
+    string apply_type = 10;
+}
+
+message GetSceneSignedListReply {
+    string result_code = 1;
+    int32 total = 2;
+    repeated SceneSigned list = 3;
+    bool showAddButton = 4;
+}
+
+message SceneSigned {
+    string signed_no = 1;
+    string status = 2;
+    string create_time = 3;
+    string scene_name = 4;
+    string industry_name = 5;
+    int32 rate = 6;
+    string cycle = 7;
+    string start_time = 8;
+    string end_time = 9;
+}
+
+message AddBusinessSceneSignedRequest {
+    string business_no = 1;
+    string scene_no = 2;
+    string industry_no = 3;
+    string acc_uid = 4;
+}
+
+message AddBusinessSceneSignedReply {
+    string result_code = 1;
+}
+
+message UpdateBusinessSceneSignedStatusRequest {
+    string signed_id = 1;
+    string status = 2;
+    string notes = 3;
+    string login_uid = 4; //审核员的账号uid
+}
+
+message UpdateBusinessSceneSignedStatusReply {
+    string result_code = 1;
+}
+
+message UpdateBusinessSceneSignedInfoRequest {
+    string signed_id = 1;
+    string cycle = 2;
+    string rate = 3;
+    string LoginUid = 4; //审核员的账号uid
+}
+
+message UpdateBusinessSceneSignedInfoReply {
+    string result_code = 1;
+}
+message GetBusinessSceneSignedListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string status = 6;
+    string lang = 7;
+    string account = 8;
+}
+
+message GetBusinessSceneSignedListReply {
+    string result_code = 1;
+    repeated BusinessSceneSignedData datas = 2;
+    int32 total = 3;
+}
+
+message BusinessSceneSignedData {
+    string signed_no = 1;
+    string status = 2;
+    string create_time = 3;
+    string scene_name = 4;
+    string industry_name = 5;
+
+    string rate = 6;
+    string cycle = 7;
+    string start_time = 8;
+    string end_time = 9;
+    string account = 10;
+
+    string notes = 11;
+}
+
+message GetFingerprintListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string account = 5;
+    string device_no = 6;
+    string use_status = 7;
+}
+
+message GetFingerprintListReply {
+    string result_code = 1;
+    int32 total = 2;
+    repeated DeviceFingerprint list = 3;
+}
+
+message DeviceFingerprint {
+    string id = 1;
+    string account = 2;
+    string device_no = 3;
+    string use_status = 4;
+    string open_time = 5;
+}
+
+message CloseFingerprintFunctionRequest {
+    string login_uid = 1;
+    string is_open = 2;
+}
+
+message CloseFingerprintFunctionReply {
+    string result_code = 1;
+}
+
+message CleanFingerprintDataRequest {
+    string login_uid = 1;
+    string op_type = 2;
+    string id = 3;
+}
+
+message CleanFingerprintDataReply {
+    string result_code = 1;
+}
+
+message GetAppFingerprintOnRequest {
+
+}
+
+message GetAppFingerprintOnReply {
+    string result_code = 1;
+    string is_open = 2;
+}
+message GetApiPayLogListRequest {
+    string req_method = 1;
+    string req_uri = 2;
+    string req_body = 3;
+    string resp_data = 4;
+    string traffic_status = 5; //通信状态(0失败，1成功)
+
+    string business_status = 6; //业务处理装(0失败，1成功)
+    string start_time = 7;
+    string end_time = 8;
+    string page = 9;
+    string page_size = 10;
+
+    string app_id = 11;
+    string req_start_time = 12;
+    string req_end_time = 13;
+}
+
+message GetApiPayLogListReply {
+    repeated ApiPayLogData datas = 1;
+    int32 total = 2;
+    string result_code = 3;
+}
+
+message ApiPayLogData {
+    string trace_no = 1; //id
+    string req_method = 2; //请求方法
+    string req_uri = 3; //请求uri
+    string req_body = 4; //请求body
+    string resp_data = 5; //返回数据
+    string traffic_status = 6; //通信状态(0失败，1成功)
+    string business_status = 7; //业务处理装(0失败，1成功)
+    string create_time = 8; //创建时间
+    string app_id = 9; //应用id
+    string req_time = 10; //请求时间(时间戳)
+}
+
+message GetPersonalBusinessBalanceRequest {
+    string account_no = 1;
+}
+
+message GetPersonalBusinessBalanceReply {
+    string result_code = 1;
+    repeated PersonalBusiness data = 2;
+}
+
+message PersonalBusiness {
+    string currency_type = 1;
+    string collection_amount = 2;
+    string collection_num = 3;
+    string refund_amount = 4;
+    string account_balance = 5;
+    string no_settle_amount = 6;
+}
+
+message GetPersonalBusinessBillsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string account_no = 5;
+    string currency_type = 6;
+    string order_status = 7;
+
+}
+
+message GetPersonalBusinessBillsReply {
+    string result_code = 1;
+    int32 total = 2;
+    repeated BusinessBillData list = 3;
+}
+
+message GetPersonalBusinessBillDetailRequest {
+    string account_no = 1;
+    string order_no = 2;
+}
+
+message GetPersonalBusinessBillDetailReply {
+    string result_code = 1;
+    BusinessBillData data = 2;
+}
+
+
+message GetPersonalBusinessFixedCodeRequest {
+    string account_no = 1;
+    string account_type = 2;
+}
+
+message GetPersonalBusinessFixedCodeReply {
+    string result_code = 1;
+    string fixed_code = 2;
+    string simplify_name = 3;
+}
+
+message GetPersonalBusinessInfoRequest {
+    string account_no = 1;
+}
+
+message GetPersonalBusinessInfoReply {
+    string result_code = 1;
+    PersonalBusinessInfo data = 2;
+}
+
+message PersonalBusinessInfo {
+    string account = 1;
+    string real_name = 2;
+    string business_auth_status = 3;
+    string business_name = 4;
+    string simplify_name = 5;
+    string operating_period = 6;
+    string organization_code = 7;
+    string license_img = 8;
+}
+
+
+message AddIndividualBusinessToHeadRequest {
+    string account_uid = 1;
+    string account_type = 2;
+    string card_no = 3;
+    string amount = 4;
+    string money_type = 5;
+    string pay_pwd = 6;
+    string image_id = 7;
+    string iden_no = 8;
+    string non_str = 9;
+}
+
+message AddIndividualBusinessToHeadReply {
+    string log_no = 1;
+    string result_code = 2;
+    string pay_password_err_tips = 3;
+}

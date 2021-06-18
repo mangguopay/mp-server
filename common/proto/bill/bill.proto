@@ -1,0 +1,1477 @@
+syntax = "proto3";
+
+package go.micro.srv.bill;
+
+service Bill {
+    rpc Exchange (ExchangeRequest) returns (ExchangeReply) {
+    }
+    rpc Transfer (TransferRequest) returns (TransferReply) {
+    }
+    rpc GenRecvCode (GenRecvCodeRequest) returns (GenRecvCodeReply) {
+    }
+    rpc ScanRecvCode (ScanRecvCodeRequest) returns (ScanRecvCodeReply) {
+    }
+    rpc SaveMoney (SaveMoneyRequest) returns (SaveMoneyReply) {
+    }
+    rpc Withdrawal (WithdrawalRequest) returns (WithdrawalReply) {
+    }
+    rpc GenWithdrawCode (GenWithdrawCodeRequest) returns (GenWithdrawCodeReply) {
+    }
+    rpc ModifyGenCodeStatus (ModifyGenCodeStatusRequest) returns (ModifyGenCodeStatusReply) {
+    }
+    rpc QuerySweepCodeStatus (QuerySweepCodeStatusRequest) returns (QuerySweepCodeStatusReply) {
+    }
+    rpc SweepWithdrawal (SweepWithdrawRequest) returns (SweepWithdrawReply) {
+    }
+    rpc ConfirmWithdrawal (ConfirmWithdrawRequest) returns (ConfirmWithdrawReply) {
+    }
+    rpc CancelWithdraw (CancelWithdrawRequest) returns (CancelWithdrawReply) {
+    }
+    rpc TransferToHeadquarters (TransferToHeadquartersRequest) returns (TransferToHeadquartersReply) {
+    }
+    rpc CustTransferToHeadquarters (CustTransferToHeadquartersRequest) returns (CustTransferToHeadquartersReply) {
+    }
+    rpc ApplyMoney (ApplyMoneyRequest) returns (ApplyMoneyReply) {
+    }
+    rpc CustWithdraw (CustWithdrawRequest) returns (CustWithdrawReply) {
+    }
+    rpc GetTransferToHeadquartersLog (GetTransferToHeadquartersLogRequest) returns (GetTransferToHeadquartersLogReply) {
+    }
+    // 计算手续费
+    rpc QeuryFees (QeuryRateRequest) returns (QeuryRateReply) {
+    }
+    rpc CustQeuryFees (CustQeuryRateRequest) returns (CustQeuryRateReply) {
+    }
+    rpc QueryMinMaxAmount (QueryMinMaxAmountRequest) returns (QueryMinMaxAmountReply) {
+    }
+    // 判断用户是否有支付密码
+    rpc QueryCustHasPwd (QueryCustHasPwdRequest) returns (QueryCustHasPwdReply) {
+    }
+    rpc QuerySaveReceipt (QuerySaveReceiptRequest) returns (QuerySaveReceiptReply) {
+    }
+    rpc GetTransferToServicerLogs (GetTransferToServicerLogsRequest) returns (GetTransferToServicerLogsReply) {
+    }
+    rpc WithdrawReceipt (WithdrawReceiptRequest) returns (WithdrawReceiptReply) {
+    }
+
+    // pos端获-获取对账列表
+    rpc GetServicerCheckList (GetServicerCheckListRequest) returns (GetServicerCheckListReply) {
+    }
+
+
+    rpc SaveDetail (SaveDetailRequest) returns (SaveDetailReply) {
+    }
+    rpc ExchangeAmount (ExchangeAmountRequest) returns (ExchangeAmountReply) {
+    }
+
+    // 收款
+    rpc Collection (CollectionRequest) returns (CollectionReply) {
+    }
+    rpc GetServicerProfitLedgers (GetServicerProfitLedgersRequest) returns (GetServicerProfitLedgersReply) {
+    }
+    rpc GetServicerProfitLedgerDetail (GetServicerProfitLedgerDetailRequest) returns (GetServicerProfitLedgerDetailReply) {
+    }
+    rpc CustIncomeBillsDetail (CustIncomeBillsDetailRequest) returns (CustIncomeBillsDetailReply) {
+    }
+    rpc CustOutgoBillsDetail (CustOutgoBillsDetailRequest) returns (CustOutgoBillsDetailReply) {
+    }
+    rpc CustTransferBillsDetail (CustTransferBillsDetailRequest) returns (CustTransferBillsDetailReply) {
+    }
+    rpc CustCollectionBillsDetail (CustCollectionBillsDetailRequest) returns (CustCollectionBillsDetailReply) {
+    }
+
+    //    rpc GetExchangeOrder (GetExchangeOrderRequest) returns (GetExchangeOrderReply) {
+    //    }
+    rpc CustOrderBillDetail (CustOrderBillDetailRequest) returns (CustOrderBillDetailReply) {
+    }
+    rpc SweepWithdrawDetail (SweepWithdrawDetailRequest) returns (SweepWithdrawDetailReply) {
+    }
+    rpc SaveMoneyDetail (SaveMoneyDetailRequest) returns (SaveMoneyDetailReply) {
+    }
+    rpc RealTimeCount (RealTimeCountRequest) returns (RealTimeCountReply) {
+    }
+    rpc GetLogAppMessagesCnt (GetLogAppMessagesCntRequest) returns (GetLogAppMessagesCntReply) {
+    }
+    rpc InsertHeadquartersProfitWithdraw (InsertHeadquartersProfitWithdrawRequest) returns (InsertHeadquartersProfitWithdrawReply) {
+    }
+    rpc AddCashRecharge (AddCashRechargeRequest) returns (AddCashRechargeReply) {
+    }
+    rpc UpdateBusinessToHeadStatus (UpdateBusinessToHeadStatusRequest) returns (UpdateBusinessToHeadStatusReply) {
+    }
+    rpc BusinessWithdraw (BusinessWithdrawRequest) returns (BusinessWithdrawReply) {
+    }
+    rpc UpdateToBusinessStatus (UpdateToBusinessStatusRequest) returns (UpdateToBusinessStatusReply) {
+    }
+    rpc AddChangeBalanceOrder (AddChangeBalanceOrderRequest) returns (AddChangeBalanceOrderReply) {
+    }
+    rpc AddBusinessTransfer (AddBusinessTransferRequest) returns (AddBusinessTransferReply) {
+    }
+    rpc BusinessBatchTransferConfirm (BusinessBatchTransferConfirmRequest) returns (BusinessBatchTransferConfirmReply) {
+    }
+    rpc GetBatchAnalysisResult (GetBatchAnalysisResultRequest) returns (GetBatchAnalysisResultReply) {
+    }
+    rpc EnterpriseTransferToUser (EnterpriseTransferToUserRequest) returns (EnterpriseTransferToUserReply) {
+    }
+    //dddddddddddddddddddddddddd
+}
+
+message ExchangeRequest {
+    string in_type = 1;
+    string out_type = 2;
+    string amount = 3;
+    string account_no = 4;
+    string trans_from = 5;
+    string account_type = 6;
+    string lang = 7;
+    string ip = 8;
+    string op_acc_no = 9;
+    string non_str = 10;
+    string password = 11;
+    string lat = 12;
+    string lng = 13;
+    string sign_key = 14; //指纹支付标识Key
+    string device_uuid = 15; //设备uuid
+}
+
+message ExchangeReply {
+    string result_code = 1;
+    string msg = 2;
+    string order_no = 3;
+    string risk_no = 4;
+    string pay_password_err_tips = 5;
+}
+//======================================
+message TransferRequest {
+    string money_type = 1;
+    string from_account_no = 2;
+    string amount = 3;
+    string to_phone = 4;
+    string exchange_type = 5;
+    string account_type = 6;
+    string iden_no = 7;
+    string password = 8;
+    string non_str = 9;
+    string lang = 10;
+    string ip = 11;
+    string lat = 12;
+    string lng = 13;
+    string country_code = 14;
+    string payment_method = 15;
+    string card_no = 16;
+    string sign_key = 17; //指纹支付标识Key
+    string device_uuid = 18; //设备uuid
+}
+
+message TransferReply {
+    string result_code = 1;
+    string msg = 2;
+    string order_no = 3;
+    string risk_no = 4;
+    string pay_password_err_tips = 5;
+}
+//======================================
+message GenRecvCodeRequest {
+    string money_type = 1;
+    string amount = 2;
+    string account_no = 3;
+}
+
+message GenRecvCodeReply {
+    string result_code = 1;
+    string msg = 2;
+    string code = 3;
+}
+//======================================
+message ScanRecvCodeRequest {
+    string code = 1;
+}
+
+message ScanRecvCodeReply {
+    string result_code = 1;
+    string msg = 2;
+    RecvCodeData data = 3;
+}
+
+message RecvCodeData {
+    string account_no = 1;
+    string recv_phone = 2;
+    string amount = 3;
+    string fee_rate = 4;
+    string money_type = 5;
+}
+//======================================
+message SaveMoneyRequest {
+    // 收款人手机号
+    string recv_phone = 1;
+    // 存款人手机号
+    string send_phone = 2;
+    // 金额
+    string amount = 3;
+    // 支付密码
+    string password = 4;
+    // 币种
+    string money_type = 5;
+    // 操作员账号
+    string op_acc_no = 6;
+    // 操作类型,3-服务商;5-pos机
+    string account_type = 7;
+
+    string non_str = 8;
+    // acountNo
+    string account_uid = 9;
+
+    string lang = 10;
+    string ip = 11;
+    string save_country_code = 12; // 存款人的国家区号
+    string recv_country_code = 13; // 收款人的国家区号
+}
+
+message SaveMoneyReply {
+    string result_code = 1;
+    string order_no = 2;
+    string risk_no = 3;
+    string pay_password_err_tips = 4;
+}
+//======================================
+message WithdrawalRequest {
+    // 收款人手机
+    string recv_phone = 1;
+    // 存款人手机
+
+    // 金额
+    string amount = 2;
+    // 币种
+    string money_type = 3;
+    // 短信核销码
+    string save_code = 4;
+    // 操作员账号
+    string op_acc_no = 5;
+    // 支付密码
+    string password = 6;
+    // 账号类型
+    string account_type = 7;
+    // acountNo
+    string account_uid = 8;
+
+    string non_str = 9;
+    string lang = 10;
+    string ip = 11;
+    string order_type = 12; // 1-存款;2转账
+    string lat = 13;
+    string lng = 14;
+    string save_country_code = 15; // 存款人的国家区号
+    string recv_country_code = 16; // 收款人的国家区号
+}
+
+message WithdrawalReply {
+    string result_code = 1;
+    string order_no = 2;
+    string risk_no = 3;
+    string pay_password_err_tips = 4;
+}
+
+
+message GenWithdrawCodeRequest {
+    string account_no = 1;
+    // 操作员账号
+    string op_acc_no = 2; // 操作员账号
+    // 账号类型
+    string account_type = 3;
+}
+
+message GenWithdrawCodeReply {
+    string result_code = 1;
+    string msg = 2;
+    string code = 3;
+}
+
+
+message ModifyGenCodeStatusRequest {
+    string gen_key = 1;
+    int32 status = 2;
+    string account_uid = 3;
+    // 操作类型,3-服务商;4-用户;5-pos机
+    string account_type = 4;
+    string money_type = 5;
+}
+
+message ModifyGenCodeStatusReply {
+    string result_code = 1;
+    string msg = 2;
+}
+
+message QuerySweepCodeStatusRequest {
+    string gen_code = 1;
+    string accountNo = 2;
+    string iden_no = 3;
+
+}
+
+message QuerySweepCodeStatusReply {
+    string result_code = 1;
+    string msg = 2;
+    string status = 3;
+    string order_no = 4;
+    string sweep_account_no = 5;
+    string nick_name = 6;
+    string head_url = 7;
+}
+
+message SweepWithdrawRequest {
+    // 金额
+    string amount = 1;
+    // 币种
+    string money_type = 2;
+    // 支付密码
+    string password = 3;
+    // acountNo
+    string account_uid = 4;
+
+    string non_str = 5;
+
+    // 操作类型,3-服务商;4-用户;5-pos机
+    string account_type = 6;
+    // 操作员账号
+    string op_acc_no = 7;
+    // 码
+    string gen_code = 8;
+    //提现类型,1-普通提现,2全部提现
+    int32 swithdraw_type = 9;
+
+    string lang = 10;
+
+    string ip = 11;
+    string lat = 12;
+    string lng = 13;
+}
+
+message SweepWithdrawReply {
+    string result_code = 1;
+    string msg = 2;
+    string risk_no = 3;
+    string order_no = 4;
+    string pay_password_err_tips = 5;
+}
+
+message ConfirmWithdrawRequest {
+    // 金额
+    string amount = 1;
+    // 币种
+    string money_type = 2;
+    // pos机支付密码
+    string password = 3;
+    // acountNo
+    string use_account_uid = 4;
+
+    string non_str = 5;
+    // 操作类型,3-服务商;4-用户;5-pos机
+    string account_type = 6;
+    // pos机的账号
+    string account_uid = 7;
+    // 订单ID
+    string out_order_no = 8;
+    // 操作员账号
+    string op_acc_no = 9;
+    // 码
+    string gen_code = 10;
+
+    string lang = 11;
+}
+
+message ConfirmWithdrawReply {
+    string result_code = 1;
+    string msg = 2;
+    string pay_password_err_tips = 3;
+}
+message CancelWithdrawRequest {
+    // 订单号
+    string order_no = 1;
+    // 取消原因
+    string cancel_reason = 2;
+    string lang = 3;
+}
+
+message CancelWithdrawReply {
+    string result_code = 1;
+    string msg = 2;
+}
+
+message TransferToHeadquartersRequest {
+    // 图片路径
+    string image_id = 1;
+    // 当前登录的服务员ID
+    string account_uid = 2;
+    // 币种
+    string money_type = 3;
+    // 金额
+    string amount = 4;
+    // 收款人姓名
+    string rec_name = 5;
+    // 收款人卡号
+    string rec_car_num = 6;
+    // 支付密码
+    string password = 7;
+    // 操作类型,3-服务商;4-用户;5-pos机
+    string account_type = 8;
+
+    string non_str = 9;
+    // 操作员账号
+    string op_acc_no = 10;
+
+    string card_no = 11;
+}
+
+message TransferToHeadquartersReply {
+    string result_code = 1;
+    string msg = 2;
+    string pay_password_err_tips = 3;
+}
+message CustTransferToHeadquartersRequest {
+    // 图片路径
+    string image_id = 1;
+    // 当前登录的服务员ID
+    string account_uid = 2;
+    // 币种
+    string money_type = 3;
+    // 金额
+    string amount = 4;
+    // 收款人姓名
+    string rec_name = 5;
+    // 收款人卡号
+    string rec_car_num = 6;
+    // 支付密码
+    string password = 7;
+    // 操作类型,3-服务商;4-用户;5-pos机
+    string account_type = 8;
+
+    string non_str = 9;
+    // 操作员账号
+    string op_acc_no = 10;
+
+    string card_no = 11;
+    string lat = 12;
+    string lng = 13;
+    string ip = 14;
+    string sign_key = 15; //指纹支付标识Key
+    string device_uuid = 16; //设备uuid
+}
+
+message CustTransferToHeadquartersReply {
+    string result_code = 1;
+    string order_no = 2;
+    string pay_password_err_tips = 3;
+}
+
+message ApplyMoneyRequest {
+    string channel_name = 1;
+    // 当前登录的服务员ID
+    string account_uid = 2;
+    // 币种
+    string money_type = 3;
+    // 金额
+    string amount = 4;
+    // 收款人卡号
+    string rec_car_num = 5;
+    // 支付密码
+    string password = 6;
+    // 操作类型,3-服务商;4-用户;5-pos机
+    string account_type = 7;
+
+    string non_str = 8;
+    // 操作员账号
+    string op_acc_no = 9;
+
+
+}
+
+message ApplyMoneyReply {
+    string result_code = 1;
+    string msg = 2;
+    string pay_password_err_tips = 3;
+}
+
+//
+message CustWithdrawRequest {
+    // 当前登录的服务员ID
+    string account_uid = 1;
+    // 币种
+    string money_type = 2;
+    // 金额
+    string amount = 3;
+    // 收款人卡号
+    string rec_car_no = 4;
+    // 支付密码
+    string password = 5;
+    // 操作类型,3-服务商;4-用户;5-pos机
+    string account_type = 6;
+
+    string non_str = 7;
+
+    string withdraw_type = 8; // 1-普通提现;2-全部提现
+    string iden_no = 9; //
+    string lat = 10; //
+    string lng = 11; //
+    string ip = 12; //
+    string lang = 13; //
+    string sign_key = 14; //指纹支付标识Key
+    string device_uuid = 15; //设备uuid
+}
+
+
+message CustWithdrawReply {
+    string result_code = 1;
+    string msg = 2;
+    string order_no = 3;
+    string pay_password_err_tips = 4;
+}
+
+message GetTransferToHeadquartersLogRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string account_no = 5;
+    string order_status = 6;
+    string account_type = 7;
+    string currency_type = 8;
+}
+
+message GetTransferToHeadquartersLogReply {
+    string result_code = 1;
+    repeated TransferToHeadquartersLogData datas = 2;
+    int32 total = 3;
+}
+//
+//message GetTransferToHeadquartersLogData {
+//    string time = 1;
+//    repeated TransferToHeadquartersLogData data = 2;
+//}
+
+message TransferToHeadquartersLogData {
+    string currency_type = 1;
+    string amount = 2;
+    string order_status = 3;
+    string card_no = 4;
+    string finish_time = 5;
+    string channel_name = 6;
+    string name = 7;
+    string card_number = 8;
+    string create_time = 9;
+    string logo_img_url = 10;
+
+    string time = 11; //归属那天的，只第一条数据有
+}
+// 计算手续费和费率
+message QeuryRateRequest {
+    //创建账号所需信息
+    string amount = 1;
+    // 1-购买费率/万分比
+    // 2-usd转账提现费率
+    // 3-usd收款手续费率
+    // 4-usd存款提现费率
+    // 5-usd取款提现费率
+    // 6-msc直推费率
+    // 7-khr转账手续费率
+    // 8-khr收款手续费率
+    // 9-khr存款手续费率
+    // 10-khr 取款手续费率
+    int32 type = 3;
+    string account_type = 4;
+    string account_uid = 5;
+    string iden_no = 6;
+}
+
+message QeuryRateReply {
+    string result_code = 1;
+    string msg = 2;
+    RateData data = 3;
+}
+
+message RateData {
+    string rate = 1;
+    string fees = 2;
+}
+message CustQeuryRateRequest {
+    //创建账号所需信息
+    string amount = 1;
+    string channel_no = 2;
+    string account_type = 3;
+    string account_uid = 4;
+    string iden_no = 5;
+    int32 op_type = 6; // 1-存款;2-取款
+    string money_type = 7;
+}
+
+message CustQeuryRateReply {
+    string result_code = 1;
+    CustRateData data = 2;
+}
+
+message CustRateData {
+    string rate = 1;
+    string fees = 2;
+    string charge_type = 3; // 1-按比例收取手续费，2按单笔手续费收取
+}
+
+//========================================
+
+// 查询最大金额和最小金额限制
+message QueryMinMaxAmountRequest {
+    string type = 1; // 1-手机号取款;2-存款;3-转正;4-扫码取款
+    string money_type = 2; // usd; khr
+}
+
+message QueryMinMaxAmountReply {
+    string result_code = 1;
+    string msg = 2;
+    MinMaxAmountData data = 3;
+}
+
+message MinMaxAmountData {
+    string min_amount = 1;
+    string max_amount = 2;
+}
+
+//========================================
+message QuerySaveReceiptRequest {
+    string order_no = 1;
+}
+
+message QuerySaveReceiptReply {
+    string result_code = 1;
+    string msg = 2;
+    QuerySaveReceiptResult data = 3;
+}
+message QueryCustHasPwdRequest {
+    string iden_no = 1;
+    string account_type = 2;
+}
+
+message QueryCustHasPwdReply {
+    string result_code = 1;
+}
+
+message QuerySaveReceiptResult {
+    // 订单号
+    string order_no = 1;
+    // 商户号
+    string service_no = 2;
+    // 终端编号
+    string terminal_number = 3;
+    // 存款手机号
+    string save_phone = 4;
+    //核销码
+    string save_code = 5;
+    // 收款手机号
+    string rec_phone = 6;
+    // 申请金额
+    string apply_amount = 7;
+    // 手续费
+    string fees = 8;
+    // 到账金额
+    string arrive_amount = 9;
+    // 日期
+    string date = 10;
+    string money_type = 11;
+}
+
+
+message GetTransferToServicerLogsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string account_no = 5;
+    string order_status = 6;
+    string account_type = 7;
+    string currency_type = 8;
+}
+
+message GetTransferToServicerLogsReply {
+    string result_code = 1;
+    repeated TransferToServicerLogData datas = 2;
+    int32 total = 3;
+}
+
+
+message TransferToServicerLogData {
+    string currency_type = 1;
+    string amount = 2;
+    string order_status = 3;
+    string channel_name = 4;
+    string name = 5;
+    string card_number = 6;
+    string finish_time = 7;
+    string card_no = 8;
+    string create_time = 9;
+    string logo_img_url = 10;
+
+    string time = 11;
+}
+
+message WithdrawReceiptRequest {
+    string order_no = 1;
+}
+
+message WithdrawReceiptReply {
+    string result_code = 1;
+    string msg = 2;
+    WithdrawReceiptResult data = 3;
+}
+
+message WithdrawReceiptResult {
+    // 订单号
+    string order_no = 1;
+    // 商户号
+    string service_no = 2;
+    // 终端编号
+    string terminal_number = 3;
+    // 取款手机号
+    string withdraw_phone = 4;
+    // 申请金额
+    string apply_amount = 5;
+    // 手续费
+    string fees = 6;
+    // 到账金额
+    string arrive_amount = 7;
+    // 日期
+    string date = 8;
+
+    string money_type = 9;
+}
+
+
+message SaveDetailRequest {
+    string order_no = 1;
+    // 1-存款;2-取款
+    int32 type = 2;
+}
+
+message SaveDetailReply {
+    string result_code = 1;
+    string msg = 2;
+    SaveDetailResult data = 3;
+}
+
+message SaveDetailResult {
+    // 订单号
+    string order_no = 1;
+    // 存款手机号
+    string save_phone = 2;
+    // 收款手机号
+    string rec_phone = 3;
+    // 申请金额
+    string amount = 4;
+    // 手续费
+    string fees = 5;
+    // 日期
+    string date = 6;
+
+    string money_type = 7;
+    // 订单状态
+    string status = 8;
+}
+
+message ExchangeAmountRequest {
+    string amount = 1;
+    // 1-usd-->khr;2-khr-->usd
+    int32 type = 2;
+}
+
+message ExchangeAmountReply {
+    string result_code = 1;
+    string amount = 2;
+}
+
+// pos端对账列表-请求参数
+message GetServicerCheckListRequest {
+    string account_no = 1;
+    string account_type = 2;
+    string start_time = 3;
+    string end_time = 4;
+    int32 page = 5;
+    int32 page_size = 6;
+}
+
+// pos端对账列表-返回
+message GetServicerCheckListReply {
+    string result_code = 1;
+    string msg = 2;
+    repeated GetServicerCheckListReplyData datas = 3;
+    int32 total = 4;
+}
+
+// pos端对账列表-返回数据
+message GetServicerCheckListReplyData {
+    string date = 1;
+
+    message CurrencyList {
+        string currency_type = 1;
+        message Result {
+            int64 type = 1;
+            int64 num = 2;
+            int64 amount = 3;
+        }
+        repeated Result results = 2;
+    }
+
+    repeated CurrencyList currency_list = 2;
+}
+
+
+message GetServicerProfitLedgersRequest {
+    string account_no = 1;
+    string account_type = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string currency_type = 5;
+
+    int32 page = 6;
+    int32 page_size = 7;
+}
+message GetServicerProfitLedgersReply {
+    string result_code = 1;
+    repeated ServicerProfitLedgersData datas = 2;
+    int32 total = 3;
+    string usd_count_sum = 4; //统计usd总计金额
+    string khr_count_sum = 5; //统计khr总计金额
+}
+
+//message GetServicerProfitLedgersData {
+//    string time = 1;
+//    repeated ServicerProfitLedgersData datas = 2;
+//    string usd_sum = 3;
+//    string khr_sum = 4;
+//}
+
+message GetServicerProfitLedgerDetailRequest {
+    string account_no = 1;
+    string account_type = 2;
+    string log_no = 3;
+}
+message GetServicerProfitLedgerDetailReply {
+    string result_code = 1;
+    ServicerProfitLedgersData data = 2;
+}
+
+
+message ServicerProfitLedgersData {
+    string log_no = 1;
+    string amount_order = 2;
+    string servicefee_amount_sum = 3;
+    string split_proportion = 4;
+    string actual_income = 5;
+    string create_time = 6;
+    string servicer_no = 7;
+    string currency_type = 8;
+    string order_no = 9;
+    string order_type = 10;
+
+    string time = 11; //时间年月日（yyyy-MM-dd）
+    string usd_sum = 12; //当天统计usd
+    string khr_sum = 13; //当天统计khr
+}
+
+// 收款
+message CollectionRequest {
+    // 扫码人的id,jwt获取
+    string sweep_account_uid = 1;
+    // 收款人的id
+    string rec_account_uid = 2;
+    string money_type = 3;
+    string amount = 4;
+    // 二维码
+    string gen_code = 5;
+    // 扫码人支付密码
+    string password = 6;
+    string non_str = 7;
+    // 操作员账号
+    string op_acc_no = 8;
+    // 操作类型,3-服务商;5-pos机
+    string account_type = 9;
+
+    string lang = 10;
+
+    string ip = 11;
+    string lat = 12;
+    string lng = 13;
+}
+
+// 收款
+message CollectionReply {
+    string result_code = 1;
+    string order_no = 2;
+    string risk_no = 3;
+}
+message CustIncomeBillsDetailRequest {
+    string account_no = 1;
+    string account_type = 2;
+    string log_no = 3;
+}
+message CustIncomeBillsDetailReply {
+    string result_code = 1;
+    CustIncomeBillsDetailData data = 2;
+}
+
+message CustIncomeBillsDetailData {
+    string log_no = 1;
+    string amount = 2;
+    string order_status = 3;
+    string payment_type = 4;
+    string create_time = 5;
+    string finish_time = 6;
+    string balance_type = 7;
+
+    string op_type = 8;
+    string fees = 9;
+
+    string order_type = 10;
+}
+message CustToHeadquartersDetailData {
+    string log_no = 1;
+    string amount = 2;
+    string order_status = 3;
+    string payment_type = 4;
+    string create_time = 5;
+    string finish_time = 6;
+    string balance_type = 7;
+
+    string op_type = 8;
+    string fees = 9;
+
+    string order_type = 10;
+    string arrive_amount = 11;
+    string card_number = 12;
+    string name = 13;
+    string channel_name = 14;
+}
+message ToCustDetailData {
+    string log_no = 1;
+    string amount = 2;
+    string order_status = 3;
+    string payment_type = 4;
+    string create_time = 5;
+    string finish_time = 6;
+    string balance_type = 7;
+
+    string op_type = 8;
+    string fees = 9;
+
+    string order_type = 10;
+    string arrive_amount = 11;
+    string card_number = 12;
+    string name = 13;
+    string channel_name = 14;
+}
+
+message CustOutgoBillsDetailRequest {
+    string account_no = 1;
+    string account_type = 2;
+    string log_no = 3;
+}
+message CustOutgoBillsDetailReply {
+    string result_code = 1;
+    CustOutgoBillsDetailData data = 2;
+}
+
+message CustOutgoBillsDetailData {
+    string log_no = 1;
+    string amount = 2;
+    string order_status = 3;
+    string payment_type = 4;
+    string fees = 5;
+    string create_time = 6;
+    string finish_time = 7;
+    string balance_type = 8;
+
+    string op_type = 9;
+
+    string order_type = 10;
+}
+
+message CustTransferBillsDetailRequest {
+    string account_no = 1;
+    string account_type = 2;
+    string log_no = 3;
+}
+message CustTransferBillsDetailReply {
+    string result_code = 1;
+    CustTransferBillsDetailData data = 2;
+}
+
+message CustTransferBillsDetailData {
+    string log_no = 1;
+    string amount = 2;
+    string order_status = 3;
+    string payment_type = 4;
+    string fees = 5;
+    string create_time = 6;
+    string finish_time = 7;
+    string balance_type = 8;
+    string op_type = 9;
+    string order_type = 10;
+
+    string to_vaccount_no = 11;
+    string to_phone = 12;
+    string to_phone_country_code = 13;
+
+    string from_vaccount_no = 14;
+    string from_phone = 15;
+    string from_phone_country_code = 16;
+
+
+}
+
+message CustCollectionBillsDetailRequest {
+    string account_no = 1;
+    string account_type = 2;
+    string log_no = 3;
+}
+message CustCollectionBillsDetailReply {
+    string result_code = 1;
+    CustCollectionBillsDetailData data = 2;
+}
+
+message CustCollectionBillsDetailData {
+    string log_no = 1;
+    string amount = 2;
+    string order_status = 3;
+    string payment_type = 4;
+    string create_time = 5;
+    string finish_time = 6;
+    string balance_type = 7;
+    string from_account = 8;
+
+    string order_type = 9;
+}
+
+
+message GetExchangeOrderRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string account_no = 3;
+}
+message GetExchangeOrderReply {
+    string result_code = 1;
+    repeated ExchangeOrderData datas = 2;
+    int32 total = 3;
+}
+
+message ExchangeOrderData {
+    string log_no = 1;
+    string in_type = 2;
+    string out_type = 3;
+    string amount = 4;
+    string create_time = 5;
+    string rate = 6;
+    string order_status = 7;
+    string finish_time = 8;
+    string account_no = 9;
+    string trans_from = 10;
+    string trans_amount = 11;
+    string err_reason = 12;
+    string fees = 13;
+
+    string order_type = 14;
+}
+
+message CustOrderBillDetailRequest {
+    string order_no = 1;
+    string order_type = 2;
+    string account_no = 3;
+    string log_no = 4;
+}
+
+message CustOrderBillDetailReply {
+    string result_code = 1;
+    CustOrderBillDetailData data = 2;
+}
+
+message CustOrderBillDetailData {
+    string log_no = 1;
+    string amount = 2;
+    string order_status = 3;
+    string payment_type = 4; //付款类型1-现金2-余额
+    string create_time = 5;
+
+    string finish_time = 6;
+    string balance_type = 7;
+    string op_type = 8;
+    string fees = 9; //取款手续费，兑换手续费
+
+    string to_account = 10;
+    string from_vaccount_no = 11;
+    string to_vaccount_no = 12;
+
+    string to_phone = 13;
+    string from_phone = 14;
+    string from_account = 15;
+
+    string in_type = 16;
+    string out_type = 17;
+    string rate = 18;
+    string trans_from = 19;
+    string trans_amount = 20;
+    string err_reason = 21;
+
+    string order_type = 22;
+    string code = 23;
+
+    string card_number = 24; //卡号
+    string name = 25; //银行卡开户名
+    string channel_name = 26; //渠道名称
+
+    string business_name = 27; //商家名称
+    string subject = 28; //商品名称
+
+    string before_balance = 29; //变化前余额
+    string after_balance = 30; //变化后余额
+
+    string notes = 31; //备注
+    string pay_order_no = 32; //支付订单号
+    string business_app_name = 33; //商家app名称
+    string simplify_name = 34; //商家简称
+}
+
+message SweepWithdrawDetailRequest {
+    string order_no = 1;
+}
+message SweepWithdrawDetailReply {
+    string result_code = 1;
+    string msg = 2;
+    SweepWithdrawDetailResult data = 3;
+}
+
+message SweepWithdrawDetailResult {
+    // 订单号
+    string order_no = 1;
+    // 取款金额
+    string withdraw_amount = 2;
+    // 到账金额
+    string arrive_amount = 3;
+    //
+    string withdraw_phone = 4;
+    // 手续费
+    string fees = 5;
+    // 日期
+    string date = 6;
+
+    string money_type = 7;
+
+    string order_status = 8;
+    // 二维码
+    string gen_code = 9;
+    // 扫码人的id
+    string sweep_account_uid = 10;
+
+    //
+    string account = 11;
+}
+
+// 存款订单明细
+message SaveMoneyDetailRequest {
+    string order_no = 1;
+}
+message SaveMoneyDetailReply {
+    string result_code = 1;
+    string msg = 2;
+    SaveMoneyDetailResult data = 3;
+}
+
+message SaveMoneyDetailResult {
+    // 订单号
+    string order_no = 1;
+    // 取款金额
+    string save_amount = 2;
+    // 到账金额
+    string arrive_amount = 3;
+    // 存款手机号
+    string send_phone = 4;
+    // 收款人手机号
+    string recv_phone = 5;
+    // 手续费
+    string fees = 6;
+    // 日期
+    string date = 7;
+
+    string money_type = 8;
+
+    string order_status = 9;
+
+    string account = 10;
+    //核销码
+    string save_code = 11;
+}
+
+
+message RealTimeCountRequest {
+    string account_uid = 1;
+    string account_type = 2;
+}
+message RealTimeCountReply {
+    string result_code = 1;
+    repeated RealTimeCountData data = 2;
+}
+
+message RealTimeCountData {
+    string type = 1;
+    string usd_sum = 2;
+    string khr_sum = 3;
+
+    //    string income_usd_sum = 1;
+    //    string income_khr_sum = 2;
+    //
+    //    string outgo_usd_sum = 3;
+    //    string outgo_khr_sum = 4;
+    //
+    //    string to_headquarters_usd_sum = 5;
+    //    string to_headquarters_khr_sum = 6;
+    //
+    //    string to_servicer_usd_sum = 7;
+    //    string to_servicer_khr_sum = 8;
+    //
+    //    string profit_usd_sum = 9;
+    //    string profit_khr_sum = 10;
+}
+
+message GetLogAppMessagesCntRequest {
+    string account_uid = 1;
+}
+
+message GetLogAppMessagesCntReply {
+    string result_code = 1;
+    int32 total = 2;
+}
+
+
+message InsertHeadquartersProfitWithdrawRequest {
+    string currency_type = 1;
+    string account_no = 2;
+    string amount = 3;
+    string note = 4;
+}
+
+message InsertHeadquartersProfitWithdrawReply {
+    string result_code = 1;
+}
+
+message AddCashRechargeRequest {
+    string acc_account = 1; //充值的服务商账号
+    string uid = 2; //操作账号uid
+    string amount = 3;
+    string currency_type = 4;
+    string notes = 5;
+    string password = 6;
+    string non_str = 7;
+}
+
+message AddCashRechargeReply {
+    string result_code = 1;
+}
+
+message UpdateBusinessToHeadStatusRequest {
+    string account_uid = 1;
+    string log_no = 2;
+    string status = 3;
+    string notes = 4;
+}
+
+message UpdateBusinessToHeadStatusReply {
+    string result_code = 1;
+}
+
+
+message BusinessToHeadData {
+    string log_no = 1;
+    string business_no = 2;
+    string currency_type = 3;
+    string amount = 4;
+    string order_status = 5;
+    string collection_type = 6;
+    string card_no = 7;
+    string create_time = 8;
+    string modify_time = 9;
+    string image_id = 10;
+    string arrive_amount = 11;
+    string fee = 12;
+    string notes = 13;
+
+    string account = 14;
+    string business_acc_no = 15;
+}
+
+message BusinessBillData {
+    string order_no = 1; //平台订单号
+    string fee = 2; //手续费
+    string create_time = 3; //创建时间
+    string amount = 4; //交易金额
+    string real_amount = 5; //实际金额
+    string order_status = 6; //订单状态（1待支付,2支付成功,3支付超时)
+    string notify_status = 7; //异步通知状态(0未通知,1成功,2失败,3超时)
+    string out_order_no = 8; //外部订单
+    string rate = 9; //费率
+    string business_no = 10; //收款人账号id
+    string app_id = 11; //商户appid
+    string account_no = 12; //付款人账号id
+    string currency_type = 13; //币种
+    string pay_time = 14; //支付时间
+    string subject = 15; //订单名称
+    string business_account_no = 16; //收款人虚账id
+    string scene_name = 17; //支付类型
+
+    string account = 18; //付款人账号
+    string receive_account = 19; //收款人账账号
+    string business_name = 20;
+    string remark = 21; //备注
+    string app_name = 22; //商家app名称
+    string simplify_name = 23; //商家简称
+}
+
+//
+message BusinessWithdrawRequest {
+    string account_uid = 1; // 当前登录账号ID
+    string account_type = 2; //账号类型
+    string iden_no = 3; //
+    string withdraw_type = 4; // 1-普通提现;2-全部提现
+    string card_no = 5; // 收款人卡号
+    string pay_pwd = 6; // 支付密码
+    string non_str = 7;
+    string amount = 8;
+    string money_type = 9;
+
+    string lang = 10; //
+}
+
+
+message BusinessWithdrawReply {
+    string result_code = 1;
+    string msg = 2;
+    string log_no = 3;
+}
+
+message UpdateToBusinessStatusRequest {
+    string log_no = 1;
+    string account_uid = 2;
+    string img_str = 3; //图片base64字符串。审核通过才上传
+    string notes = 4;
+    string order_status = 5;
+}
+
+message UpdateToBusinessStatusReply {
+    string result_code = 1;
+}
+
+
+message AddChangeBalanceOrderRequest {
+    string acc_uid = 1; //修改余额的账号uid
+    string amount = 2; //变更余额
+    string currency_type = 3; //币种
+    string op_type = 4; //变更方式1+,2-
+    string change_reason = 5;
+    string non_str = 6;
+    string login_pwd = 7;
+    string login_uid = 8;
+    string account_type = 9; //账号类型（修改的是什么身份的余额）
+}
+
+message AddChangeBalanceOrderReply {
+    string result_code = 1;
+}
+
+
+message AddBusinessTransferRequest {
+    string business_no = 1;
+    string business_acc_no = 2;
+    string payee_no = 3;
+    string amount = 4;
+    string remarks = 5;
+    string payment_pwd = 6;
+    string account_type = 7;
+    string non_str = 8;
+    string currency_type = 9;
+    string country_code = 10;
+    string lang = 11;
+    string transfer_type = 12;
+    string out_order_no = 13;
+}
+
+message AddBusinessTransferReply {
+    string result_code = 1;
+    string log_no = 2;
+    string order_status = 3;
+}
+
+message BusinessBatchTransferConfirmRequest {
+    string business_no = 1;
+    string batch_no = 2;
+    string pay_pwd = 3;
+    string non_str = 4;
+    string business_acc_no = 5;
+    string account_type = 6;
+
+}
+
+message BusinessBatchTransferConfirmReply {
+    string result_code = 1;
+    string order_status = 2;
+}
+
+message GetBatchAnalysisResultRequest {
+    string file_id = 1;
+    string account_uid = 2;
+    string business_no = 3;
+    string lang = 4;
+}
+
+
+message GetBatchAnalysisResultReply {
+    BatchAnalysisResultData data = 1;
+    repeated BatchAnalysisWrongResultData wrong_datas = 2;
+    string result_code = 3;
+    string batch_no = 4;
+}
+
+//分析批量转账出现异常的数据data
+message BatchAnalysisWrongResultData {
+    string row = 1; //序号
+    string account = 2; //账号
+    string name = 3; //姓名
+    string currency_type = 4; //币种
+    string amount = 5; //金额
+    string remarks = 6; //备注
+    string wrong_reason = 7; //异常原因
+}
+
+message BatchAnalysisResultData {
+    string total_number = 1; //总笔数
+    string total_amount = 2; //总金额
+    string successful_number = 3; //成功笔数
+    string successful_amount = 4; //成功金额
+    string real_number = 5; //实际支付数量
+    string real_amount = 6; //实际支付金额(订单金额加手续费，生成时还未付款，要付款是付的这个金额)
+    string fail_number = 7; //异常笔数
+    string fail_amount = 8; //异常金额
+    string fee = 9; //手续费
+    string currency_type = 10; //币种
+    string wrong_status = 11; //0-全部正常，1-全部异常，2-部分异常
+}
+
+message EnterpriseTransferToUserRequest {
+    string transfer_no = 1;
+    string lang = 2;
+    string transfer_type = 3;
+}
+
+message EnterpriseTransferToUserReply {
+    string result_code = 1;
+    EnterpriseTransfer order = 2;
+}
+
+message EnterpriseTransfer {
+    string order_no = 1;
+    string amount = 2;
+    string currency_type = 3;
+    string payee_acc_no = 4;
+    string payee_acc_type = 5;
+}
+

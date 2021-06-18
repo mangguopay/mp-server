@@ -1,0 +1,1013 @@
+syntax = "proto3";
+
+package go.micro.srv.admin_auth;
+
+service AdminAuth {
+    // 验证码
+    rpc GetCaptcha (GetCaptchaRequet) returns (GetCaptchaReply) {
+    }
+
+    // 登陆
+    rpc Login (LoginRequest) returns (LoginReply) {
+    }
+
+    // 获取账户列表
+    rpc GetAccountList (GetAccountListRequest) returns (GetAccountListReply) {
+    }
+    // 获取Admin账户列表
+    rpc GetAdminAccountList (GetAdminAccountListRequest) returns (GetAdminAccountListReply) {
+    }
+
+    // 获取账户列表2
+    rpc GetAccountList2 (GetAccountListRequest2) returns (GetAccountListReply2) {
+    }
+
+    // 账号信息
+    rpc GetAccount (GetAccountRequest) returns (GetAccountReply) {
+    }
+
+    // Admin账号信息
+    rpc GetAdminAccount (GetAdminAccountRequest) returns (GetAdminAccountReply) {
+    }
+
+    // 更新账号信息
+    rpc SaveAccount (SaveAccountRequest) returns (SaveAccountReply) {
+    }
+    // 更新Admin账号信息
+    rpc SaveAdminAccount (SaveAdminAccountRequest) returns (SaveAdminAccountReply) {
+    }
+
+    // 删除账户
+    rpc DeleteAccount (DeleteAccountRequest) returns (DeleteAccountReply) {
+    }
+
+    // 获取账号授权信息
+    rpc GetAccountByNickname (GetAccountByNicknameRequest) returns (GetAccountByNicknameReply) {
+    }
+
+    // 更新账号授权
+    rpc UpdateOrInsertAccountAuth (UpdateOrInsertAccountAuthRequest) returns (UpdateOrInsertAccountAuthReply) {
+    }
+    // 更新admin账号授权
+    rpc UpdateOrInsertAdminAccountAuth (UpdateOrInsertAdminAccountAuthRequest) returns (UpdateOrInsertAdminAccountAuthReply) {
+    }
+
+    // 修改密码
+    rpc ModifyPw (ModifyPwRequest) returns (ModifyPwReply) {
+    }
+    // 修改Admin密码
+    rpc ModifyAdminPw (ModifyAdminPwRequest) returns (ModifyAdminPwReply) {
+    }
+
+    // 重置密码
+    rpc ResetPw (ResetPwRequest) returns (ResetPwReply) {
+    }
+    // 重置admin密码
+    rpc ResetAdminPw (ResetAdminPwRequest) returns (ResetAdminPwReply) {
+    }
+
+    rpc GetLogLoginList (GetLogLoginListRequest) returns (GetLogLoginListReply) {
+    }
+
+    rpc ModifyUserStatus (ModifyUserStatusRequest) returns (ModifyUserStatusReply) {
+    }
+
+    rpc CheckAccount (CheckAccountRequest) returns (CheckAccountReply) {
+    }
+
+    rpc CheckAdminAccount (CheckAdminAccountRequest) returns (CheckAdminAccountReply) {
+    }
+
+    rpc GetRoleFromAcc (GetRoleFromAccRequest) returns (GetRoleFromAccReply) {
+    }
+    rpc GetAdminRoleFromAcc (GetAdminRoleFromAccRequest) returns (GetAdminRoleFromAccReply) {
+    }
+
+    // 获取admin菜单详情
+    rpc GetAdminMenu (GetAdminMenuRequest) returns (GetAdminMenuReply) {
+    }
+    // 获取菜单详情
+    rpc GetMenu (GetMenuRequest) returns (GetMenuReply) {
+    }
+
+    // 获取Admin菜单列表
+    rpc GetAdminMenuList (GetAdminMenuListRequest) returns (GetAdminMenuListReply) {
+    }
+    // 获取菜单列表
+    rpc GetMenuList (GetMenuListRequest) returns (GetMenuListReply) {
+    }
+
+    // 菜单修改
+    rpc SaveOrInsertAdminMenu (SaveOrInsertAdminMenuRequest) returns (SaveOrInsertAdminMenuReply) {
+    }
+    // 菜单修改
+    rpc SaveOrInsertMenu (SaveOrInsertMenuRequest) returns (SaveOrInsertMenuReply) {
+    }
+
+    // 菜单删除
+    rpc DeleteAdminMenu (DeleteAdminMenuRequest) returns (DeleteAdminMenuReply) {
+    }
+    // 菜单删除
+    rpc DeleteMenu (DeleteMenuRequest) returns (DeleteMenuReply) {
+    }
+
+    rpc AdminMenuRefreshChild (AdminMenuRefreshChildRequest) returns (AdminMenuRefreshChildReply) {
+    }
+    rpc MenuRefreshChild (MenuRefreshChildRequest) returns (MenuRefreshChildReply) {
+    }
+
+    // 获取角色URL
+    rpc GetRoleUrlList (GetRoleUrlListRequest) returns (GetRoleUrlListReply) {
+    }
+    // 获取Admin角色URL
+    rpc GetAdminRoleUrlList (GetAdminRoleUrlListRequest) returns (GetAdminRoleUrlListReply) {
+    }
+
+    // 获取角色
+    rpc GetRoleInfo (GetRoleInfoRequest) returns (GetRoleInfoReply) {
+    }
+    // 获取Admin角色
+    rpc GetAdminRoleInfo (GetAdminRoleInfoRequest) returns (GetAdminRoleInfoReply) {
+    }
+
+    // 获取角色
+    rpc GetRole (GetRoleRequest) returns (GetRoleReply) {
+    }
+    // 获取角色
+    rpc GetAdminRole (GetAdminRoleRequest) returns (GetAdminRoleReply) {
+    }
+
+    // 获取角色列表
+    rpc GetRoleList (GetRoleListRequest) returns (GetRoleListReply) {
+    }
+    // 获取Admin角色列表
+    rpc GetAdminRoleList (GetAdminRoleListRequest) returns (GetAdminRoleListReply) {
+    }
+
+    // 角色修改
+    rpc UpdateOrInsertRole (UpdateOrInsertRoleRequest) returns (UpdateOrInsertRoleReply) {
+    }
+    // 角色修改
+    rpc UpdateOrInsertAdminRole (UpdateOrInsertAdminRoleRequest) returns (UpdateOrInsertAdminRoleReply) {
+    }
+
+    // 角色授权修改
+    rpc UpdateOrInsertRoleAuth (UpdateOrInsertRoleAuthRequest) returns (UpdateOrInsertRoleAuthReply) {
+    }
+    // 角色授权修改
+    rpc UpdateOrInsertAdminRoleAuth (UpdateOrInsertAdminRoleAuthRequest) returns (UpdateOrInsertAdminRoleAuthReply) {
+}
+
+    rpc AuthRole (AuthRoleRequest) returns (AuthRoleReply) {
+    }
+    rpc AuthAdminRole (AuthAdminRoleRequest) returns (AuthAdminRoleReply) {
+    }
+    // 角色删除
+    rpc DeleteRole (DeleteRoleRequest) returns (DeleteRoleReply) {
+    }
+    // 角色删除
+    rpc DeleteAdminRole (DeleteAdminRoleRequest) returns (DeleteAdminRoleReply) {
+    }
+
+
+    // 获取未激活账号列表
+    rpc GetUnActivedAccounts (GetUnActivedAccountsRequest) returns (GetUnActivedAccountsReply) {
+    }
+}
+
+//================获取账户============================
+message GetAccountRequest {
+    string account = 1;
+    string account_uid = 2;
+    string iden_no = 3;
+    string account_type = 4;
+    // string account_name = 5;
+    string login_account_no = 6;
+    string pub_key = 7;
+    string jump_iden_no = 8;
+    string jump_iden_type = 9;
+    string master_acc_no = 10;
+    string is_master_acc = 11;
+    string lang = 12;
+}
+message GetAccountReply {
+    string result_code = 1;
+    string msg = 2;
+    string uid = 3;
+    string account = 5;
+    string use_status = 6;
+    string create_time = 7;
+    string modify_time = 8;
+    string account_type = 11;
+    repeated RouteData data_list = 12;
+    string top_agency = 15;
+    string phone = 16;
+    string login_token = 19;
+    string country_code = 20;
+    //string jwt = 21;
+}
+
+message RouteData {
+    string url_uid = 1;
+    string url_name = 2;
+    string url = 3;
+    string parent_uid = 4;
+    string title = 5;
+    string icon = 6;
+    string component_name = 7;
+    string component_path = 8;
+    string redirect = 9;
+    int32 idx = 10;
+    int32 is_hidden = 11;
+}
+
+//================获取账户============================
+message GetAdminAccountRequest {
+    string account_uid = 1;
+}
+message GetAdminAccountReply {
+    string result_code = 1;
+    string msg = 2;
+    string uid = 3;
+    string account = 5;
+    string use_status = 6;
+    string create_time = 7;
+    string modify_time = 8;
+    string account_type = 11;
+    repeated RouteData data_list = 12;
+    string top_agency = 15;
+    string phone = 16;
+    string login_token = 19;
+    string country_code = 20;
+}
+
+//============================================
+message AuthAdminRoleRequest {
+    string role_no = 1;
+    string def_type = 2;
+    string acc_type = 3;
+}
+message AuthAdminRoleReply {
+    string result_code = 1;
+    string msg = 2;
+}
+
+//============================================
+message GetRoleInfoReply {
+    string result_code = 1;
+    RoleData data = 2;
+}
+message GetRoleInfoRequest {
+    string role_no = 1;
+}
+
+//============================================
+message GetAdminRoleInfoReply {
+    string result_code = 1;
+    RoleData data = 2;
+}
+message GetAdminRoleInfoRequest {
+    string role_no = 1;
+}
+
+//==============获取标签==============================
+message GetAdminRoleRequest {
+    string role_name = 1;
+}
+message GetAdminRoleReply {
+    string result_code = 1;
+    string role_no = 3;
+    string role_name = 4;
+    string create_time = 5;
+    string modify_time = 6;
+    string drop_time = 7;
+    int32 use_status = 8;
+    string remark = 9;
+    repeated GetRoleUrlData url_data = 10;
+    repeated GetRoleUrlData url_data_2 = 11;
+    string master_acc = 12;
+    string master_account = 13;
+    string top_agency = 14;
+}
+message GetRoleUrlData {
+    string url = 1;
+    string name = 2;
+    string url_uid = 3;
+}
+
+//==============获取角色列表==============================
+message GetRoleListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string search = 3;
+    string acc_type = 4;
+    string master_acc = 5;
+}
+message GetRoleListReply {
+    string result_code = 1;
+    string msg = 2;
+    repeated RoleData data_list = 3;
+    int32 len = 4;
+}
+message RoleData {
+    string role_no = 1;
+    string role_name = 2;
+    string create_time = 3;
+    string modify_time = 4;
+    string acc_type = 5;
+    string def_type = 6;
+    string master_acc = 7;
+    string master_account = 8;
+}
+
+//==============获取角色列表==============================
+message GetAdminRoleListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string search = 3;
+    string acc_type = 4;
+}
+message GetAdminRoleListReply {
+    string result_code = 1;
+    string msg = 2;
+    repeated AdminRoleData data_list = 3;
+    int32 len = 4;
+}
+message AdminRoleData {
+    string role_no = 1;
+    string role_name = 2;
+    string create_time = 3;
+    string modify_time = 4;
+    string acc_type = 5;
+    string def_type = 6;
+    string master_acc = 7;
+    string master_account = 8;
+}
+
+//==============更新账号信息==============================
+message UpdateOrInsertAdminRoleRequest {
+    string role_no = 1;
+    string role_name = 2;
+    string acc_type = 3;
+    string acc_uid = 4;
+    string master_acc = 5;
+}
+
+message UpdateOrInsertAdminRoleReply {
+    string result_code = 1;
+    string msg = 2;
+}
+
+//=============删除账户=======================
+message DeleteAdminRoleRequest {
+    string role_no = 1;
+}
+
+message DeleteAdminRoleReply {
+    string result_code = 1;
+    string msg = 2;
+}
+
+//=============更新角色授权===================
+message UpdateOrInsertAdminRoleAuthRequest {
+    string role_no = 1;
+    repeated string urls = 2;
+}
+
+message UpdateOrInsertAdminRoleAuthReply {
+    string result_code = 1;
+    string msg = 2;
+}
+
+//============================================
+message GetRoleUrlListRequest {
+    string role_no = 1;
+}
+
+message GetRoleUrlListReply {
+    string result_code = 1;
+    repeated RoleUrlListData data_list = 2;
+    string master_acc = 3;
+}
+
+message RoleUrlListData {
+    string id = 1;
+    string name = 2;
+    string parent_uid = 3;
+    string role_no = 4;
+    repeated RoleUrlListData children = 5;
+}
+//============================================
+message GetAdminRoleUrlListRequest {
+    string role_no = 1;
+}
+
+message GetAdminRoleUrlListReply {
+    string result_code = 1;
+    repeated AdminRoleUrlListData data_list = 2;
+}
+
+message AdminRoleUrlListData {
+    string id = 1;
+    string name = 2;
+    string parent_uid = 3;
+    string role_no = 4;
+    repeated AdminRoleUrlListData children = 5;
+}
+
+//=============验证码===============================
+message GetCaptchaRequet {
+    int32 strlen = 1;
+}
+
+message GetCaptchaReply {
+    string result_code = 1;
+    string msg = 2;
+    string verifyid = 3; //图片id
+    string base64png = 4; //base64图片
+}
+
+//=============获取菜单详情===============================
+message GetAdminMenuRequest {
+    string url_uid = 1;
+}
+message GetAdminMenuReply {
+    string result_code = 1;
+    AdminRouteData data = 2;
+    int32 total = 3;
+}
+message AdminRouteData {
+    string url_uid = 1;
+    string url_name = 2;
+    string url = 3;
+    string parent_uid = 4;
+    string title = 5;
+    string icon = 6;
+    string component_name = 7;
+    string component_path = 8;
+    string redirect = 9;
+    int32 idx = 10;
+    int32 is_hidden = 11;
+}
+
+
+
+//=============获取Admin菜单列表===============================
+message GetAdminMenuListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string search = 3;
+}
+
+message GetAdminMenuListReply {
+    string result_code = 1;
+    repeated AdminRouteData data_list = 2;
+    int32 total = 3;
+}
+
+
+
+
+
+//============更新菜单信息================================
+message SaveOrInsertAdminMenuRequest {
+    string url_uid = 1;
+    string url_name = 2;
+    string url = 3;
+    string parent_uid = 4;
+    string title = 5;
+    string icon = 6;
+    string component_name = 7;
+    string component_path = 8;
+    string redirect = 9;
+    int32 idx = 10;
+    int32 is_hidden = 11;
+}
+
+message SaveOrInsertAdminMenuReply {
+    string result_code = 1;
+    string uid = 2;
+}
+
+//==============删除菜单==============================
+message DeleteAdminMenuRequest {
+    string url_uid = 1;
+}
+message DeleteAdminMenuReply {
+    string result_code = 1;
+}
+
+//============================================
+message GetConfigRequest {
+    string account_uid = 1;
+}
+message GetConfigReply {
+    string result_code = 1;
+    string msg = 2;
+    PlatformConfig data = 3;
+}
+message PlatformConfig {
+    string account_uid = 1;
+    int32 side_status = 2;
+    int32 top_status = 3;
+}
+
+//============================================
+message AdminMenuRefreshChildRequest {
+    repeated string url_no = 1;
+}
+
+message AdminMenuRefreshChildReply {
+    string result_code = 1;
+}
+
+//==============登录==============================
+message LoginRequest {
+    string account = 1;
+    string password = 2;
+    string verifyid = 3; //图片id
+    string verifynum = 4; //验证码
+    string nonstr = 5;
+    string ip = 6;
+}
+
+message LoginReply {
+    string result_code = 1;
+    string msg = 2;
+    string jwt = 3;
+    bool isEncrypted = 4;
+    string account_uid = 5;
+    string account_type = 6;
+}
+
+//============================================
+message CheckAccountRequest {
+    string account = 1;
+}
+
+message CheckAccountReply {
+    string result_code = 1;
+    CheckAccountData data = 2;
+}
+
+message CheckAccountData {
+    string count = 1;
+}
+
+//============================================
+message CheckAdminAccountRequest {
+    string account = 1;
+}
+
+message CheckAdminAccountReply {
+    string result_code = 1;
+    CheckAdminAccountData data = 2;
+}
+
+message CheckAdminAccountData {
+    string count = 1;
+}
+
+//=============获取账户列表===============================
+message GetAccountListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string search = 3;
+    string account_type = 4;
+    string affiliation_uid = 5;
+    string master_acc = 6;
+    string is_actived = 7;
+}
+
+message GetAccountListReply {
+    string result_code = 1;
+    string msg = 2;
+    repeated Account account_data = 3;
+    int32 total = 4;
+}
+//=============获取Admin账户列表===============================
+message GetAdminAccountListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string search = 3;
+    string account_type = 4;
+}
+
+message GetAdminAccountListReply {
+    string result_code = 1;
+    string msg = 2;
+    repeated Account account_data = 3;
+    int32 total = 4;
+}
+
+message Account {
+    string uid = 1;
+    string nickname = 2;
+    string account = 3;
+    string use_status = 4;
+    string create_time = 5;
+    string modify_time = 6;
+    string account_type = 7;
+    string affiliation_uid = 8;
+    string master_acc = 9;
+    string master_account = 10;
+    string is_actived = 11;
+}
+
+//==============获取账户列表2==============================
+message GetAccountListRequest2 {
+    int32 page = 1;
+    int32 page_size = 2;
+    string query_nickname = 3;
+    string query_phone = 4;
+    string start_time = 5;
+    string end_time = 6;
+    string account = 7;
+    string auth_status = 8;
+    string is_actived = 9;
+    string use_status = 10;
+
+    //余额进行排序
+    string sort_type = 12;
+}
+
+message GetAccountListReply2 {
+    string result_code = 1;
+    repeated Account2 account_data = 2;
+    int32 total = 3;
+}
+
+message Account2 {
+    string uid = 1;
+    string nickname = 2;
+    string use_status = 3;
+    string phone = 4;
+    string create_time = 5;
+    string usd_balance = 6;
+    string khr_balance = 7;
+    string account = 8;
+    string auth_status = 9;
+    string country_code = 10;
+    string is_actived = 11;
+}
+
+//==============更新账号信息==============================
+message SaveAccountRequest {
+    string account_uid = 1;
+    string nickname = 2;
+    string account = 3;
+    string password = 4;
+    string use_status = 5;
+    string phone = 6;
+    string email = 7;
+    string master_acc = 8;
+    string account_type = 9;
+    string country_code = 10;
+    string utm_source = 11;
+}
+
+message SaveAccountReply {
+    string result_code = 1;
+    string msg = 2;
+    string uid = 3;
+}
+//==============更新账号信息==============================
+message SaveAdminAccountRequest {
+    string account_uid = 1;
+    string account = 2;
+    string password = 3;
+    string use_status = 4;
+    string phone = 5;
+    string email = 6;
+    string account_type = 7;
+}
+
+message SaveAdminAccountReply {
+    string result_code = 1;
+    string msg = 2;
+    string uid = 3;
+}
+
+//================删除账户============================
+message DeleteAccountRequest {
+    repeated string account_uids = 1;
+}
+
+message DeleteAccountReply {
+    string result_code = 1;
+    string msg = 2;
+}
+
+//===============获取账户=============================
+message GetAccountByNicknameRequest {
+    string nickname = 1;
+}
+
+message GetAccountByNicknameReply {
+    string result_code = 1;
+    string msg = 2;
+    string uid = 3;
+    string nickname = 4;
+    string account = 5;
+    string use_status = 6;
+    string create_time = 7;
+    string modify_time = 8;
+    string drop_time = 9;
+    repeated RoleSimpleData data_list = 10;
+    repeated RoleSimpleData data_list_2 = 11;
+}
+
+message RoleSimpleData {
+    string role_no = 1;
+    string role_name = 2;
+}
+
+//==============更新账户授权==============================
+message UpdateOrInsertAccountAuthRequest {
+    string account_type = 1; //登陆的账号角色
+    string uid = 2; //要更新账号角色的uid
+    string roles = 3;
+    string login_uid = 4;
+}
+
+message UpdateOrInsertAccountAuthReply {
+    string result_code = 1;
+    string msg = 2;
+}
+//==============更新Admin账户授权==============================
+message UpdateOrInsertAdminAccountAuthRequest {
+    string account_type = 1; //登陆的账号角色
+    string uid = 2; //要更新账号角色的uid
+    string roles = 3;
+    string login_uid = 4;
+}
+
+message UpdateOrInsertAdminAccountAuthReply {
+    string result_code = 1;
+    string msg = 2;
+}
+
+//================修改密码============================
+message ModifyPwRequest {
+    string account = 1;
+    string new_pw = 2;
+    string old_pw = 3;
+    string sms_code = 4;
+    string cli = 5; // 来源
+    string account_login = 6;
+    string top_agency = 7;
+}
+
+message ModifyPwReply {
+    string result_code = 1;
+    string msg = 2;
+}
+//================修改Admin密码============================
+message ModifyAdminPwRequest {
+    string account_uid = 1;
+    string new_pw = 2;
+    string old_pw = 3;
+    string account_login = 6;
+}
+
+message ModifyAdminPwReply {
+    string result_code = 1;
+    string msg = 2;
+}
+
+//================重置密码============================
+message ResetPwRequest {
+    string account = 1;
+    string new_pw = 2;
+    string sms_code = 3;
+    string cli = 4; // 来源
+    string login_pw = 5;
+    string login_acc_no = 6;
+}
+
+message ResetPwReply {
+    string result_code = 1;
+    string msg = 2;
+}
+
+//================重置密码============================
+message ResetAdminPwRequest {
+    string account = 1;
+    string login_pw = 5;
+    string login_acc_no = 6;
+}
+
+message ResetAdminPwReply {
+    string result_code = 1;
+    string msg = 2;
+}
+
+//============================================
+message GetLogLoginListRequest {
+    string account_no = 1;
+    string account_type = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string search = 5;
+    int32 page = 6;
+    int32 page_size = 7;
+}
+message GetLogLoginListReply {
+    string result_code = 1;
+    string msg = 2;
+    int32 total = 3;
+    repeated LogLogin datas = 4;
+}
+message LogLogin {
+    string login_time = 1;
+    string ip = 2;
+    string client = 3;
+    string result = 4;
+    string account_no = 5;
+    string account_name = 6;
+    string login_no = 7;
+}
+
+//==================修改用户状态==========================
+message ModifyUserStatusRequest {
+    string account = 1;
+    string uid = 2;
+    string set_status = 3;
+    string login_uid = 4;
+}
+message ModifyUserStatusReply {
+    string result_code = 1;
+    string msg = 2;
+}
+
+//============================================
+message GetRoleFromAccRequest {
+    string acc_no = 1;
+    string top_agency = 2;
+}
+
+message GetRoleFromAccReply {
+    string result_code = 1;
+    repeated RoleSimpleData datas = 2;
+}
+//============================================
+message GetAdminRoleFromAccRequest {
+    string acc_no = 1;
+    string top_agency = 2;
+}
+
+message GetAdminRoleFromAccReply {
+    string result_code = 1;
+    repeated RoleSimpleData datas = 2;
+}
+
+// 获取未激活账号列表
+message GetUnActivedAccountsRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string start_time = 5;
+    string end_time = 6;
+    string account = 7;
+}
+
+message GetUnActivedAccountsReply {
+    string result_code = 1;
+    repeated Account3 account_data = 2;
+    int32 total = 3;
+}
+
+message Account3 { //未激活账号返回封装
+   string uid = 1;
+   string phone = 2;
+   string create_time = 3;
+   string account = 4;
+   string country_code = 5;
+}
+
+
+//=============获取菜单列表===============================
+message GetMenuListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string search = 3;
+}
+
+message GetMenuListReply {
+    string result_code = 1;
+    repeated RouteData data_list = 2;
+    int32 total = 3;
+}
+
+//=============获取菜单详情===============================
+message GetMenuRequest {
+    string url_uid = 1;
+}
+message GetMenuReply {
+    string result_code = 1;
+    RouteData data = 2;
+    int32 total = 3;
+}
+
+//============更新菜单信息================================
+message SaveOrInsertMenuRequest {
+    string url_uid = 1;
+    string url_name = 2;
+    string url = 3;
+    string parent_uid = 4;
+    string title = 5;
+    string icon = 6;
+    string component_name = 7;
+    string component_path = 8;
+    string redirect = 9;
+    int32 idx = 10;
+    int32 is_hidden = 11;
+}
+
+message SaveOrInsertMenuReply {
+    string result_code = 1;
+    string uid = 2;
+}
+
+//==============删除菜单==============================
+message DeleteMenuRequest {
+    string url_uid = 1;
+}
+message DeleteMenuReply {
+    string result_code = 1;
+}
+
+//============================================
+message MenuRefreshChildRequest {
+    repeated string url_no = 1;
+}
+
+message MenuRefreshChildReply {
+    string result_code = 1;
+}
+
+
+//==============获取标签==============================
+message GetRoleRequest {
+    string role_name = 1;
+}
+message GetRoleReply {
+    string result_code = 1;
+    string role_no = 3;
+    string role_name = 4;
+    string create_time = 5;
+    string modify_time = 6;
+    string drop_time = 7;
+    int32 use_status = 8;
+    string remark = 9;
+    repeated GetRoleUrlData url_data = 10;
+    repeated GetRoleUrlData url_data_2 = 11;
+    string master_acc = 12;
+    string master_account = 13;
+    string top_agency = 14;
+}
+//==============更新账号信息==============================
+message UpdateOrInsertRoleRequest {
+    string role_no = 1;
+    string role_name = 2;
+    string acc_type = 3;
+    string acc_uid = 4;
+    string master_acc = 5;
+}
+
+message UpdateOrInsertRoleReply {
+    string result_code = 1;
+    string msg = 2;
+}
+
+
+//=============更新角色授权===================
+message UpdateOrInsertRoleAuthRequest {
+    string role_no = 1;
+    repeated string urls = 2;
+}
+
+message UpdateOrInsertRoleAuthReply {
+    string result_code = 1;
+    string msg = 2;
+}
+
+//============================================
+message AuthRoleRequest {
+    string role_no = 1;
+    string def_type = 2;
+    string acc_type = 3;
+}
+message AuthRoleReply {
+    string result_code = 1;
+    string msg = 2;
+}
+
+//=============删除账户=======================
+message DeleteRoleRequest {
+    string role_no = 1;
+}
+
+message DeleteRoleReply {
+    string result_code = 1;
+    string msg = 2;
+}

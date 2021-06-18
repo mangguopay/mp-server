@@ -1,0 +1,77 @@
+syntax = "proto3";
+
+package go.micro.srv.push;
+
+service Push {
+    rpc SendSms (SendSmsRequest) returns (SendSmsReply) {
+    }
+    rpc SendPushMsg (SendPushMsgRequest) returns (SendPushMsgReply) {
+    }
+    rpc Push (PushReqest) returns (PushReply) {
+    }
+    //dddddddddddddddddddddddddd
+}
+
+//==========================================
+message PushReqest {
+    repeated PushAccout accounts = 1;
+    string temp_no = 2;
+    repeated string args = 3;
+    repeated string title_args = 4;
+}
+
+message PushAccout {
+    string account_no = 1;
+    string account_type = 2;
+    string phone = 3;
+    string lang = 4;
+    string country_code = 5;
+    string email = 6;
+}
+
+message PushReply {
+    string result_code = 1;
+}
+
+//==========================================
+message SendSmsRequest {
+    string phone = 1;
+    string lang = 2;
+    string function = 3;
+    string business = 4;
+    string p1 = 5;
+    string country_code = 6;
+}
+
+message SendSmsReply {
+    string result_code = 1;
+}
+//==========================================
+message SendPushMsgRequest {
+    string phone = 1;
+    string lang = 2;
+    string send_type = 3;
+    string title = 4;
+    ContentWithArgs content = 5;
+    string order_type = 6;
+    string order_no = 7;
+}
+
+message SendPushMsgReply {
+    string result_code = 1;
+}
+
+message ContentWithArgs {
+    string key = 1; // zzxzxavva
+    repeated string args = 2; // xxxx
+}
+
+
+message SendListenExpKeyRequest {
+    string gen_code = 1;
+    string order_no = 2;
+}
+
+//type, val
+
+//==========================================

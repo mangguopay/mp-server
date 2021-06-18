@@ -1,0 +1,29 @@
+
+syntax = "proto3";
+
+package go.micro.srv.settle;
+
+service Settle {
+    // 清算转账订单
+    rpc SettleTransfer (SettleTransferRequest) returns (SettleTransferReply) {
+    }
+    //dddddddddddddddddddddddddd
+}
+
+//======================================
+message SettleTransferRequest {
+    string bill_no = 1;
+    // 1-兑换;2-转账;3-收款;4-存款
+    string fees_type = 2;
+    // 手续费
+    string fees = 3;
+
+    string money_type = 4;
+
+    int32 va_type = 5;
+}
+
+message SettleTransferReply {
+    string result_code = 1;
+}
+//======================================

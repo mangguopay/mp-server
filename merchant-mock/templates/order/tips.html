@@ -1,0 +1,23 @@
+{{define "order/tips.html"}}
+
+    {{template "common/header.html" .}}
+
+    <div class="container-fluid">
+        {{if ne .errMsg ""}}
+        <div class="alert alert-danger" role="alert">
+            <span class="sr-only">Error:</span>
+            {{.errMsg}}
+        </div>
+        {{end}}
+
+        {{if ne .successMsg ""}}
+        <div class="alert alert-success" role="alert">
+            <span class="sr-only">Success:</span>
+            {{.successMsg}}
+        </div>
+        {{end}}
+
+    </div>
+
+    {{template "common/footer.html"}}
+{{end}}

@@ -1,0 +1,1 @@
+micro --registry=etcd web --namespace=go.micro.web

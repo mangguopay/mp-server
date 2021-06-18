@@ -1,0 +1,1 @@
+nats-streaming-server -m 8282 -p 4282  -DV --cluster_id secondary

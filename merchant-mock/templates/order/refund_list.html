@@ -1,0 +1,52 @@
+{{define "order/refund_list.html"}}
+
+    {{template "common/header.html" .}}
+
+    <div class="container-fluid">{{.errMsg}}<div>
+    <div class="container-fluid">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>应用ID</th>
+                    <th>订单号</th>
+                    <th>本地退款单号</th>
+                    <th>币种</th>
+                    <th>金额(单位:分)</th>
+                    <th>创建时间</th>
+                    <th>退款单号</th>
+                    <th>退款时间</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{range .refundList}}
+                    <tr>
+                        <td>{{.AppId}}</td>
+                        <td>{{.OrderSn}}</td>
+                        <td>{{.OutRefundNo}}</td>
+                        <td>{{.CurrencyType}}</td>
+                        <td>{{.Amount}}</td>
+                        <td>{{.CreateTime}}</td>
+                        <td>{{.RefundNo}}</td>
+                        <td>{{.RefundTime}}</td>
+                        <td>
+                            {{if eq .Status 1}}
+                                <span class="label label-default">{{.StatusStr}}</span>
+                            {{else if eq .Status 2}}
+                                <span class="label label-success">{{.StatusStr}}</span>
+                            {{else if eq .Status 3}}
+                                <span class="label label-warning">{{.StatusStr}}</span>
+                            {{else }}
+                                <span class="label label-default">{{.StatusStr}}</span>
+                            {{end}}
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>
+                {{end}}
+                </tbody>
+            </table>
+    </div>
+
+    {{template "common/footer.html"}}
+{{end}}

@@ -1,0 +1,10 @@
+{
+  "type": "for",
+  "condition": "opNo",
+  "i_begin": "",
+  "i_step": "",
+  "i_end": "",
+  "loop": [
+
+  ]
+}

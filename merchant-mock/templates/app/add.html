@@ -1,0 +1,61 @@
+{{define "app/add.html"}}
+
+    {{template "common/header.html" .}}
+
+    <div class="container-fluid">
+        <form class="form-horizontal" action="/app/create" method="post">
+            <div class="form-group">
+                <label for="app_id" class="col-sm-2 control-label">应用ID</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="app_id" name="app_id" >
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="app_name" class="col-sm-2 control-label">应用名称</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="app_name" name="app_name" >
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="merchant_private_key" class="col-sm-2 control-label">商家私钥</label>
+                <div class="col-sm-6">
+                    <textarea class="form-control" rows="10" id="merchant_private_key" name="merchant_private_key" ></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="merchant_public_key" class="col-sm-2 control-label">商家公钥</label>
+                <div class="col-sm-6">
+                    <textarea class="form-control" rows="6" id="merchant_public_key" name="merchant_public_key" ></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="platform_public_key" class="col-sm-2 control-label">平台公钥</label>
+                <div class="col-sm-6">
+                    <textarea class="form-control" rows="6" id="platform_public_key" name="platform_public_key" ></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="merchant_key_type" class="col-sm-2 control-label">秘钥类型</label>
+                <div class="col-sm-6">
+                    <select class="form-control" name="merchant_key_type">
+                        <option value="PKCS1">PKCS1</option>
+                        <option value="PKCS8">PKCS8</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary">添加应用</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+    {{template "common/footer.html"}}
+{{end}}

@@ -1,0 +1,66 @@
+{
+  "steps": [
+    {
+      "type": "if",
+      "condition": "7ca6f3ed-c953-4b38-b503-5f29db425ca7",
+      "rollback": "a",
+      "y": [
+        {
+          "type": "pipeline",
+          "steps": "opNo"
+        },
+        {
+          "type": "if",
+          "condition": "a == b",
+          "y": [
+            {
+              "type": "pipeline",
+              "step": ""
+            }
+          ],
+          "n": {}
+        }
+      ],
+      "n": [
+        {
+          "type": "pipeline",
+          "steps": "xxxxx"
+        },
+        {
+          "type": "if",
+          "condition": "a == b",
+          "y": {
+            "type": "if",
+            "condition": "a == b",
+            "y": [
+              {
+                "type": "if",
+                "condition": "a == b",
+                "y": [
+                ],
+                "n": ""
+              }
+            ],
+            "n": [
+              {
+                "type": "pipeline",
+                "steps": "xxxxx"
+              },
+              {
+                "type": "if",
+                "condition": "a == b",
+                "y": "",
+                "n": ""
+              }
+            ]
+          },
+          "n": ""
+        }
+      ]
+    }
+  ]
+}
+
+
+
+

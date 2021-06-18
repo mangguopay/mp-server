@@ -1,0 +1,1 @@
+nats-streaming-server -m 8272 -p 4272  -DV --cluster_id primary

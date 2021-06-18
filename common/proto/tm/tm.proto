@@ -1,0 +1,119 @@
+syntax = "proto3";
+
+package go.micro.srv.tm;
+
+service Tm {
+    // 开启事物
+    rpc TxBegin (TxBeginRequest) returns (TxBeginReply) {}
+
+    // 查询单行记录事物的sql
+    rpc TxQueryRow (TxQueryRowRequest) returns (TxQueryRowReply) {}
+
+    // 查询多行记录事物的sql
+    rpc TxQueryRows (TxQueryRowsRequest) returns (TxQueryRowsReply) {}
+
+    // 执行事务的sql
+    rpc TxExec (TxExecRequest) returns (TxExecReply) {}
+
+    // 提交事务
+    rpc TxCommit (TxCommitRequest) returns (TxCommitReply) {}
+
+    // 回滚事务
+    rpc TxRollback (TxRollbackRequest) returns (TxRollbackReply) {}
+}
+
+//---------------开启事物------------------------
+// 请求参数
+message TxBeginRequest {
+    string From_server_id = 1;
+}
+
+// 返回参数
+message TxBeginReply {
+    string Tx_no = 1;
+    string Err = 2;
+}
+//--------------------------------------------------
+
+
+//---------------查询单行记录事物的sql------------------
+// 请求参数
+message TxQueryRowRequest {
+    string From_server_id = 1;
+    string Tx_no = 2;
+    string Sql = 3;
+    repeated string Args = 4;
+}
+
+// 返回参数
+message TxQueryRowReply {
+    string Tx_no = 1;
+    string Err = 2;
+    map<string, string> Datas = 3;
+}
+//--------------------------------------------------
+
+
+//---------------查询多行记录事物的sql------------------
+// 请求参数
+message TxQueryRowsRequest {
+    string From_server_id = 1;
+    string Tx_no = 2;
+    string Sql = 3;
+    repeated string Args = 4;
+}
+
+// 返回参数
+message TxQueryRowsReply {
+    string Tx_no = 1;
+    string Err = 2;
+    repeated string Columns = 3;
+    message Row {
+        repeated string Data = 1;
+    }
+    repeated Row Rows = 4;
+}
+//--------------------------------------------------
+
+//---------------执行事务的sql------------------------
+// 请求参数
+message TxExecRequest {
+    string From_server_id = 1;
+    string Tx_no = 2;
+    string Sql = 3;
+    repeated string Args = 4;
+}
+
+// 返回参数
+message TxExecReply {
+    string Tx_no = 1;
+    string Err = 2;
+}
+//--------------------------------------------------
+
+
+//---------------提交事务---------------------------
+// 请求参数
+message TxCommitRequest {
+    string From_server_id = 1;
+    string Tx_no = 2;
+}
+
+// 返回参数
+message TxCommitReply {
+    string Err = 2;
+}
+//-------------------------------------------------
+
+//---------------回滚事务---------------------------
+// 请求参数
+message TxRollbackRequest {
+    string From_server_id = 1;
+    string Tx_no = 2;
+}
+
+// 返回参数
+message TxRollbackReply {
+    string Err = 2;
+}
+//-------------------------------------------------

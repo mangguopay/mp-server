@@ -1,0 +1,1307 @@
+syntax = "proto3";
+
+package go.micro.srv.auth;
+
+service Auth {
+    // 验证码
+    rpc GetCaptcha (GetCaptchaRequet) returns (GetCaptchaReply) {
+    }
+    // 获取菜单详情
+    rpc GetMenu (GetMenuRequest) returns (GetMenuReply) {
+    }
+    // 获取菜单列表
+    rpc GetMenuList (GetMenuListRequest) returns (GetMenuListReply) {
+    }
+    // 菜单修改
+    rpc SaveOrInsertMenu (SaveOrInsertMenuRequest) returns (SaveOrInsertMenuReply) {
+    }
+    // 菜单删除
+    rpc DeleteMenu (DeleteMenuRequest) returns (DeleteMenuReply) {
+    }
+
+    rpc RefreshChild (RefreshChildRequest) returns (RefreshChildReply) {
+    }
+
+    // 获取角色
+    rpc GetRole (GetRoleRequest) returns (GetRoleReply) {
+    }
+    // 获取角色
+    rpc GetRoleInfo (GetRoleInfoRequest) returns (GetRoleInfoReply) {
+    }
+    // 获取角色列表
+    rpc GetRoleList (GetRoleListRequest) returns (GetRoleListReply) {
+    }
+    // 角色修改
+    rpc UpdateOrInsertRole (UpdateOrInsertRoleRequest) returns (UpdateOrInsertRoleReply) {
+    }
+    // 角色删除
+    rpc DeleteRole (DeleteRoleRequest) returns (DeleteRoleReply) {
+    }
+    // 角色授权修改
+    rpc UpdateOrInsertRoleAuth (UpdateOrInsertRoleAuthRequest) returns (UpdateOrInsertRoleAuthReply) {
+    }
+    // 获取角色URL
+    rpc GetRoleUrlList (GetRoleUrlListRequest) returns (GetRoleUrlListReply) {
+    }
+    rpc AuthRole (AuthRoleRequest) returns (AuthRoleReply) {
+    }
+
+    //    rpc CheckLang (CheckLangRequest) returns (CheckLangReply) {
+    //    }
+
+    // 登陆
+    rpc BusinessLogin (BusinessLoginRequest) returns (BusinessLoginReply) {
+    }
+    rpc MobileLogin (MobileLoginRequest) returns (MobileLoginReply) {
+    }
+    // 二次登陆
+    rpc Login2nd (Login2ndRequest) returns (Login2ndReply) {
+    }
+    // 二次登陆返回
+    rpc LoginReturn (LoginReturnRequest) returns (LoginReturnReply) {
+    }
+    //=================================
+    rpc CheckAccount (CheckAccountRequest) returns (CheckAccountReply) {
+    }
+    // 获取账户列表
+    rpc GetAccountList (GetAccountListRequest) returns (GetAccountListReply) {
+    }
+    // 更新账号信息
+    rpc SaveAccount (SaveAccountRequest) returns (SaveAccountReply) {
+    }
+    // 更新商家账号信息
+    rpc SaveBusinessAccount (SaveBusinessAccountRequest) returns (SaveBusinessAccountReply) {
+    }
+    //  账号信息
+    rpc GetAccount (GetAccountRequest) returns (GetAccountReply) {
+    }
+    // 获取版本信息
+    rpc GetVersinInfo (GetVersinInfoRequest) returns (GetVersinInfoReply) {
+    }
+
+    // 上传客户端信息
+    rpc UploadClientInfo (UploadClientInfoRequest) returns (UploadClientInfoReply) {
+    }
+
+    // 删除账户
+    rpc DeleteAccount (DeleteAccountRequest) returns (DeleteAccountReply) {
+    }
+    // 获取账号授权信息
+    rpc GetAccountByNickname (GetAccountByNicknameRequest) returns (GetAccountByNicknameReply) {
+    }
+    // 更新账号授权
+    rpc UpdateOrInsertAccountAuth (UpdateOrInsertAccountAuthRequest) returns (UpdateOrInsertAccountAuthReply) {
+    }
+    // 重置密码
+    rpc ResetPw (ResetPwRequest) returns (ResetPwReply) {
+    }
+    // 修改密码
+    rpc ModifyPw (ModifyPwRequest) returns (ModifyPwReply) {
+    }
+    // 修改密码
+    rpc ModifyPwMerc (ModifyPwMercRequest) returns (ModifyPwMercReply) {
+    }
+    rpc GetLogLoginList (GetLogLoginListRequest) returns (GetLogLoginListReply) {
+    }
+    rpc GetRoleFromAcc (GetRoleFromAccRequest) returns (GetRoleFromAccReply) {
+    }
+    rpc ModifyUserStatus (ModifyUserStatusRequest) returns (ModifyUserStatusReply) {
+    }
+    rpc GetRemain (GetRemainRequest) returns (GetRemainReply) {
+    }
+    rpc GetPosRemain (GetPosRemainRequest) returns (GetPosRemainReply) {
+    }
+
+    // 找回密码
+    rpc MobileBackPwd (MobileBackPwdRequest) returns (MobileBackPwdReply) {
+    }
+
+    // 修改密码
+    rpc MobileModifyPwd (MobileModifyPwdRequest) returns (MobileModifyPwdReply) {
+    }
+
+    // 修改支付密码
+    rpc MobileModifyPayPwd (MobileModifyPayPwdRequest) returns (MobileModifyPayPwdReply) {
+    }
+
+    // 修改手机号
+    rpc MobileModifyPhone (MobileModifyPhonedRequest) returns (MobileModifyPhonedReply) {
+    }
+    // 添加操作员
+    rpc AddCashier (AddCashierRequest) returns (AddCashierReply) {
+    }
+    rpc ModifyNickname (ModifyNicknameRequest) returns (ModifyNicknameReply) {
+    }
+    rpc AddCard (AddCardRequest) returns (AddCardReply) {
+    }
+    rpc ModifyDefaultCard (ModifyDefaultCardRequest) returns (ModifyDefaultCardReply) {
+    }
+    rpc DeleteBindCard (DeleteBindCardRequest) returns (DeleteBindCardReply) {
+    }
+    rpc MyData (MyDataRequest) returns (MyDataReply) {
+    }
+    // 用户注册直接登录
+    rpc RegLogin (RegLoginRequest) returns (RegLoginReply) {
+    }
+    rpc PerfectingInfo (PerfectingInfoRequest) returns (PerfectingInfoReply) {
+    }
+    rpc GetAccountCollect (GetAccountCollectRequest) returns (GetAccountCollectReply) {
+    }
+    rpc AddAccountCollect (AddAccountCollectRequest) returns (AddAccountCollectReply) {
+    }
+    rpc CheckPayPWD (CheckPayPWDRequest) returns (CheckPayPWDReply) {
+    }
+    rpc CustPayment (CustPaymentRequest) returns (CustPaymentReply) {
+    }
+
+    // 刷新token
+    rpc RefreshToken (RefreshTokenRequest) returns (RefreshTokenReply) {
+    }
+    rpc InsertLogAppDot (InsertLogAppDotRequest) returns (InsertLogAppDotReply) {
+    }
+    rpc ModifyPayPWDByMailCode (ModifyPayPWDByMailCodeRequest) returns (ModifyPayPWDByMailCodeReply) {
+    }
+    rpc ModifyEmail (ModifyEmailRequest) returns (ModifyEmailReply) {
+    }
+    rpc ModifyPayPWDByOldPwd (ModifyPayPWDByOldPwdRequest) returns (ModifyPayPWDByOldPwdReply) {
+    }
+    rpc BusinessModifyPhone (BusinessModifyPhoneRequest) returns (BusinessModifyPhoneReply) {
+    }
+    rpc BusinessModifyPWDBySms (BusinessModifyPWDBySmsRequest) returns (BusinessModifyPWDBySmsReply) {
+    }
+    rpc ModifyPWDByMailCode (ModifyPWDByMailCodeRequest) returns (ModifyPWDByMailCodeReply) {
+    }
+    rpc InitBusinessPayPwd (InitBusinessPayPwdRequest) returns (InitBusinessPayPwdReply) {
+    }
+    // 增加用户
+    rpc AddCust (AddCustRequest) returns (AddCustReply) {
+    }
+    //添加指纹
+    rpc AddAppFingerprint (AddAppFingerprintRequest) returns (AddAppFingerprintReply) {
+    }
+    //关闭指纹
+    rpc CloseAppFingerprint (CloseAppFingerprintRequest) returns (CloseAppFingerprintReply) {
+    }
+    //dddddddddddddddddddddddddd
+}
+
+//==============刷新token===============
+message RefreshTokenRequest {
+    string account = 1;
+    string account_uid = 2;
+    string iden_no = 3;
+    string account_type = 4;
+    string account_name = 5;
+    string login_account_no = 6;
+    string pub_key = 7;
+    string jump_iden_no = 8;
+    string jump_iden_type = 9;
+    string master_acc_no = 10;
+    string is_master_acc = 11;
+    string pos_sn = 12;
+    string jwt_iat = 13;
+}
+message RefreshTokenReply {
+    string result_code = 1;
+    string msg = 2;
+    string jwt = 3;
+    int32 refresh_token_interval = 4;
+}
+//======================================
+
+// 获取账户
+message GetAccountRequest {
+    string account = 1;
+    string account_uid = 2;
+    string iden_no = 3;
+    string account_type = 4;
+    // string account_name = 5;
+    string login_account_no = 6;
+    string pub_key = 7;
+    string jump_iden_no = 8;
+    string jump_iden_type = 9;
+    string master_acc_no = 10;
+    string is_master_acc = 11;
+    string lang = 12;
+}
+
+//message CheckLangRequest {
+//    string account = 1;
+//    string account_uid = 2;
+//    string iden_no = 3;
+//    string account_type = 4;
+//    string account_name = 5;
+//    string login_account_no = 6;
+//    string pub_key = 7;
+//    string jump_iden_no = 8;
+//    string jump_iden_type = 9;
+//    string master_acc_no = 10;
+//    string is_master_acc = 11;
+//    string lang = 12;
+//}
+//message CheckLangReply {
+//    string result_code = 1;
+//    string jwt =  2;
+//}
+
+//=============================
+
+message AuthRoleRequest {
+    string role_no = 1;
+    string def_type = 2;
+    string acc_type = 3;
+}
+message AuthRoleReply {
+    string result_code = 1;
+    string msg = 2;
+}
+//=============================
+message GetRoleInfoReply {
+    string result_code = 1;
+    RoleData data = 2;
+}
+message GetRoleInfoRequest {
+    string role_no = 1;
+}
+// 获取标签
+message GetRoleRequest {
+    string role_name = 1;
+}
+
+message GetRoleReply {
+    string result_code = 1;
+    string role_no = 3;
+    string role_name = 4;
+    string create_time = 5;
+    string modify_time = 6;
+    string drop_time = 7;
+    int32 use_status = 8;
+    string remark = 9;
+    repeated GetRoleUrlData url_data = 10;
+    repeated GetRoleUrlData url_data_2 = 11;
+    string master_acc = 12;
+    string master_account = 13;
+    string top_agency = 14;
+}
+
+message GetRoleUrlData {
+    string url = 1;
+    string name = 2;
+    string url_uid = 3;
+}
+
+// 获取角色列表
+message GetRoleListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string search = 3;
+    string acc_type = 4;
+    string master_acc = 5;
+}
+
+message GetRoleListReply {
+    string result_code = 1;
+    string msg = 2;
+    repeated RoleData data_list = 3;
+    int32 len = 4;
+}
+
+message RoleData {
+    string role_no = 1;
+    string role_name = 2;
+    string create_time = 3;
+    string modify_time = 4;
+    string acc_type = 5;
+    string def_type = 6;
+    string master_acc = 7;
+    string master_account = 8;
+}
+// 更新账号信息
+message UpdateOrInsertRoleRequest {
+    string role_no = 1;
+    string role_name = 2;
+    string acc_type = 3;
+    string acc_uid = 4;
+    string master_acc = 5;
+}
+
+message UpdateOrInsertRoleReply {
+    string result_code = 1;
+    string msg = 2;
+}
+//=============================
+// 删除账户
+message DeleteRoleRequest {
+    string role_no = 1;
+}
+
+message DeleteRoleReply {
+    string result_code = 1;
+    string msg = 2;
+}
+//=============================
+// 更新角色授权
+message UpdateOrInsertRoleAuthRequest {
+    string role_no = 1;
+    repeated string urls = 2;
+}
+
+message UpdateOrInsertRoleAuthReply {
+    string result_code = 1;
+    string msg = 2;
+}
+
+message GetRoleUrlListRequest {
+    string role_no = 1;
+}
+
+message GetRoleUrlListReply {
+    string result_code = 1;
+    repeated RoleUrlListData data_list = 2;
+    string master_acc = 3;
+}
+
+message RoleUrlListData {
+    string id = 1;
+    string name = 2;
+    string parent_uid = 3;
+    string role_no = 4;
+    repeated RoleUrlListData children = 5;
+}
+//=============================
+//=============================
+//=============================
+// 验证码
+message GetCaptchaRequet {
+    int32 strlen = 1;
+}
+
+message GetCaptchaReply {
+    string result_code = 1;
+    string verifyid = 2; //图片id
+    string base64png = 3; //base64图片
+}
+
+//=============================
+//获取菜单详情
+message GetMenuRequest {
+    string url_uid = 1;
+}
+
+message GetMenuReply {
+    string result_code = 1;
+    RouteData data = 2;
+    int32 total = 3;
+}
+//=============================
+message RouteData {
+    string url_uid = 1;
+    string url_name = 2;
+    string url = 3;
+    string parent_uid = 4;
+    string title = 5;
+    string icon = 6;
+    string component_name = 7;
+    string component_path = 8;
+    string redirect = 9;
+    int32 idx = 10;
+    int32 is_hidden = 11;
+}
+
+// 获取菜单列表
+message GetMenuListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string search = 3;
+}
+
+message GetMenuListReply {
+    string result_code = 1;
+    string msg = 2;
+    repeated RouteData data_list = 3;
+    int32 total = 4;
+}
+//=============================
+// 更新菜单信息
+message SaveOrInsertMenuRequest {
+    string url_uid = 1;
+    string url_name = 2;
+    string url = 3;
+    string parent_uid = 4;
+    string title = 5;
+    string icon = 6;
+    string component_name = 7;
+    string component_path = 8;
+    string redirect = 9;
+    int32 idx = 10;
+    int32 is_hidden = 11;
+}
+
+message SaveOrInsertMenuReply {
+    string result_code = 1;
+    string uid = 2;
+}
+//=============================
+// 删除菜单
+message DeleteMenuRequest {
+    string url_uid = 1;
+}
+message DeleteMenuReply {
+    string result_code = 1;
+}
+
+//=============================
+
+//==============================
+message RefreshChildRequest {
+    repeated string url_no = 1;
+}
+
+message RefreshChildReply {
+    string result_code = 1;
+}
+//=============================
+// 商家登录
+message BusinessLoginRequest {
+    string account = 1;
+    string password = 2;
+    string verifyid = 3; //图片id
+    string verifynum = 4; //验证码
+    string client = 5; // 读常量
+    string location = 6;
+    string login_acc_type = 7; // 账号类型
+    string nonstr = 8;
+    string ip = 9;
+}
+
+message BusinessLoginReply {
+    string result_code = 1;
+    string msg = 2;
+    string jwt = 3;
+    bool isEncrypted = 4;
+    string account_uid = 5;
+    string account_type = 6;
+    string initPayPwdStatus = 7; //是否已初始化支付密码(0否，1是)
+}
+//=============================
+// 登录
+message MobileLoginRequest {
+    string account = 1;
+    string password = 2;
+    string imei = 3;
+    string ip = 4;
+    string nonstr = 5;
+    string lang = 6;
+    string account_type = 7;
+    string pos_sn = 8;
+    string app_version = 9;
+    string pub_key = 10;
+    string lat = 11; // 维度
+    string lng = 12; // 经度
+    string country_code = 13;
+    string uuid = 14;
+}
+
+
+message MobileLoginReply {
+    string result_code = 1;
+    string msg = 2;
+    string jwt = 3;
+    bool isEncrypted = 4;
+    string account_uid = 5;
+    string gen_key = 6;
+    string phone = 7;
+    string terminal_no = 8;
+    string cashier_name = 9;
+    string account_type = 10;
+    string head_portrait_img_no = 11;
+    string app_version = 12;
+    string version_description = 13;
+    string app_url = 14;
+    string is_first_login = 15;
+    string pub_key = 16;
+    string is_force = 17; // 是否强制更新;0-否,1-是
+    int32 refresh_token_interval = 18;
+    string country_code = 19;
+    bool is_set_payment_pwd = 20; //是否已设置支付密码
+}
+//=============================
+
+message GetAccountReply {
+    string result_code = 1;
+    string msg = 2;
+    string uid = 3;
+    string nickname = 4;
+    string account = 5;
+    string use_status = 6;
+    string create_time = 7;
+    string modify_time = 8;
+    string drop_time = 9;
+    string merchant_uid = 10;
+    string account_type = 11;
+    repeated RouteData data_list = 12;
+    string master_acc = 13;
+    string master_account = 14;
+    string top_agency = 15;
+    string phone = 16;
+    string gen_key = 17;
+    string head_portrait_img_no = 18;
+    string login_token = 19;
+    string country_code = 20;
+    string email = 21;
+    string business_phone = 22;
+    //string jwt = 21;
+}
+message GetVersinInfoRequest {
+    string app_version = 1;
+    string vs_type = 2;
+    string system = 3;
+}
+
+message GetVersinInfoReply {
+    string app_version = 1;
+    string version_description = 2;
+    string app_url = 3;
+    string result_code = 4;
+    string is_force = 5;
+    string msg = 6;
+}
+
+//===============上传客户端信息======================
+message UploadClientInfoRequest {
+    string device_brand = 1;
+    string device_model = 2;
+    string resolution = 3;
+    string screen_size = 4;
+    string imei1 = 5;
+    string imei2 = 6;
+    string system_ver = 7;
+    string user_agent = 8;
+    string platform = 9;
+    string app_ver = 10;
+    string upload_point = 11;
+    int32 client_type = 12;
+    string account = 13;
+    string uuid = 14;
+}
+
+message UploadClientInfoReply {
+    string result_code = 1;
+}
+//======================================
+
+//=============================
+// 二次登录
+message Login2ndRequest {
+    string login_account_no = 1;
+    string jump_iden_no = 2;
+    string jump_iden_type = 3;
+    string jump_acc_no = 4;
+}
+
+message Login2ndReply {
+    string result_code = 1;
+    string msg = 2;
+    string jwt = 3;
+    bool isEncrypted = 4;
+    string login_nick_name = 5;
+    string jump_acc_no = 6;
+}
+//=============================
+// 二次登录
+message LoginReturnRequest {
+    string login_account_no = 1;
+    string jump_iden_no = 2;
+    string jump_iden_type = 3;
+}
+
+message LoginReturnReply {
+    string result_code = 1;
+    string msg = 2;
+    string jwt = 3;
+    bool isEncrypted = 4;
+    string login_nick_name = 5;
+}
+//=============================
+message CheckAccountRequest {
+    string account = 1;
+}
+
+message CheckAccountReply {
+    string result_code = 1;
+    CheckAccountData data = 3;
+}
+
+message CheckAccountData {
+    string count = 1;
+}
+//=============================
+// 获取账户列表
+message GetAccountListRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string search = 3;
+    string account_type = 4;
+    string affiliation_uid = 5;
+    string master_acc = 6;
+    string is_actived = 7;
+}
+
+message GetAccountListReply {
+    string result_code = 1;
+    string msg = 2;
+    repeated Account account_data = 3;
+    int32 total = 4;
+}
+
+message Account {
+    string uid = 1;
+    string nickname = 2;
+    string account = 3;
+    string use_status = 4;
+    string create_time = 5;
+    string modify_time = 6;
+    string account_type = 7;
+    string affiliation_uid = 8;
+    string master_acc = 9;
+    string master_account = 10;
+    string is_actived = 11;
+}
+//=============================
+// 更新账号信息
+message SaveAccountRequest {
+    string account_uid = 1;
+    string nickname = 2;
+    string account = 3;
+    string password = 4;
+    string use_status = 5;
+    string phone = 6;
+    string email = 7;
+    string master_acc = 8;
+    string account_type = 9;
+    string country_code = 10;
+    string utm_source = 11;
+}
+
+message SaveAccountReply {
+    string result_code = 1;
+    string msg = 2;
+    string uid = 3;
+}
+// 更新商家账号信息
+message SaveBusinessAccountRequest {
+    string email = 1;
+    string mail_code = 2;
+    string password = 3;
+    string phone = 4;
+    string country_code = 5;
+    string ip = 6;
+    string client = 7;
+}
+
+message SaveBusinessAccountReply {
+    string result_code = 1;
+    string msg = 2;
+    string uid = 3;
+    string account_type = 4;
+    string jwt = 5;
+    string init_pay_pwd_status = 6;
+}
+// 更新账号信息
+message AddCashierRequest {
+    string phone = 1;
+    string country_code = 2;
+    string servicer_no = 3;
+    string login_uid = 4;
+}
+
+message AddCashierReply {
+    string result_code = 1;
+    string msg = 2;
+    string uid = 3;
+}
+//=============================
+// 删除账户
+message DeleteAccountRequest {
+    repeated string account_uids = 1;
+}
+
+message DeleteAccountReply {
+    string result_code = 1;
+    string msg = 2;
+}
+//=============================
+// 获取账户
+message GetAccountByNicknameRequest {
+    string nickname = 1;
+}
+
+message GetAccountByNicknameReply {
+    string result_code = 1;
+    string msg = 2;
+    string uid = 3;
+    string nickname = 4;
+    string account = 5;
+    string use_status = 6;
+    string create_time = 7;
+    string modify_time = 8;
+    string drop_time = 9;
+    repeated RoleSimpleData data_list = 10;
+    repeated RoleSimpleData data_list_2 = 11;
+}
+
+message RoleSimpleData {
+    string role_no = 1;
+    string role_name = 2;
+}
+//=============================
+// 更新账户授权
+message UpdateOrInsertAccountAuthRequest {
+    string account_type = 1; //登陆的账号角色
+    string uid = 2; //要更新账号角色的uid
+    string roles = 3;
+    string login_uid = 4;
+}
+
+message UpdateOrInsertAccountAuthReply {
+    string result_code = 1;
+    string msg = 2;
+}
+//=============================================
+// 修改密码
+message ModifyPwRequest {
+    string account = 1;
+    string new_pw = 2;
+    string old_pw = 3;
+    string sms_code = 4;
+    string cli = 5; // 来源
+    string account_login = 6;
+    string top_agency = 7;
+}
+
+message ModifyPwReply {
+    string result_code = 1;
+    string msg = 2;
+}
+
+// 修改密码
+message ModifyPwMercRequest {
+    string iden_no = 1;
+    string iden_type = 2;
+    string new_pw = 3;
+    string account_login = 4;
+}
+
+message ModifyPwMercReply {
+    string result_code = 1;
+    string msg = 2;
+}
+//=============================================
+// 重置密码
+message ResetPwRequest {
+    string account = 1;
+    string new_pw = 2;
+    string sms_code = 3;
+    string cli = 4; // 来源
+    string login_pw = 5;
+    string login_acc_no = 6;
+}
+
+message ResetPwReply {
+    string result_code = 1;
+    string msg = 2;
+}
+//==============================================
+
+message GetLogLoginListRequest {
+    string account_no = 1;
+    string account_type = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string search = 5;
+    int32 page = 6;
+    int32 page_size = 7;
+}
+message GetLogLoginListReply {
+    string result_code = 1;
+    string msg = 2;
+    int32 total = 3;
+    repeated LogLogin datas = 4;
+}
+message LogLogin {
+    string login_time = 1;
+    string ip = 2;
+    string client = 3;
+    string result = 4;
+    string account_no = 5;
+    string account_name = 6;
+    string login_no = 7;
+}
+
+//修改用户状态
+message ModifyUserStatusRequest {
+    string account = 1;
+    string uid = 2;
+    string set_status = 3;
+    string login_uid = 4;
+}
+message ModifyUserStatusReply {
+    string result_code = 1;
+    string msg = 2;
+}
+
+message GetRoleFromAccRequest {
+    string acc_no = 1;
+    string top_agency = 2;
+}
+
+message GetRoleFromAccReply {
+    string result_code = 1;
+    repeated RoleSimpleData datas = 3;
+}
+//=============================
+message GetRemainRequest {
+    string account_no = 1;
+}
+
+message GetRemainReply {
+    string result_code = 1;
+    string msg = 2;
+    RemainData data = 3;
+}
+
+message RemainData {
+    string khr = 1;
+    string usd = 2;
+}
+message GetPosRemainRequest {
+    string account_uid = 1;
+    string account_type = 2;
+}
+
+message GetPosRemainReply {
+    string result_code = 1;
+    string msg = 2;
+    GetPosRemainData data = 3;
+}
+
+message GetPosRemainData {
+    string use_khr = 1;
+    string auth_khr = 2;
+    string use_usd = 3;
+    string auth_usd = 4;
+}
+
+message MobileBackPwdRequest {
+    string phone = 1;
+    string password = 2;
+    string sms = 3;
+    string pub_key = 4;
+    string country_code = 5;
+}
+
+message MobileBackPwdReply {
+    string result_code = 1;
+    string msg = 2;
+}
+
+message MobileModifyPwdRequest {
+    string uid = 1;
+    string account_type = 2;
+    string old_password = 3;
+    string new_password = 4;
+    string non_str = 5;
+}
+
+message MobileModifyPwdReply {
+    string result_code = 1;
+    string msg = 2;
+}
+
+message MobileModifyPayPwdRequest {
+    string uid = 1;
+    string sms = 2;
+    string password = 3;
+    string account_type = 4;
+}
+
+message MobileModifyPayPwdReply {
+    string result_code = 1;
+    string msg = 2;
+}
+
+message MobileModifyPhonedRequest {
+    string uid = 1;
+    string sms = 2;
+    string phone = 3;
+    string country_code = 4;
+}
+
+message MobileModifyPhonedReply {
+    string result_code = 1;
+    string msg = 2;
+    string jwt = 3;
+}
+
+
+message ModifyNicknameRequest {
+    string nickname = 1;
+    string account_no = 2;
+    string account_type = 3;
+}
+
+message ModifyNicknameReply {
+    string result_code = 1;
+    string jwt = 2;
+}
+
+message AddCardRequest {
+    // 币种
+    string money_type = 1;
+    // 银行名字
+    string channel_name = 2;
+    // 当前登录的服务员ID
+    string account_uid = 3;
+    // 收款人姓名
+    string rec_name = 4;
+    // 收款人卡号
+    string rec_car_num = 5;
+    // 操作类型,3-服务商;4-用户;5-pos机
+    string account_type = 6;
+    // 操作员账号
+    string op_acc_no = 7;
+    // 是否默认,0-否;1-是
+    int32 is_default = 8;
+}
+
+message AddCardReply {
+    string result_code = 1;
+    string msg = 2;
+}
+
+message ModifyDefaultCardRequest {
+    // 当前登录的服务员ID
+    string account_uid = 1;
+    // 卡号
+    string card_no = 2;
+    // 操作类型,3-服务商;4-用户;5-pos机
+    string account_type = 3;
+    // 操作员账号
+    string op_acc_no = 4;
+
+    string money_type = 5;
+}
+
+message ModifyDefaultCardReply {
+    string result_code = 1;
+    string msg = 2;
+}
+
+message DeleteBindCardRequest {
+    // 币种
+    string money_type = 1;
+    // 银行名字
+    string channel_name = 2;
+    // 当前登录的服务员ID
+    string account_uid = 3;
+    // 卡号
+    string car_num = 4;
+    // 操作类型,3-服务商;4-用户;5-pos机
+    string account_type = 5;
+    // 操作员账号
+    string op_acc_no = 6;
+    // 银行卡主键
+    string card_no = 7;
+}
+
+message DeleteBindCardReply {
+    string result_code = 1;
+    string msg = 2;
+}
+
+message MyDataRequest {
+    string op_acc_no = 1;
+    string account_type = 2;
+}
+
+message MyDataReply {
+    string result_code = 1;
+    string msg = 2;
+    // 网点id,开会序列
+    string open_idx = 3;
+    // 联系人
+    string contact_person = 4;
+    // 联系方式
+    string contact_phone = 5;
+    // 联系地址
+    string contact_addr = 6;
+    // 网点地址
+    string addr = 7;
+    // 收款权限
+    string income_authorization = 8;
+    // 取款权限
+    string outgo_authorization = 9;
+    string create_time = 10;
+}
+
+message RegLoginRequest {
+    string phone = 1;
+    string password = 2;
+    string sms = 3;
+    string lang = 4;
+    string ip = 5;
+    string app_version = 6;
+    string pub_key = 7;
+    string lat = 8;
+    string lng = 9;
+    string country_code = 10;
+    string utm_source = 11;
+    string uuid = 12;
+}
+
+message RegLoginReply {
+    string result_code = 1;
+    string msg = 2;
+    string jwt = 3;
+    bool isEncrypted = 4;
+    string account_uid = 5;
+    string gen_key = 6;
+    string phone = 7;
+    string terminal_no = 8;
+    string cashier_name = 9;
+    string account_type = 10;
+    string app_version = 11;
+    string version_description = 12;
+    string app_url = 13;
+    string is_force = 14; // 是否强制更新;0-否;1-是
+    int32 refresh_token_interval = 15;
+    bool is_set_payment_pwd = 16;
+}
+
+message PerfectingInfoRequest {
+    string account_no = 1;
+    string account_type = 2;
+    string nickname = 3;
+    string image_str = 4;
+}
+
+message PerfectingInfoReply {
+    string ResultCode = 1;
+    string head_portrait_img_no = 2;
+}
+
+message GetAccountCollectRequest {
+    int32 page = 1;
+    int32 page_size = 2;
+    string account_no = 3;
+}
+
+message GetAccountCollectReply {
+    string ResultCode = 1;
+    repeated AccountCollectData datas = 2;
+    int32 total = 3;
+}
+
+message AccountCollectData {
+    string account_no = 1;
+    string collect_account_no = 2;
+    string collect_phone = 3;
+    string modify_time = 4;
+    string collect_no = 5;
+
+    string account = 6;
+    string nickname = 7;
+    string head_portrait_img_no = 8;
+    string country_code = 9;
+}
+
+
+message AddAccountCollectRequest {
+    string account_no = 1;
+    string to_phone = 2;
+    string country_code = 3;
+}
+message AddAccountCollectReply {
+    string result_code = 1;
+}
+
+
+message CheckPayPWDRequest {
+    string account_uid = 1;
+    string account_type = 2;
+    string password = 3;
+    string iden_no = 4;
+    string non_str = 5;
+}
+message CheckPayPWDReply {
+    string result_code = 1;
+    string msg = 2;
+    string errTips = 3; //提示还可以输入几次错误支付密码
+}
+
+message CustPaymentRequest {
+    string account_uid = 1;
+    string account_type = 2;
+    string cust_no = 3;
+}
+message CustPaymentReply {
+    string result_code = 1;
+    string msg = 2;
+    string def_pay_no = 3;
+    CustPaymentData data = 4;
+}
+
+message CustPaymentData {
+    string usd_balance = 1;
+    string khr_balance = 2;
+    repeated CardData cardDatas = 3;
+}
+
+message CardData {
+    string logo_img_no = 1; //渠道logo图片
+    string channel_name = 2; //渠道名称
+    string card_number = 3; //卡号（后面四位）
+    string is_defalut = 4; //1：推荐卡
+    string currency_type = 5; //币种
+    string card_no = 6;
+    string logo_img_no_grey = 7; //渠道logo图片灰色
+    string color_begin = 8; //渐变开始颜色
+    string color_end = 9; //渐变结束颜色
+
+}
+
+message InsertLogAppDotRequest {
+    string op_type = 1;
+    string uuid = 2;
+}
+
+message InsertLogAppDotReply {
+    string result_code = 1;
+}
+message ModifyPayPWDByMailCodeRequest {
+    string uid = 1;
+    string mail_code = 2;
+    string password = 3;
+    string account_type = 4;
+}
+
+message ModifyPayPWDByMailCodeReply {
+    string result_code = 1;
+}
+
+message ModifyPayPWDByOldPwdRequest {
+    string iden_no = 1;
+    string old_pay_pwd = 2; //旧的支付密码
+    string new_pay_pwd = 3; //新的支付密码
+    string non_str = 4;
+    string account_type = 5;
+    string account_uid = 6;
+}
+
+message ModifyPayPWDByOldPwdReply {
+    string result_code = 1;
+}
+
+message ModifyEmailRequest {
+    string uid = 1;
+    string account_type = 2;
+    string email = 3; //新邮箱
+    string mail_code = 4; //新邮箱收到的验证码
+    string password = 5;
+    string non_str = 6;
+    string account = 7;
+    string iden_no = 8;
+    string phone = 9;
+    string country_code = 10;
+
+}
+
+message ModifyEmailReply {
+    string result_code = 1;
+    string token = 2;
+}
+
+message BusinessModifyPhoneRequest {
+    string uid = 1;
+    string account_type = 2;
+    string phone = 3; //新手机
+    string sms = 4; //新手机收到的验证码
+    string country_code = 5; //国家码
+
+    string account = 6;
+    string iden_no = 7;
+    string email = 8;
+}
+
+message BusinessModifyPhoneReply {
+    string result_code = 1;
+    string token = 2;
+}
+
+message BusinessModifyPWDBySmsRequest {
+    string uid = 1;
+    string sms = 2;
+    string password = 3;
+    string phone = 4;
+    string account = 5;
+}
+
+message BusinessModifyPWDBySmsReply {
+    string result_code = 1;
+    string msg = 2;
+}
+
+message ModifyPWDByMailCodeRequest {
+    string uid = 1;
+    string mail_code = 2;
+    string password = 3;
+    string email = 4;
+    string account = 5;
+}
+
+message ModifyPWDByMailCodeReply {
+    string result_code = 1;
+    string msg = 2;
+}
+message InitBusinessPayPwdRequest {
+    string uid = 1;
+    string iden_no = 2;
+    string account_type = 3;
+    string pay_pwd = 4;
+}
+
+message InitBusinessPayPwdReply {
+    string result_code = 1;
+}
+//增加用户
+message AddCustRequest {
+    string gender = 1;
+    string nickname = 2;
+    string phone = 3;
+    string password = 4;
+    string country_code = 5;
+
+    string utm_source = 6;
+}
+
+message AddCustReply {
+    string result_code = 1;
+    string acc_uid = 2;
+}
+message AddAppFingerprintRequest {
+    string account_no = 1; //账号uid
+    string device_uuid = 2; //设备uid
+}
+
+message AddAppFingerprintReply {
+    string result_code = 1;
+    string sign_key = 2;
+}
+message CloseAppFingerprintRequest {
+    string account_no = 1; //账号uid
+    string device_uuid = 2; //设备uid
+}
+
+message CloseAppFingerprintReply {
+    string result_code = 1;
+}

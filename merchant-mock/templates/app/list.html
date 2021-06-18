@@ -1,0 +1,74 @@
+{{define "app/list.html"}}
+
+    {{template "common/header.html" .}}
+
+    <div class="container-fluid">{{.errMsg}}<div>
+    <div class="container-fluid">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th colspan="5">
+                        <span>当前运行的应用为: {{.runningAppID}}({{.runningAppName}})</span>
+                        &nbsp;&nbsp;&nbsp;
+                        <a href="/app/add" class="btn btn-primary">添加应用</a>
+                        &nbsp;&nbsp;&nbsp;
+                        <a href="http://10.41.1.241:9001/index.html?processname=merchant-mock&action=restart" target="_blank" class="btn btn-primary">重启应用</a>
+                    </th>
+                </tr>
+                <tr>
+                    <th>应用ID</th>
+                    <th>应用名称</th>
+                    <th>是否正在使用</th>
+                    <th>创建时间</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{range .appList}}
+                    <tr>
+                        <td>{{.AppId}}</td>
+                        <td>{{.AppName}}</td>
+                        <td>
+                            {{if eq .IsUse "1"}}
+                                <span class="label label-success">使用中</span>
+                            {{else }}
+                                <span class="label label-default">未使用</span>
+                            {{end}}
+                        </td>
+                        <td>{{.CreateTime}}</td>
+                        <td>
+                            {{if eq .IsUse "0"}}
+                                <a class="btn btn-primary btn-sm btn-change-use" data-app-id="{{.AppId}}" href="javascript:void(0);">设置为使用</a>
+                            {{end}}
+
+                            <a class="btn btn-primary btn-sm" href="/app/detail?app_id={{.AppId}}">查看详细</a>
+
+                        </td>
+                    </tr>
+                {{end}}
+                </tbody>
+            </table>
+    </div>
+    <script type="text/javascript">
+        // 修改应用可用状态
+        $(".btn-change-use").click(function(e){
+            var _btn =  $(this);
+
+            _data = {
+                app_id: _btn.attr("data-app-id")
+            };
+
+            console.log(_data);
+
+            $.post("/app/change_use", _data, function(result){
+                console.log(result);
+                if (result.code == "0") {
+                    window.location.reload();
+                } else {
+                    alert(result.msg);
+                }
+            });
+        });
+    </script>
+    {{template "common/footer.html"}}
+{{end}}

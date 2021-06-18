@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package go.micro.srv.quota;
+
+service Quota {
+    rpc ModifyQuota (ModifyQuotaRequest) returns (ModifyQuotaReply) {
+    }
+    rpc ModifyDefaultQuota (ModifyDefaultQuotaRequest) returns (ModifyDefaultQuotaReply) {
+    }
+    //dddddddddddddddddddddddddd
+}
+
+//======================================
+message ModifyQuotaRequest {
+    string currency_type = 1;
+    string amount = 2;
+    string account_no = 3;
+    string op_type = 4;
+    string log_no = 5;
+    string reason = 6;
+    string tx_no = 7; // 事务id
+}
+
+message ModifyQuotaReply {
+    string result_code = 1;
+}
+//======================================
+message ModifyDefaultQuotaRequest {
+    string currency_type = 1;
+    string amount = 2;
+    string account_no = 3;
+    string op_type = 4;
+    string log_no = 5;
+}
+
+message ModifyDefaultQuotaReply {
+    string result_code = 1;
+}
+//======================================
